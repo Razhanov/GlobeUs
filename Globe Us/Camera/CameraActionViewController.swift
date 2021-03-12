@@ -59,6 +59,8 @@ class CameraActionViewController: UIViewController {
         view.layer.cornerRadius = 20
         view.clipsToBounds = true
         view.isHidden = true
+        view.layer.borderColor = UIColor(red: 1, green: 0.671, blue: 0.173, alpha: 0.5).cgColor
+        view.layer.borderWidth = 1
         return view
     }()
     
@@ -119,6 +121,7 @@ class CameraActionViewController: UIViewController {
             stickersCollectionView.isHidden = workModeEnum == .challenge
             challengeView.isHidden = workModeEnum == .clouds
             stickersCollectionView.reloadData()
+            delegate?.setWorkMode(self.workModeEnum)
         }
     }
 
@@ -143,11 +146,11 @@ class CameraActionViewController: UIViewController {
         stickersCollectionView.snp.makeConstraints { (make) in
             make.bottom.equalTo(shutterButton.view.snp.top).offset(-12)
             make.leading.trailing.equalToSuperview()
-            make.height.equalTo(114)
+            make.height.equalTo(93)//114)
         }
         workModeCollectionView.snp.makeConstraints { (make) in
-            make.bottom.lessThanOrEqualTo(stickersCollectionView.snp.top).offset(-12)
-            make.top.greaterThanOrEqualToSuperview().offset(8)
+            make.bottom.equalTo(stickersCollectionView.snp.top).offset(-12)//lessThanOrEqualTo(stickersCollectionView.snp.top).offset(-12)
+//            make.top.greaterThanOrEqualToSuperview().offset(8)
             make.height.equalTo(56)
             make.leading.trailing.equalToSuperview()
         }
@@ -169,7 +172,7 @@ class CameraActionViewController: UIViewController {
             make.left.equalTo(challengeImageView.snp.right).offset(17)
             make.height.equalTo(24)
 //            make.width.equalTo(143)
-            make.width.equalToSuperview().multipliedBy(0.5)
+            make.width.equalToSuperview().multipliedBy(0.55)
             make.bottom.equalTo(challengeImageView.snp.bottom)
         }
         self.view.layoutIfNeeded()

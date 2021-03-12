@@ -14,6 +14,7 @@ enum WorkMode {
 
 protocol CameraActionDelegate: class {
     func didSelect(cloud: CloudData?)
+    func setWorkMode(_ workMode: WorkMode)
 }
 
 class CameraViewController: UIViewController {
@@ -24,7 +25,11 @@ class CameraViewController: UIViewController {
 
     private var cameraActionView: CameraActionViewController!
     private var cameraActionViewHeight: CGFloat {
-        return (self.view.frame.height - self.view.frame.height * 0.7) - (self.view.getSafeAreaInsets().top * 0.5)
+        return 280//(self.view.frame.height - self.view.frame.height * 0.7) - (self.view.getSafeAreaInsets().top * 0.5)
+    }
+
+    private var cameraViewHeight: CGFloat {
+        return self.view.frame.height - cameraActionViewHeight
     }
     
     private(set) lazy var topImageView: UIImageView = {
@@ -37,6 +42,14 @@ class CameraViewController: UIViewController {
         let imageView = UIImageView()
 //        imageView.contentMode = .scaleAspectFit
         return imageView
+    }()
+
+    private(set) lazy var challengeInfoView: ChallengeInfoView = {
+        let view = ChallengeInfoView()
+        view.isHidden = true
+        view.startButton.addTarget(self, action: #selector(openChallengesVC(_:)), for: .touchUpInside)
+        view.infoButton.addTarget(self, action: #selector(openAboutChallenge), for: .touchUpInside)
+        return view
     }()
     
     private var places: [Place] = [] {
@@ -57,6 +70,8 @@ class CameraViewController: UIViewController {
 
         setupUI()
         makeConstraints()
+        
+        navigationController?.setNavigationBarHidden(true, animated: false)
         
         self.view.backgroundColor = .systemBackground
         CitiesService.getAllClouds(with: "Saint-Petersburg") { (result) in
@@ -107,6 +122,7 @@ class CameraViewController: UIViewController {
         cameraView.isUserInteractionEnabled = true
         
         self.view.addSubview(cameraView)
+        self.view.addSubview(challengeInfoView)
         
         cameraView.addSubview(topImageView)
         cameraView.addSubview(bottomImageView)
@@ -122,8 +138,10 @@ class CameraViewController: UIViewController {
     private func makeConstraints() {
         cameraView.snp.makeConstraints { (make) in
             make.width.equalTo(self.view.frame.width) //* 0.95)
-            make.height.equalTo(self.view.frame.height * 0.65)
-            make.top.equalTo(self.view.safeAreaLayoutGuide).offset(10)
+//            make.height.equalTo(self.view.frame.height * 0.65)
+            make.height.equalTo(cameraViewHeight)
+//            make.top.equalTo(self.view.safeAreaLayoutGuide).offset(10)
+            make.top.equalToSuperview()
             make.centerX.equalToSuperview()
         }
         topImageView.snp.makeConstraints { (make) in
@@ -139,6 +157,9 @@ class CameraViewController: UIViewController {
             make.height.equalTo(cameraActionViewHeight)
             make.bottom.equalToSuperview()
         }
+        challengeInfoView.snp.makeConstraints { (make) in
+            make.edges.equalTo(cameraView.snp.edges)
+        }
     }
     
     /// Reset the camera view to improve performance
@@ -146,10 +167,26 @@ class CameraViewController: UIViewController {
         cameraView.pixelBuffer = nil
         cameraView.flushTextureCache()
     }
+    
+    @objc private func openChallengesVC(_ : UIButton) {
+        let vc = ChallengesViewController()
+        vc.places = places
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @objc private func openAboutChallenge() {
+        let vc = AboutChallengeViewController()
+        present(vc, animated: true, completion: nil)
+    }
 
 }
 
 extension CameraViewController: CameraActionDelegate {
+    func setWorkMode(_ workMode: WorkMode) {
+        cameraView.isHidden = workMode == .challenge
+        challengeInfoView.isHidden = workMode == .clouds
+    }
+
     func didSelect(cloud: CloudData?) {
         guard let cloud = cloud else { return }
 //        topImageView.loadWithAlamofire(urlStringFull: cloud.topImage)

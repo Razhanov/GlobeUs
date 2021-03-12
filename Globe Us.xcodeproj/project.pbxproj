@@ -29,8 +29,21 @@
 		052B1E4E24C39C030068B701 /* AuthorizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052B1E4A24C39C030068B701 /* AuthorizationView.swift */; };
 		052B1E4F24C39C030068B701 /* AuthorizationConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052B1E4B24C39C030068B701 /* AuthorizationConfigurator.swift */; };
 		2398F1CA0B1B391FCA8EE4A1 /* ShutterButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2398F5A3371410C1773E385B /* ShutterButtonViewController.swift */; };
+		2398F6CDA780662CF40BF311 /* ChallengeInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2398FAA97653EC51C3C97A16 /* ChallengeInfoView.swift */; };
 		2398F7342F36A48AFEDECA51 /* DataEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2398F87DF879B1B9DE892350 /* DataEngine.swift */; };
 		2398FC94704549997E8B3F9E /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2398FEE3B0DAA87F648F8A23 /* Photo.swift */; };
+		C72C9F7425F988FA00A0A6F5 /* ChallengesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72C9F7325F988FA00A0A6F5 /* ChallengesViewController.swift */; };
+		C72C9F7A25F9891900A0A6F5 /* ChallengesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72C9F7925F9891900A0A6F5 /* ChallengesView.swift */; };
+		C72C9F7E25F98F9100A0A6F5 /* ChallengeInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72C9F7D25F98F9100A0A6F5 /* ChallengeInfoTableViewCell.swift */; };
+		C75548D425FAA2D000D0D9BE /* ChallengeArrowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75548D325FAA2D000D0D9BE /* ChallengeArrowTableViewCell.swift */; };
+		C75548D825FAB49700D0D9BE /* ChallengeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75548D725FAB49700D0D9BE /* ChallengeHeaderView.swift */; };
+		C75548DF25FAC46100D0D9BE /* ChallengesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75548DE25FAC46100D0D9BE /* ChallengesDetailViewController.swift */; };
+		C75548E325FAC48900D0D9BE /* ChallengesDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75548E225FAC48900D0D9BE /* ChallengesDetailView.swift */; };
+		C75548E725FAC98400D0D9BE /* ChallengesDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75548E625FAC98400D0D9BE /* ChallengesDetailTableViewCell.swift */; };
+		C75548EE25FAE23200D0D9BE /* ChallengeDetailInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75548ED25FAE23200D0D9BE /* ChallengeDetailInfoViewController.swift */; };
+		C75548F225FAE24E00D0D9BE /* ChallengeDetailInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75548F125FAE24E00D0D9BE /* ChallengeDetailInfoView.swift */; };
+		C75548F725FAEBA800D0D9BE /* AboutChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75548F625FAEBA800D0D9BE /* AboutChallengeViewController.swift */; };
+		C75548FB25FAEBBB00D0D9BE /* AboutChallengeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75548FA25FAEBBB00D0D9BE /* AboutChallengeView.swift */; };
 		C7A31AB725EBA6C3008D5E20 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A31AB625EBA6C3008D5E20 /* CameraViewController.swift */; };
 		C7A31ABD25EBA8D4008D5E20 /* CameraEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A31ABC25EBA8D4008D5E20 /* CameraEngine.swift */; };
 		C7A31AC125EBA938008D5E20 /* PreviewMetalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A31AC025EBA938008D5E20 /* PreviewMetalView.swift */; };
@@ -117,6 +130,7 @@
 		0AF799E7D1CC1056A70FCE75 /* Pods-Globe Us-Globe UsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Globe Us-Globe UsUITests.release.xcconfig"; path = "Target Support Files/Pods-Globe Us-Globe UsUITests/Pods-Globe Us-Globe UsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		2398F5A3371410C1773E385B /* ShutterButtonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShutterButtonViewController.swift; sourceTree = "<group>"; };
 		2398F87DF879B1B9DE892350 /* DataEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataEngine.swift; sourceTree = "<group>"; };
+		2398FAA97653EC51C3C97A16 /* ChallengeInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeInfoView.swift; sourceTree = "<group>"; };
 		2398FEE3B0DAA87F648F8A23 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		33BC249C115990C343359DB3 /* Pods-Globe Us-Globe UsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Globe Us-Globe UsUITests.debug.xcconfig"; path = "Target Support Files/Pods-Globe Us-Globe UsUITests/Pods-Globe Us-Globe UsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		3C46A13AB7DD04E7EBAA37DD /* Pods_Globe_Us_Globe_UsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Globe_Us_Globe_UsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,6 +138,18 @@
 		629F2DFE4206F374FB93EA1B /* Pods-Globe UsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Globe UsTests.release.xcconfig"; path = "Target Support Files/Pods-Globe UsTests/Pods-Globe UsTests.release.xcconfig"; sourceTree = "<group>"; };
 		87B8CCC842DB471D11D8D71B /* Pods-Globe Us.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Globe Us.release.xcconfig"; path = "Target Support Files/Pods-Globe Us/Pods-Globe Us.release.xcconfig"; sourceTree = "<group>"; };
 		8964DCD05CB9F3D8DD4CDC14 /* Pods_Globe_Us.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Globe_Us.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C72C9F7325F988FA00A0A6F5 /* ChallengesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengesViewController.swift; sourceTree = "<group>"; };
+		C72C9F7925F9891900A0A6F5 /* ChallengesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengesView.swift; sourceTree = "<group>"; };
+		C72C9F7D25F98F9100A0A6F5 /* ChallengeInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeInfoTableViewCell.swift; sourceTree = "<group>"; };
+		C75548D325FAA2D000D0D9BE /* ChallengeArrowTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeArrowTableViewCell.swift; sourceTree = "<group>"; };
+		C75548D725FAB49700D0D9BE /* ChallengeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeHeaderView.swift; sourceTree = "<group>"; };
+		C75548DE25FAC46100D0D9BE /* ChallengesDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengesDetailViewController.swift; sourceTree = "<group>"; };
+		C75548E225FAC48900D0D9BE /* ChallengesDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengesDetailView.swift; sourceTree = "<group>"; };
+		C75548E625FAC98400D0D9BE /* ChallengesDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengesDetailTableViewCell.swift; sourceTree = "<group>"; };
+		C75548ED25FAE23200D0D9BE /* ChallengeDetailInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeDetailInfoViewController.swift; sourceTree = "<group>"; };
+		C75548F125FAE24E00D0D9BE /* ChallengeDetailInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeDetailInfoView.swift; sourceTree = "<group>"; };
+		C75548F625FAEBA800D0D9BE /* AboutChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutChallengeViewController.swift; sourceTree = "<group>"; };
+		C75548FA25FAEBBB00D0D9BE /* AboutChallengeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutChallengeView.swift; sourceTree = "<group>"; };
 		C7A31AB625EBA6C3008D5E20 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		C7A31ABC25EBA8D4008D5E20 /* CameraEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraEngine.swift; sourceTree = "<group>"; };
 		C7A31AC025EBA938008D5E20 /* PreviewMetalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewMetalView.swift; sourceTree = "<group>"; };
@@ -218,6 +244,7 @@
 				C7FB9ACF25EC0FCB0010CD2C /* Network */,
 				C7FB9AC225EC05920010CD2C /* Extensions */,
 				C7FB9ABF25EBD5530010CD2C /* Globe Us.entitlements */,
+				C72C9F7225F988D700A0A6F5 /* Challenge */,
 				C7A31AB525EBA69C008D5E20 /* Camera */,
 				0521CADD24BBADD5008BB178 /* Controllers */,
 				052B1E4724C39B8F0068B701 /* Authorization */,
@@ -296,6 +323,49 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		C72C9F7225F988D700A0A6F5 /* Challenge */ = {
+			isa = PBXGroup;
+			children = (
+				C75548F525FAEB8F00D0D9BE /* About */,
+				C75548EC25FAE21000D0D9BE /* Detail */,
+				C75548DD25FAC44100D0D9BE /* Detail List */,
+				C72C9F7325F988FA00A0A6F5 /* ChallengesViewController.swift */,
+				C72C9F7925F9891900A0A6F5 /* ChallengesView.swift */,
+				C72C9F7D25F98F9100A0A6F5 /* ChallengeInfoTableViewCell.swift */,
+				C75548D325FAA2D000D0D9BE /* ChallengeArrowTableViewCell.swift */,
+				C75548D725FAB49700D0D9BE /* ChallengeHeaderView.swift */,
+			);
+			path = Challenge;
+			sourceTree = "<group>";
+		};
+		C75548DD25FAC44100D0D9BE /* Detail List */ = {
+			isa = PBXGroup;
+			children = (
+				C75548DE25FAC46100D0D9BE /* ChallengesDetailViewController.swift */,
+				C75548E225FAC48900D0D9BE /* ChallengesDetailView.swift */,
+				C75548E625FAC98400D0D9BE /* ChallengesDetailTableViewCell.swift */,
+			);
+			path = "Detail List";
+			sourceTree = "<group>";
+		};
+		C75548EC25FAE21000D0D9BE /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				C75548ED25FAE23200D0D9BE /* ChallengeDetailInfoViewController.swift */,
+				C75548F125FAE24E00D0D9BE /* ChallengeDetailInfoView.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		C75548F525FAEB8F00D0D9BE /* About */ = {
+			isa = PBXGroup;
+			children = (
+				C75548F625FAEBA800D0D9BE /* AboutChallengeViewController.swift */,
+				C75548FA25FAEBBB00D0D9BE /* AboutChallengeView.swift */,
+			);
+			path = About;
+			sourceTree = "<group>";
+		};
 		C7A31AB525EBA69C008D5E20 /* Camera */ = {
 			isa = PBXGroup;
 			children = (
@@ -305,6 +375,7 @@
 				2398F5A3371410C1773E385B /* ShutterButtonViewController.swift */,
 				C7FB9ACB25EC09690010CD2C /* StickersCollectionViewCell.swift */,
 				C7D62D2725ED06730021E642 /* WorkModeCollectionViewCell.swift */,
+				2398FAA97653EC51C3C97A16 /* ChallengeInfoView.swift */,
 			);
 			path = Camera;
 			sourceTree = "<group>";
@@ -613,11 +684,14 @@
 				052B1E4C24C39C030068B701 /* AuthorizationPresenter.swift in Sources */,
 				C7FB9B0925EC23E00010CD2C /* UIImageViewDownloader.swift in Sources */,
 				0521CAE524BBB0DA008BB178 /* MainPresenter.swift in Sources */,
+				C75548D425FAA2D000D0D9BE /* ChallengeArrowTableViewCell.swift in Sources */,
 				C7FB9AE525EC158B0010CD2C /* MainRequestFactory.swift in Sources */,
 				C7FB9AF525EC17250010CD2C /* CitiesResponse.swift in Sources */,
 				C7FB9AE625EC158B0010CD2C /* AbstractRequestFactory.swift in Sources */,
+				C75548E325FAC48900D0D9BE /* ChallengesDetailView.swift in Sources */,
 				0521CAE824BBB0DA008BB178 /* MainConfigurator.swift in Sources */,
 				C7FB9AC425EC05AC0010CD2C /* ViewControllerExtensions.swift in Sources */,
+				C75548E725FAC98400D0D9BE /* ChallengesDetailTableViewCell.swift in Sources */,
 				C7FB9AD325EC11630010CD2C /* AbstractRequestRouter.swift in Sources */,
 				C7D62D2825ED06730021E642 /* WorkModeCollectionViewCell.swift in Sources */,
 				C7A31AC125EBA938008D5E20 /* PreviewMetalView.swift in Sources */,
@@ -625,6 +699,7 @@
 				C7A31ABD25EBA8D4008D5E20 /* CameraEngine.swift in Sources */,
 				0521CAE724BBB0DA008BB178 /* MainView.swift in Sources */,
 				052B1E4D24C39C030068B701 /* AuthorizationViewController.swift in Sources */,
+				C72C9F7E25F98F9100A0A6F5 /* ChallengeInfoTableViewCell.swift in Sources */,
 				C7FB9AEC25EC159D0010CD2C /* SessionManagerFactory.swift in Sources */,
 				0521CAF324BBDAED008BB178 /* CameraController.swift in Sources */,
 				0517B02824BA473C00008884 /* AppDelegate.swift in Sources */,
@@ -633,11 +708,15 @@
 				C7FB9AEB25EC159D0010CD2C /* RequestFactory.swift in Sources */,
 				0521CAE624BBB0DA008BB178 /* MainViewController.swift in Sources */,
 				051D060424BE0EC400E61520 /* AccelerometerOrientation.swift in Sources */,
+				C72C9F7425F988FA00A0A6F5 /* ChallengesViewController.swift in Sources */,
+				C72C9F7A25F9891900A0A6F5 /* ChallengesView.swift in Sources */,
 				0517B02A24BA473C00008884 /* SceneDelegate.swift in Sources */,
 				C7FB9AC825EC05F40010CD2C /* UIViewExtensions.swift in Sources */,
 				C7FB9ACC25EC09690010CD2C /* StickersCollectionViewCell.swift in Sources */,
+				C75548FB25FAEBBB00D0D9BE /* AboutChallengeView.swift in Sources */,
 				052B1E4F24C39C030068B701 /* AuthorizationConfigurator.swift in Sources */,
 				C7A31AB725EBA6C3008D5E20 /* CameraViewController.swift in Sources */,
+				C75548F725FAEBA800D0D9BE /* AboutChallengeViewController.swift in Sources */,
 				C7A31AD025EBB6FC008D5E20 /* CameraActionViewController.swift in Sources */,
 				052B1E4E24C39C030068B701 /* AuthorizationView.swift in Sources */,
 				C7A31ACC25EBB4DD008D5E20 /* PassThrough.metal in Sources */,
@@ -645,10 +724,15 @@
 				0521CADF24BBADFC008BB178 /* AppController.swift in Sources */,
 				2398F1CA0B1B391FCA8EE4A1 /* ShutterButtonViewController.swift in Sources */,
 				C7FB9AFF25EC195A0010CD2C /* CitiesService.swift in Sources */,
+				C75548D825FAB49700D0D9BE /* ChallengeHeaderView.swift in Sources */,
+				C75548EE25FAE23200D0D9BE /* ChallengeDetailInfoViewController.swift in Sources */,
 				C7FB9B0525EC23310010CD2C /* SafeCollection.swift in Sources */,
 				2398F7342F36A48AFEDECA51 /* DataEngine.swift in Sources */,
+				C75548F225FAE24E00D0D9BE /* ChallengeDetailInfoView.swift in Sources */,
 				C7FB9AE025EC13C90010CD2C /* MainRequestRouter.swift in Sources */,
+				C75548DF25FAC46100D0D9BE /* ChallengesDetailViewController.swift in Sources */,
 				2398FC94704549997E8B3F9E /* Photo.swift in Sources */,
+				2398F6CDA780662CF40BF311 /* ChallengeInfoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

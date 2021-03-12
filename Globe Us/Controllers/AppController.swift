@@ -33,18 +33,18 @@ final class AppController {
     }
     
     func startApp() {
-        let picker = MainViewController()
-        
-        let screenSize = UIScreen.main.bounds.size
-        let ratio: CGFloat = 4.0 / 3.0
-        let cameraHeight: CGFloat = screenSize.width * ratio
-        let scale: CGFloat = screenSize.height / cameraHeight
+//        let picker = MainViewController()
+//
+//        let screenSize = UIScreen.main.bounds.size
+//        let ratio: CGFloat = 4.0 / 3.0
+//        let cameraHeight: CGFloat = screenSize.width * ratio
+//        let scale: CGFloat = screenSize.height / cameraHeight
         
 //        picker.
 //        picker.cameraViewTransform = CGAffineTransform(translationX: 0, y: (screenSize.height - cameraHeight) / 2.0)
 //        picker.cameraViewTransform = CGAffineTransform(scaleX: scale, y: scale)
         
-        rootViewController = CameraViewController()//MainViewController()
+        rootViewController = UINavigationController(rootViewController: CameraViewController())//CameraViewController()//MainViewController()
     }
     
 }
