@@ -9,6 +9,8 @@ target 'Globe Us' do
   pod 'SnapKit'
   pod 'Alamofire'
   pod 'AlamofireImage'
+  pod 'GoogleSignIn'
+  pod 'FBSDKLoginKit'
 
   target 'Globe UsTests' do
     inherit! :search_paths

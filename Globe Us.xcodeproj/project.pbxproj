@@ -32,6 +32,19 @@
 		2398F6CDA780662CF40BF311 /* ChallengeInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2398FAA97653EC51C3C97A16 /* ChallengeInfoView.swift */; };
 		2398F7342F36A48AFEDECA51 /* DataEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2398F87DF879B1B9DE892350 /* DataEngine.swift */; };
 		2398FC94704549997E8B3F9E /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2398FEE3B0DAA87F648F8A23 /* Photo.swift */; };
+		BD2D3226264B1F32008489BF /* KeyboardObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2D3225264B1F32008489BF /* KeyboardObserver.swift */; };
+		BD82297D26502F6D000B286E /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD82297C26502F6C000B286E /* AuthResponse.swift */; };
+		BD8229812650308D000B286E /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8229802650308D000B286E /* AuthService.swift */; };
+		BD82299126503B6F000B286E /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD82299026503B6F000B286E /* AudioToolbox.framework */; };
+		BD82299B26503C96000B286E /* AuthenticationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD82299A26503C96000B286E /* AuthenticationServices.framework */; };
+		BD8229AB26504236000B286E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD8229AA26504236000B286E /* GoogleService-Info.plist */; };
+		BD8229CF26511708000B286E /* RegistrationConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8229CE26511708000B286E /* RegistrationConfigurator.swift */; };
+		BD8229D52651171C000B286E /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8229D42651171C000B286E /* RegistrationView.swift */; };
+		BD8229D92651172F000B286E /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8229D82651172F000B286E /* RegistrationViewController.swift */; };
+		BD8229E12651173D000B286E /* RegistrationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8229E02651173D000B286E /* RegistrationPresenter.swift */; };
+		BD8229E726511C2F000B286E /* RegisterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8229E626511C2F000B286E /* RegisterResponse.swift */; };
+		BDCBA974264B121500D894D1 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCBA973264B121500D894D1 /* UIImageExtensions.swift */; };
+		BDCBA978264B160F00D894D1 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCBA977264B160F00D894D1 /* UIColorExtensions.swift */; };
 		C72C9F7425F988FA00A0A6F5 /* ChallengesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72C9F7325F988FA00A0A6F5 /* ChallengesViewController.swift */; };
 		C72C9F7A25F9891900A0A6F5 /* ChallengesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72C9F7925F9891900A0A6F5 /* ChallengesView.swift */; };
 		C72C9F7E25F98F9100A0A6F5 /* ChallengeInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72C9F7D25F98F9100A0A6F5 /* ChallengeInfoTableViewCell.swift */; };
@@ -138,6 +151,19 @@
 		629F2DFE4206F374FB93EA1B /* Pods-Globe UsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Globe UsTests.release.xcconfig"; path = "Target Support Files/Pods-Globe UsTests/Pods-Globe UsTests.release.xcconfig"; sourceTree = "<group>"; };
 		87B8CCC842DB471D11D8D71B /* Pods-Globe Us.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Globe Us.release.xcconfig"; path = "Target Support Files/Pods-Globe Us/Pods-Globe Us.release.xcconfig"; sourceTree = "<group>"; };
 		8964DCD05CB9F3D8DD4CDC14 /* Pods_Globe_Us.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Globe_Us.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD2D3225264B1F32008489BF /* KeyboardObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardObserver.swift; sourceTree = "<group>"; };
+		BD82297C26502F6C000B286E /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
+		BD8229802650308D000B286E /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		BD82299026503B6F000B286E /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		BD82299A26503C96000B286E /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = System/Library/Frameworks/AuthenticationServices.framework; sourceTree = SDKROOT; };
+		BD8229AA26504236000B286E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BD8229CE26511708000B286E /* RegistrationConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationConfigurator.swift; sourceTree = "<group>"; };
+		BD8229D42651171C000B286E /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
+		BD8229D82651172F000B286E /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		BD8229E02651173D000B286E /* RegistrationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPresenter.swift; sourceTree = "<group>"; };
+		BD8229E626511C2F000B286E /* RegisterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterResponse.swift; sourceTree = "<group>"; };
+		BDCBA973264B121500D894D1 /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
+		BDCBA977264B160F00D894D1 /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 		C72C9F7325F988FA00A0A6F5 /* ChallengesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengesViewController.swift; sourceTree = "<group>"; };
 		C72C9F7925F9891900A0A6F5 /* ChallengesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengesView.swift; sourceTree = "<group>"; };
 		C72C9F7D25F98F9100A0A6F5 /* ChallengeInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeInfoTableViewCell.swift; sourceTree = "<group>"; };
@@ -181,7 +207,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD82299B26503C96000B286E /* AuthenticationServices.framework in Frameworks */,
 				0521CAEF24BBC794008BB178 /* Pods_Globe_Us.framework in Frameworks */,
+				BD82299126503B6F000B286E /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,6 +235,8 @@
 		017370BB86324BCAF466CA00 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BD82299A26503C96000B286E /* AuthenticationServices.framework */,
+				BD82299026503B6F000B286E /* AudioToolbox.framework */,
 				0521CAEB24BBC75C008BB178 /* SnapKit.framework */,
 				8964DCD05CB9F3D8DD4CDC14 /* Pods_Globe_Us.framework */,
 				3C46A13AB7DD04E7EBAA37DD /* Pods_Globe_Us_Globe_UsUITests.framework */,
@@ -240,6 +270,7 @@
 		0517B02624BA473C00008884 /* Globe Us */ = {
 			isa = PBXGroup;
 			children = (
+				BD2D3224264B1F1E008489BF /* Core */,
 				C7FB9AF325EC17010010CD2C /* Models */,
 				C7FB9ACF25EC0FCB0010CD2C /* Network */,
 				C7FB9AC225EC05920010CD2C /* Extensions */,
@@ -248,10 +279,12 @@
 				C7A31AB525EBA69C008D5E20 /* Camera */,
 				0521CADD24BBADD5008BB178 /* Controllers */,
 				052B1E4724C39B8F0068B701 /* Authorization */,
+				BD8229CD265116DE000B286E /* Registration */,
 				0521CAE024BBB0C1008BB178 /* Main */,
 				0517B03024BA474100008884 /* Assets.xcassets */,
 				0517B03224BA474100008884 /* LaunchScreen.storyboard */,
 				0517B03524BA474100008884 /* Info.plist */,
+				BD8229AA26504236000B286E /* GoogleService-Info.plist */,
 				0521CADB24BBADC7008BB178 /* LaunchScreenViewController.swift */,
 			);
 			path = "Globe Us";
@@ -321,6 +354,25 @@
 				629F2DFE4206F374FB93EA1B /* Pods-Globe UsTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		BD2D3224264B1F1E008489BF /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				BD2D3225264B1F32008489BF /* KeyboardObserver.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		BD8229CD265116DE000B286E /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				BD8229E02651173D000B286E /* RegistrationPresenter.swift */,
+				BD8229D82651172F000B286E /* RegistrationViewController.swift */,
+				BD8229D42651171C000B286E /* RegistrationView.swift */,
+				BD8229CE26511708000B286E /* RegistrationConfigurator.swift */,
+			);
+			path = Registration;
 			sourceTree = "<group>";
 		};
 		C72C9F7225F988D700A0A6F5 /* Challenge */ = {
@@ -400,6 +452,8 @@
 				C7FB9AC725EC05F40010CD2C /* UIViewExtensions.swift */,
 				C7FB9B0425EC23310010CD2C /* SafeCollection.swift */,
 				C7FB9B0825EC23E00010CD2C /* UIImageViewDownloader.swift */,
+				BDCBA973264B121500D894D1 /* UIImageExtensions.swift */,
+				BDCBA977264B160F00D894D1 /* UIColorExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -407,6 +461,7 @@
 		C7FB9ACF25EC0FCB0010CD2C /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				BD8229802650308D000B286E /* AuthService.swift */,
 				C7FB9AFE25EC195A0010CD2C /* CitiesService.swift */,
 				C7FB9AF825EC188D0010CD2C /* NetworkError.swift */,
 				C7FB9AD125EC102A0010CD2C /* Request Router */,
@@ -439,6 +494,8 @@
 			isa = PBXGroup;
 			children = (
 				C7FB9AF425EC17250010CD2C /* CitiesResponse.swift */,
+				BD82297C26502F6C000B286E /* AuthResponse.swift */,
+				BD8229E626511C2F000B286E /* RegisterResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -456,6 +513,7 @@
 				0517B02224BA473C00008884 /* Resources */,
 				0521CAF124BBC794008BB178 /* Embed Frameworks */,
 				E31E149D66A85155CF7CBC55 /* [CP] Embed Pods Frameworks */,
+				74938546947FB51F822B8E45 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -494,6 +552,7 @@
 				0517B04224BA474200008884 /* Frameworks */,
 				0517B04324BA474200008884 /* Resources */,
 				7702842D94964FA073F807CE /* [CP] Embed Pods Frameworks */,
+				7BED3FC146ABE4CBD45B187E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -554,6 +613,7 @@
 			files = (
 				0517B03424BA474100008884 /* LaunchScreen.storyboard in Resources */,
 				0517B03124BA474100008884 /* Assets.xcassets in Resources */,
+				BD8229AB26504236000B286E /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -618,6 +678,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		74938546947FB51F822B8E45 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Globe Us/Pods-Globe Us-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Globe Us/Pods-Globe Us-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Globe Us/Pods-Globe Us-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		7702842D94964FA073F807CE /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -633,6 +710,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Globe Us-Globe UsUITests/Pods-Globe Us-Globe UsUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7BED3FC146ABE4CBD45B187E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Globe Us-Globe UsUITests/Pods-Globe Us-Globe UsUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Globe Us-Globe UsUITests/Pods-Globe Us-Globe UsUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Globe Us-Globe UsUITests/Pods-Globe Us-Globe UsUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		928662CE14BA11DB9CAA9B71 /* [CP] Check Pods Manifest.lock */ = {
@@ -687,6 +781,7 @@
 				C75548D425FAA2D000D0D9BE /* ChallengeArrowTableViewCell.swift in Sources */,
 				C7FB9AE525EC158B0010CD2C /* MainRequestFactory.swift in Sources */,
 				C7FB9AF525EC17250010CD2C /* CitiesResponse.swift in Sources */,
+				BD8229812650308D000B286E /* AuthService.swift in Sources */,
 				C7FB9AE625EC158B0010CD2C /* AbstractRequestFactory.swift in Sources */,
 				C75548E325FAC48900D0D9BE /* ChallengesDetailView.swift in Sources */,
 				0521CAE824BBB0DA008BB178 /* MainConfigurator.swift in Sources */,
@@ -695,9 +790,11 @@
 				C7FB9AD325EC11630010CD2C /* AbstractRequestRouter.swift in Sources */,
 				C7D62D2825ED06730021E642 /* WorkModeCollectionViewCell.swift in Sources */,
 				C7A31AC125EBA938008D5E20 /* PreviewMetalView.swift in Sources */,
+				BD8229D52651171C000B286E /* RegistrationView.swift in Sources */,
 				0521CAF524BBE0E9008BB178 /* PreviewView.swift in Sources */,
 				C7A31ABD25EBA8D4008D5E20 /* CameraEngine.swift in Sources */,
 				0521CAE724BBB0DA008BB178 /* MainView.swift in Sources */,
+				BD8229E726511C2F000B286E /* RegisterResponse.swift in Sources */,
 				052B1E4D24C39C030068B701 /* AuthorizationViewController.swift in Sources */,
 				C72C9F7E25F98F9100A0A6F5 /* ChallengeInfoTableViewCell.swift in Sources */,
 				C7FB9AEC25EC159D0010CD2C /* SessionManagerFactory.swift in Sources */,
@@ -708,12 +805,16 @@
 				C7FB9AEB25EC159D0010CD2C /* RequestFactory.swift in Sources */,
 				0521CAE624BBB0DA008BB178 /* MainViewController.swift in Sources */,
 				051D060424BE0EC400E61520 /* AccelerometerOrientation.swift in Sources */,
+				BD8229E12651173D000B286E /* RegistrationPresenter.swift in Sources */,
+				BDCBA978264B160F00D894D1 /* UIColorExtensions.swift in Sources */,
 				C72C9F7425F988FA00A0A6F5 /* ChallengesViewController.swift in Sources */,
 				C72C9F7A25F9891900A0A6F5 /* ChallengesView.swift in Sources */,
 				0517B02A24BA473C00008884 /* SceneDelegate.swift in Sources */,
 				C7FB9AC825EC05F40010CD2C /* UIViewExtensions.swift in Sources */,
 				C7FB9ACC25EC09690010CD2C /* StickersCollectionViewCell.swift in Sources */,
 				C75548FB25FAEBBB00D0D9BE /* AboutChallengeView.swift in Sources */,
+				BDCBA974264B121500D894D1 /* UIImageExtensions.swift in Sources */,
+				BD2D3226264B1F32008489BF /* KeyboardObserver.swift in Sources */,
 				052B1E4F24C39C030068B701 /* AuthorizationConfigurator.swift in Sources */,
 				C7A31AB725EBA6C3008D5E20 /* CameraViewController.swift in Sources */,
 				C75548F725FAEBA800D0D9BE /* AboutChallengeViewController.swift in Sources */,
@@ -724,11 +825,14 @@
 				0521CADF24BBADFC008BB178 /* AppController.swift in Sources */,
 				2398F1CA0B1B391FCA8EE4A1 /* ShutterButtonViewController.swift in Sources */,
 				C7FB9AFF25EC195A0010CD2C /* CitiesService.swift in Sources */,
+				BD82297D26502F6D000B286E /* AuthResponse.swift in Sources */,
 				C75548D825FAB49700D0D9BE /* ChallengeHeaderView.swift in Sources */,
 				C75548EE25FAE23200D0D9BE /* ChallengeDetailInfoViewController.swift in Sources */,
 				C7FB9B0525EC23310010CD2C /* SafeCollection.swift in Sources */,
 				2398F7342F36A48AFEDECA51 /* DataEngine.swift in Sources */,
 				C75548F225FAE24E00D0D9BE /* ChallengeDetailInfoView.swift in Sources */,
+				BD8229D92651172F000B286E /* RegistrationViewController.swift in Sources */,
+				BD8229CF26511708000B286E /* RegistrationConfigurator.swift in Sources */,
 				C7FB9AE025EC13C90010CD2C /* MainRequestRouter.swift in Sources */,
 				C75548DF25FAC46100D0D9BE /* ChallengesDetailViewController.swift in Sources */,
 				2398FC94704549997E8B3F9E /* Photo.swift in Sources */,
