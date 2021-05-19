@@ -81,12 +81,12 @@ class AuthorizationView : UIView {
         return button
     }()
     
-    private(set) lazy var signInGoogleButton: GIDSignInButton = {
+    private(set) lazy var signInWithGoogleButton: GIDSignInButton = {
         let button = GIDSignInButton()
         return button
     }()
     
-    private(set) lazy var signInAppleButton: ASAuthorizationAppleIDButton = {
+    private(set) lazy var signInWithAppleButton: ASAuthorizationAppleIDButton = {
         let button = ASAuthorizationAppleIDButton()
         return button
     }()
@@ -99,15 +99,15 @@ class AuthorizationView : UIView {
         return label
     }()
     
-    private(set) lazy var signInVKButton: UIButton = {
+    private(set) lazy var signInWithVKButton: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(iconNamed: .signInVK), for: .normal)
+        button.setImage(UIImage(iconNamed: .signInWithVKIcon), for: .normal)
         return button
     }()
     
-    private(set) lazy var signInFacebookButton: UIButton = {
+    private(set) lazy var signInWithFacebookButton: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(iconNamed: .signInFacebook), for: .normal)
+        button.setImage(UIImage(iconNamed: .signInWithFacebookIcon), for: .normal)
         return button
     }()
     
@@ -147,11 +147,11 @@ class AuthorizationView : UIView {
         view.addSubview(authorizationButton)
         
         view.addSubview(bottomView)
-        bottomView.addSubview(signInGoogleButton)
-        bottomView.addSubview(signInAppleButton)
+        bottomView.addSubview(signInWithGoogleButton)
+        bottomView.addSubview(signInWithAppleButton)
         bottomView.addSubview(signInOtherLabel)
-        bottomView.addSubview(signInVKButton)
-        bottomView.addSubview(signInFacebookButton)
+        bottomView.addSubview(signInWithVKButton)
+        bottomView.addSubview(signInWithFacebookButton)
         bottomView.addSubview(registerButton)
     }
     
@@ -192,37 +192,37 @@ class AuthorizationView : UIView {
             make.bottom.equalToSuperview()
         }
         
-        signInGoogleButton.snp.makeConstraints { make in
+        signInWithGoogleButton.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(32)
             make.centerX.equalToSuperview()
             make.size.equalTo(CGSize(width: 196, height: 40))
         }
         
-        signInAppleButton.snp.makeConstraints { make in
-            make.top.equalTo(signInGoogleButton.snp.bottom).offset(16)
+        signInWithAppleButton.snp.makeConstraints { make in
+            make.top.equalTo(signInWithGoogleButton.snp.bottom).offset(16)
             make.centerX.equalToSuperview()
             make.size.equalTo(CGSize(width: 196, height: 40))
         }
         
         signInOtherLabel.snp.makeConstraints { make in
-            make.top.equalTo(signInAppleButton.snp.bottom).offset(24)
+            make.top.equalTo(signInWithAppleButton.snp.bottom).offset(24)
             make.centerX.equalToSuperview()
         }
         
-        signInVKButton.snp.makeConstraints { make in
+        signInWithVKButton.snp.makeConstraints { make in
             make.top.equalTo(signInOtherLabel.snp.bottom).offset(4)
             make.trailing.equalTo(bottomView.snp.centerX).offset(-8)
             make.size.equalTo(CGSize(width: 34, height: 34))
         }
         
-        signInFacebookButton.snp.makeConstraints { make in
+        signInWithFacebookButton.snp.makeConstraints { make in
             make.top.equalTo(signInOtherLabel.snp.bottom).offset(4)
             make.leading.equalTo(bottomView.snp.centerX).offset(8)
             make.size.equalTo(CGSize(width: 34, height: 34))
         }
         
         registerButton.snp.makeConstraints { make in
-            make.top.greaterThanOrEqualTo(signInVKButton.snp.bottom).offset(32)
+            make.top.greaterThanOrEqualTo(signInWithVKButton.snp.bottom).offset(32)
             make.centerX.equalToSuperview()
             make.bottom.equalToSuperview().inset(24)
         }

@@ -128,8 +128,8 @@ final class MainRequestFactory: AbstractRequestFactory {
             case 200 ... 399:
                 if let data = response.data {
                     do {
-                        let authResponce = try JSONDecoder().decode(AuthFullResponse.self, from: data)
-                        completion(.success(authResponce))
+                        let authResponse = try JSONDecoder().decode(AuthFullResponse.self, from: data)
+                        completion(.success(authResponse))
                     } catch let decodingError as DecodingError {
                         print("decoding error: ", decodingError)
                         completion(.failure(NetworkError.decodingError(error: decodingError)))
@@ -170,8 +170,8 @@ final class MainRequestFactory: AbstractRequestFactory {
             case 200 ... 399:
                 if let data = response.data {
                     do {
-                        let authResponce = try JSONDecoder().decode(RegisterFullResponse.self, from: data)
-                        completion(.success(authResponce))
+                        let authResponse = try JSONDecoder().decode(RegisterFullResponse.self, from: data)
+                        completion(.success(authResponse))
                     } catch let decodingError as DecodingError {
                         print("decoding error: ", decodingError)
                         completion(.failure(NetworkError.decodingError(error: decodingError)))
@@ -195,13 +195,13 @@ final class MainRequestFactory: AbstractRequestFactory {
         }
     }
     
-    //MARK: - signInGoogle
-    public func signInGoogle(userId: String, completion: @escaping (Result<AuthFullResponse, Error>) -> Void) {
+    //MARK: - signInWithGoogle
+    public func signInWithGoogle(userId: String, completion: @escaping (Result<AuthFullResponse, Error>) -> Void) {
         let parameters: Parameters = [
             "userId" : userId
         ]
         
-        let request = MainRequestRouter.signInGoogle(parameters: parameters)
+        let request = MainRequestRouter.signInWithGoogle(parameters: parameters)
         
         self.request(request).responseJSON { (response) in
             guard let statusCode = response.response?.statusCode else {
@@ -212,8 +212,8 @@ final class MainRequestFactory: AbstractRequestFactory {
             case 200 ... 399:
                 if let data = response.data {
                     do {
-                        let authResponce = try JSONDecoder().decode(AuthFullResponse.self, from: data)
-                        completion(.success(authResponce))
+                        let authResponse = try JSONDecoder().decode(AuthFullResponse.self, from: data)
+                        completion(.success(authResponse))
                     } catch let decodingError as DecodingError {
                         print("decoding error: ", decodingError)
                         completion(.failure(NetworkError.decodingError(error: decodingError)))
@@ -237,13 +237,13 @@ final class MainRequestFactory: AbstractRequestFactory {
         }
     }
     
-    //MARK: - signInApple
-    public func signInApple(userId: String, completion: @escaping (Result<AuthFullResponse, Error>) -> Void) {
+    //MARK: - signInWithApple
+    public func signInWithApple(userId: String, completion: @escaping (Result<AuthFullResponse, Error>) -> Void) {
         let parameters: Parameters = [
             "userId" : userId
         ]
         
-        let request = MainRequestRouter.signInApple(parameters: parameters)
+        let request = MainRequestRouter.signInWithApple(parameters: parameters)
         
         self.request(request).responseJSON { (response) in
             guard let statusCode = response.response?.statusCode else {
@@ -254,8 +254,8 @@ final class MainRequestFactory: AbstractRequestFactory {
             case 200 ... 399:
                 if let data = response.data {
                     do {
-                        let authResponce = try JSONDecoder().decode(AuthFullResponse.self, from: data)
-                        completion(.success(authResponce))
+                        let authResponse = try JSONDecoder().decode(AuthFullResponse.self, from: data)
+                        completion(.success(authResponse))
                     } catch let decodingError as DecodingError {
                         print("decoding error: ", decodingError)
                         completion(.failure(NetworkError.decodingError(error: decodingError)))
@@ -279,13 +279,13 @@ final class MainRequestFactory: AbstractRequestFactory {
         }
     }
     
-    //MARK: - signInFacebook
-    public func signInFacebook(userId: String, completion: @escaping (Result<AuthFullResponse, Error>) -> Void) {
+    //MARK: - signInWithFacebook
+    public func signInWithFacebook(userId: String, completion: @escaping (Result<AuthFullResponse, Error>) -> Void) {
         let parameters: Parameters = [
             "userId" : userId
         ]
         
-        let request = MainRequestRouter.signInFacebook(parameters: parameters)
+        let request = MainRequestRouter.signInWithFacebook(parameters: parameters)
         
         self.request(request).responseJSON { (response) in
             guard let statusCode = response.response?.statusCode else {
@@ -296,8 +296,8 @@ final class MainRequestFactory: AbstractRequestFactory {
             case 200 ... 399:
                 if let data = response.data {
                     do {
-                        let authResponce = try JSONDecoder().decode(AuthFullResponse.self, from: data)
-                        completion(.success(authResponce))
+                        let authResponse = try JSONDecoder().decode(AuthFullResponse.self, from: data)
+                        completion(.success(authResponse))
                     } catch let decodingError as DecodingError {
                         print("decoding error: ", decodingError)
                         completion(.failure(NetworkError.decodingError(error: decodingError)))

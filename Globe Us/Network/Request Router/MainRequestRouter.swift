@@ -13,16 +13,16 @@ enum MainRequestRouter: AbstractRequestRouter {
     case getAllClouds(parameters: Parameters)
     case login(parameters: Parameters)
     case register(parameters: Parameters)
-    case signInGoogle(parameters: Parameters)
-    case signInApple(parameters: Parameters)
-    case signInFacebook(parameters: Parameters)
+    case signInWithGoogle(parameters: Parameters)
+    case signInWithApple(parameters: Parameters)
+    case signInWithFacebook(parameters: Parameters)
 
     
     var method: HTTPMethod {
         switch self {
         case .getCities:
             return .get
-        case .getAllClouds, .login, .register, .signInGoogle, .signInApple, .signInFacebook:
+        case .getAllClouds, .login, .register, .signInWithGoogle, .signInWithApple, .signInWithFacebook:
             return .post
         }
     }
@@ -37,11 +37,11 @@ enum MainRequestRouter: AbstractRequestRouter {
             return "v1/auth/login"
         case .register:
             return "v1/auth/register"
-        case .signInGoogle:
+        case .signInWithGoogle:
             return "v1/auth/google"
-        case .signInApple:
+        case .signInWithApple:
             return "v1/auth/apple"
-        case .signInFacebook:
+        case .signInWithFacebook:
             return "v1/auth/facebook"
         }
     }
@@ -49,7 +49,7 @@ enum MainRequestRouter: AbstractRequestRouter {
     var headers: HTTPHeaders {
         
         switch self {
-        case .getCities, .getAllClouds, .login, .register, .signInGoogle, .signInApple, .signInFacebook:
+        case .getCities, .getAllClouds, .login, .register, .signInWithGoogle, .signInWithApple, .signInWithFacebook:
             return [
                 "Content-Type": "application/json",
                 "Accept": "application/json"
@@ -79,7 +79,7 @@ enum MainRequestRouter: AbstractRequestRouter {
         case .getCities:
             urlRequest.headers = headers
             urlRequest = try URLEncoding.default.encode(urlRequest, with: nil)
-        case .getAllClouds(let parameters), .login(let parameters), .register(let parameters), .signInGoogle(let parameters), .signInApple(let parameters), .signInFacebook(let parameters):
+        case .getAllClouds(let parameters), .login(let parameters), .register(let parameters), .signInWithGoogle(let parameters), .signInWithApple(let parameters), .signInWithFacebook(let parameters):
             urlRequest.headers = headers
             urlRequest = try CustomPatchEncding().encode(urlRequest, with: parameters)
         }

@@ -22,10 +22,10 @@ enum IconIdentifier: String {
     case nav = "nav"
     case switchCamera = "switch_camera"
     case logoWithTitle = "logo_with_title"
-    case signInApple = "sign_in_apple"
-    case signInGoogle = "sign_in_google"
-    case signInVK = "sign_in_vk"
-    case signInFacebook = "sign_in_facebook"
+    case signInWithAppleIcon = "sign_in_with_apple_icon"
+    case signInWithGoogleIcon = "sign_in_with_google_icon"
+    case signInWithVKIcon = "sign_in_with_vk_icon"
+    case signInWithFacebookIcon = "sign_in_with_facebook_icon"
 }
 
 extension UIImage {

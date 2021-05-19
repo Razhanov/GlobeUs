@@ -25,24 +25,24 @@ class AuthService {
         })
     }
     
-    static func signInGoogle(userId: String, completion: @escaping (Result<AuthFullResponse, Error>) -> Void) {
+    static func signInWithGoogle(userId: String, completion: @escaping (Result<AuthFullResponse, Error>) -> Void) {
         mainFactory = factory.makeMainFactory()
-        mainFactory?.signInGoogle(userId: userId, completion: { (result) in
+        mainFactory?.signInWithGoogle(userId: userId, completion: { (result) in
             completion(result)
         })
     }
 
     
-    static func signInApple(userId: String, completion: @escaping (Result<AuthFullResponse, Error>) -> Void) {
+    static func signInWithApple(userId: String, completion: @escaping (Result<AuthFullResponse, Error>) -> Void) {
         mainFactory = factory.makeMainFactory()
-        mainFactory?.signInApple(userId: userId, completion: { (result) in
+        mainFactory?.signInWithApple(userId: userId, completion: { (result) in
             completion(result)
         })
     }
     
-    static func signInFacebook(userId: String, completion: @escaping (Result<AuthFullResponse, Error>) -> Void) {
+    static func signInWithFacebook(userId: String, completion: @escaping (Result<AuthFullResponse, Error>) -> Void) {
         mainFactory = factory.makeMainFactory()
-        mainFactory?.signInFacebook(userId: userId, completion: { (result) in
+        mainFactory?.signInWithFacebook(userId: userId, completion: { (result) in
             completion(result)
         })
     }

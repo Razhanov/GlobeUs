@@ -15,9 +15,9 @@ protocol RegistrationViewProtocol: class {
 protocol RegistrationPresenter {
     func viewDidLoad()
     func register(email: String, password: String)
-    func signInGoogle(userId: String)
-    func signInApple(userId: String)
-    func signInFacebook(userId: String)
+    func signInWithGoogle(userId: String)
+    func signInWithApple(userId: String)
+    func signInWithFacebook(userId: String)
     func openLogin()
 }
 
@@ -36,8 +36,8 @@ class RegistrationPresenterImplementation : RegistrationPresenter {
     }
     
     func register(email: String, password: String) {
-        AuthService.register(email: email, password: password) { [weak self] responce in
-            switch responce {
+        AuthService.register(email: email, password: password) { [weak self] response in
+            switch response {
             case .success(let result):
                 self?.loginView?.setEmail(email: result.data.email)
                 self?.openLogin()
@@ -47,9 +47,9 @@ class RegistrationPresenterImplementation : RegistrationPresenter {
         }
     }
     
-    func signInGoogle(userId: String) {
-        AuthService.signInGoogle(userId: userId) { responce in
-            switch responce {
+    func signInWithGoogle(userId: String) {
+        AuthService.signInWithGoogle(userId: userId) { response in
+            switch response {
             case .success(let result):
                 print(result.data.accessToken)
             case .failure(let error):
@@ -58,9 +58,9 @@ class RegistrationPresenterImplementation : RegistrationPresenter {
         }
     }
     
-    func signInApple(userId: String) {
-        AuthService.signInApple(userId: userId) { responce in
-            switch responce {
+    func signInWithApple(userId: String) {
+        AuthService.signInWithApple(userId: userId) { response in
+            switch response {
             case .success(let result):
                 print(result.data.accessToken)
             case .failure(let error):
@@ -69,9 +69,9 @@ class RegistrationPresenterImplementation : RegistrationPresenter {
         }
     }
     
-    func signInFacebook(userId: String) {
-        AuthService.signInFacebook(userId: userId) { responce in
-            switch responce {
+    func signInWithFacebook(userId: String) {
+        AuthService.signInWithFacebook(userId: userId) { response in
+            switch response {
             case .success(let result):
                 print(result.data.accessToken)
             case .failure(let error):

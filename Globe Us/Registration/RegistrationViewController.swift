@@ -22,9 +22,9 @@ class RegistrationViewController : UIViewController {
     private(set) lazy var mainView: RegistrationView = {
         let view = RegistrationView()
         view.registerButton.addTarget(self, action: #selector(register), for: .touchUpInside)
-        view.signInAppleButton.addTarget(self, action: #selector(clickSignInApple), for: .touchUpInside)
-        view.signInVKButton.addTarget(self, action: #selector(clickSignInVK), for: .touchUpInside)
-        view.signInFacebookButton.addTarget(self, action: #selector(clickSignInFacebook), for: .touchUpInside)
+        view.signInWithAppleButton.addTarget(self, action: #selector(clickSignInWithApple), for: .touchUpInside)
+        view.signInWithVKButton.addTarget(self, action: #selector(clickSignInWithVK), for: .touchUpInside)
+        view.signInWithFacebookButton.addTarget(self, action: #selector(clickSignInWithFacebook), for: .touchUpInside)
         view.loginButton.addTarget(self, action: #selector(openLogin), for: .touchUpInside)
         return view
     }()
@@ -74,7 +74,7 @@ class RegistrationViewController : UIViewController {
         presenter?.register(email: email, password: password)
     }
     
-    @objc private func clickSignInApple() {
+    @objc private func clickSignInWithApple() {
         let appleIDProvider = ASAuthorizationAppleIDProvider()
         let request = appleIDProvider.createRequest()
         
@@ -84,15 +84,15 @@ class RegistrationViewController : UIViewController {
         authorizationController.performRequests()
     }
     
-    @objc private func clickSignInVK() {
-        print("clickSignInVK")
+    @objc private func clickSignInWithVK() {
+        print("clickSignInWithVK")
     }
     
-    @objc private func clickSignInFacebook() {
+    @objc private func clickSignInWithFacebook() {
         let loginManager = LoginManager()
         
         if let token = AccessToken.current {
-            presenter?.signInFacebook(userId: token.userID)
+            presenter?.signInWithFacebook(userId: token.userID)
         } else {
             loginManager.logIn(permissions: [], from: self) { [weak self] (result, error) in
                 
@@ -109,7 +109,7 @@ class RegistrationViewController : UIViewController {
                     return
                 }
                 
-                self?.presenter?.signInFacebook(userId: token.userID)
+                self?.presenter?.signInWithFacebook(userId: token.userID)
             }
         }
     }
@@ -133,7 +133,7 @@ extension RegistrationViewController: ASAuthorizationControllerDelegate, ASAutho
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
         switch authorization.credential {
         case let appleIDCredential as ASAuthorizationAppleIDCredential:
-            presenter?.signInApple(userId: appleIDCredential.user)
+            presenter?.signInWithApple(userId: appleIDCredential.user)
         default:
             break
         }
@@ -155,7 +155,7 @@ extension RegistrationViewController: GIDSignInDelegate {
             return
         }
         
-        presenter?.signInGoogle(userId: user.userID)
+        presenter?.signInWithGoogle(userId: user.userID)
         
     }
 }

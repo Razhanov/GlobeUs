@@ -16,9 +16,9 @@ protocol AuthorizationViewProtocol: class {
 protocol AuthorizationPresenter {
     func viewDidLoad()
     func login(email: String, password: String)
-    func signInGoogle(userId: String)
-    func signInApple(userId: String)
-    func signInFacebook(userId: String)
+    func signInWithGoogle(userId: String)
+    func signInWithApple(userId: String)
+    func signInWithFacebook(userId: String)
     func openRegistration()
 }
 
@@ -36,8 +36,8 @@ class AuthorizationPresenterImplementation : AuthorizationPresenter {
     }
     
     func login(email: String, password: String) {
-        AuthService.login(email: email, password: password) { responce in
-            switch responce {
+        AuthService.login(email: email, password: password) { response in
+            switch response {
             case .success(let result):
                 print(result.data.accessToken)
             case .failure(let error):
@@ -46,9 +46,9 @@ class AuthorizationPresenterImplementation : AuthorizationPresenter {
         }
     }
     
-    func signInGoogle(userId: String) {
-        AuthService.signInGoogle(userId: userId) { responce in
-            switch responce {
+    func signInWithGoogle(userId: String) {
+        AuthService.signInWithGoogle(userId: userId) { response in
+            switch response {
             case .success(let result):
                 print(result.data.accessToken)
             case .failure(let error):
@@ -57,9 +57,9 @@ class AuthorizationPresenterImplementation : AuthorizationPresenter {
         }
     }
     
-    func signInApple(userId: String) {
-        AuthService.signInApple(userId: userId) { responce in
-            switch responce {
+    func signInWithApple(userId: String) {
+        AuthService.signInWithApple(userId: userId) { response in
+            switch response {
             case .success(let result):
                 print(result.data.accessToken)
             case .failure(let error):
@@ -68,9 +68,9 @@ class AuthorizationPresenterImplementation : AuthorizationPresenter {
         }
     }
     
-    func signInFacebook(userId: String) {
-        AuthService.signInFacebook(userId: userId) { responce in
-            switch responce {
+    func signInWithFacebook(userId: String) {
+        AuthService.signInWithFacebook(userId: userId) { response in
+            switch response {
             case .success(let result):
                 print(result.data.accessToken)
             case .failure(let error):
