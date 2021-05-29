@@ -44,7 +44,7 @@ final class AppController {
 //        picker.cameraViewTransform = CGAffineTransform(translationX: 0, y: (screenSize.height - cameraHeight) / 2.0)
 //        picker.cameraViewTransform = CGAffineTransform(scaleX: scale, y: scale)
         
-        rootViewController = UINavigationController(rootViewController: CameraViewController())//CameraViewController()//MainViewController()
+        rootViewController = UINavigationController(rootViewController: AuthorizationViewController())//CameraViewController()//MainViewController()
     }
     
 }

@@ -54,7 +54,7 @@ class ChallengeInfoView: UIView {
     
     private(set) lazy var challengeImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "challengeInfo")//?.aspectFitImage(inRect: CGRect(origin: .zero, size: CGSize(width: 280, height: 280)))
+        imageView.image = UIImage(named: "challenge_info")//?.aspectFitImage(inRect: CGRect(origin: .zero, size: CGSize(width: 280, height: 280)))
         imageView.contentMode = .scaleAspectFill
         return imageView
     }()
