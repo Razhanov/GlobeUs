@@ -9,6 +9,11 @@ import UIKit
 
 enum ColorIdentifier: String {
     case mainColor = "main_color"
+    case mainSecondaryColor = "main_secondary_color"
+    case secondaryColor = "secondary_color"
+    case textColor = "text_color"
+    case secondaryTextColor = "text_secondary_color"
+    case grayColor = "gray_color"
 }
 
 extension UIColor {

@@ -68,4 +68,15 @@ extension UIViewController {
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
+    
+    func showConfirmDeleteAlert(success: @escaping () -> ()) {
+        let alert = UIAlertController(title: "Удаление", message: "Вы уверены, что хотите удалить объект?", preferredStyle: .alert)
+
+        alert.addAction(UIAlertAction(title: "Удалить", style: .destructive, handler: { _ in
+            success()
+        }))
+        alert.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: nil))
+
+        self.present(alert, animated: true)
+    }
 }

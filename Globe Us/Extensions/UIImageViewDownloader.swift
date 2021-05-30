@@ -33,6 +33,7 @@ extension UIImageView {
         if let cachedImage = imageCache.image(withIdentifier: urlString) {
             self.image = cachedImage
         } else {
+            self.image = placeholderImage
             AF.request("https://selfident.ompr.io/api/" + urlString).responseImage { (response) in
                 if let imageUrl = response.value {
                     self.image = imageUrl
@@ -52,6 +53,7 @@ extension UIImageView {
         if let cachedImage = imageCache.image(withIdentifier: urlStringFull) {
             self.image = cachedImage
         } else {
+            self.image = placeholderImage
             AF.request(urlStringFull).responseImage { (response) in
                 if let imageUrl = response.value {
                     self.image = imageUrl

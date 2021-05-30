@@ -43,6 +43,14 @@
 		BD8229D92651172F000B286E /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8229D82651172F000B286E /* RegistrationViewController.swift */; };
 		BD8229E12651173D000B286E /* RegistrationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8229E02651173D000B286E /* RegistrationPresenter.swift */; };
 		BD8229E726511C2F000B286E /* RegisterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8229E626511C2F000B286E /* RegisterResponse.swift */; };
+		BDAC95502662882000216B35 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAC954F2662882000216B35 /* ProfilePresenter.swift */; };
+		BDAC95562662883300216B35 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAC95552662883300216B35 /* ProfileViewController.swift */; };
+		BDAC955A2662883C00216B35 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAC95592662883C00216B35 /* ProfileView.swift */; };
+		BDAC955E2662884A00216B35 /* ProfileConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAC955D2662884A00216B35 /* ProfileConfigurator.swift */; };
+		BDAC95622662A09D00216B35 /* DefaultButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAC95612662A09D00216B35 /* DefaultButton.swift */; };
+		BDAC95662662A8F100216B35 /* ProfileResponsce.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAC95652662A8F100216B35 /* ProfileResponsce.swift */; };
+		BDAC956A2662B22000216B35 /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAC95692662B21F00216B35 /* ProfileCollectionViewCell.swift */; };
+		BDAC956E2662E67600216B35 /* ProfileHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAC956D2662E67600216B35 /* ProfileHeaderCollectionReusableView.swift */; };
 		BDCBA974264B121500D894D1 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCBA973264B121500D894D1 /* UIImageExtensions.swift */; };
 		BDCBA978264B160F00D894D1 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCBA977264B160F00D894D1 /* UIColorExtensions.swift */; };
 		C72C9F7425F988FA00A0A6F5 /* ChallengesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72C9F7325F988FA00A0A6F5 /* ChallengesViewController.swift */; };
@@ -162,6 +170,14 @@
 		BD8229D82651172F000B286E /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		BD8229E02651173D000B286E /* RegistrationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPresenter.swift; sourceTree = "<group>"; };
 		BD8229E626511C2F000B286E /* RegisterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterResponse.swift; sourceTree = "<group>"; };
+		BDAC954F2662882000216B35 /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
+		BDAC95552662883300216B35 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		BDAC95592662883C00216B35 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		BDAC955D2662884A00216B35 /* ProfileConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileConfigurator.swift; sourceTree = "<group>"; };
+		BDAC95612662A09D00216B35 /* DefaultButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultButton.swift; sourceTree = "<group>"; };
+		BDAC95652662A8F100216B35 /* ProfileResponsce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileResponsce.swift; sourceTree = "<group>"; };
+		BDAC95692662B21F00216B35 /* ProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewCell.swift; sourceTree = "<group>"; };
+		BDAC956D2662E67600216B35 /* ProfileHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		BDCBA973264B121500D894D1 /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
 		BDCBA977264B160F00D894D1 /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 		C72C9F7325F988FA00A0A6F5 /* ChallengesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengesViewController.swift; sourceTree = "<group>"; };
@@ -280,6 +296,7 @@
 				0521CADD24BBADD5008BB178 /* Controllers */,
 				052B1E4724C39B8F0068B701 /* Authorization */,
 				BD8229CD265116DE000B286E /* Registration */,
+				BDAC954E266287FC00216B35 /* Profile */,
 				0521CAE024BBB0C1008BB178 /* Main */,
 				0517B03024BA474100008884 /* Assets.xcassets */,
 				0517B03224BA474100008884 /* LaunchScreen.storyboard */,
@@ -360,6 +377,7 @@
 			isa = PBXGroup;
 			children = (
 				BD2D3225264B1F32008489BF /* KeyboardObserver.swift */,
+				BDAC95612662A09D00216B35 /* DefaultButton.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -373,6 +391,19 @@
 				BD8229CE26511708000B286E /* RegistrationConfigurator.swift */,
 			);
 			path = Registration;
+			sourceTree = "<group>";
+		};
+		BDAC954E266287FC00216B35 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				BDAC954F2662882000216B35 /* ProfilePresenter.swift */,
+				BDAC95552662883300216B35 /* ProfileViewController.swift */,
+				BDAC95592662883C00216B35 /* ProfileView.swift */,
+				BDAC955D2662884A00216B35 /* ProfileConfigurator.swift */,
+				BDAC956D2662E67600216B35 /* ProfileHeaderCollectionReusableView.swift */,
+				BDAC95692662B21F00216B35 /* ProfileCollectionViewCell.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		C72C9F7225F988D700A0A6F5 /* Challenge */ = {
@@ -496,6 +527,7 @@
 				C7FB9AF425EC17250010CD2C /* CitiesResponse.swift */,
 				BD82297C26502F6C000B286E /* AuthResponse.swift */,
 				BD8229E626511C2F000B286E /* RegisterResponse.swift */,
+				BDAC95652662A8F100216B35 /* ProfileResponsce.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -781,9 +813,11 @@
 				C75548D425FAA2D000D0D9BE /* ChallengeArrowTableViewCell.swift in Sources */,
 				C7FB9AE525EC158B0010CD2C /* MainRequestFactory.swift in Sources */,
 				C7FB9AF525EC17250010CD2C /* CitiesResponse.swift in Sources */,
+				BDAC95562662883300216B35 /* ProfileViewController.swift in Sources */,
 				BD8229812650308D000B286E /* AuthService.swift in Sources */,
 				C7FB9AE625EC158B0010CD2C /* AbstractRequestFactory.swift in Sources */,
 				C75548E325FAC48900D0D9BE /* ChallengesDetailView.swift in Sources */,
+				BDAC955E2662884A00216B35 /* ProfileConfigurator.swift in Sources */,
 				0521CAE824BBB0DA008BB178 /* MainConfigurator.swift in Sources */,
 				C7FB9AC425EC05AC0010CD2C /* ViewControllerExtensions.swift in Sources */,
 				C75548E725FAC98400D0D9BE /* ChallengesDetailTableViewCell.swift in Sources */,
@@ -800,7 +834,9 @@
 				C7FB9AEC25EC159D0010CD2C /* SessionManagerFactory.swift in Sources */,
 				0521CAF324BBDAED008BB178 /* CameraController.swift in Sources */,
 				0517B02824BA473C00008884 /* AppDelegate.swift in Sources */,
+				BDAC95622662A09D00216B35 /* DefaultButton.swift in Sources */,
 				0521CADC24BBADC7008BB178 /* LaunchScreenViewController.swift in Sources */,
+				BDAC955A2662883C00216B35 /* ProfileView.swift in Sources */,
 				C7A31AC525EBAA2B008D5E20 /* TapticHelper.swift in Sources */,
 				C7FB9AEB25EC159D0010CD2C /* RequestFactory.swift in Sources */,
 				0521CAE624BBB0DA008BB178 /* MainViewController.swift in Sources */,
@@ -815,6 +851,7 @@
 				C75548FB25FAEBBB00D0D9BE /* AboutChallengeView.swift in Sources */,
 				BDCBA974264B121500D894D1 /* UIImageExtensions.swift in Sources */,
 				BD2D3226264B1F32008489BF /* KeyboardObserver.swift in Sources */,
+				BDAC95662662A8F100216B35 /* ProfileResponsce.swift in Sources */,
 				052B1E4F24C39C030068B701 /* AuthorizationConfigurator.swift in Sources */,
 				C7A31AB725EBA6C3008D5E20 /* CameraViewController.swift in Sources */,
 				C75548F725FAEBA800D0D9BE /* AboutChallengeViewController.swift in Sources */,
@@ -822,9 +859,11 @@
 				052B1E4E24C39C030068B701 /* AuthorizationView.swift in Sources */,
 				C7A31ACC25EBB4DD008D5E20 /* PassThrough.metal in Sources */,
 				C7FB9AF925EC188D0010CD2C /* NetworkError.swift in Sources */,
+				BDAC956E2662E67600216B35 /* ProfileHeaderCollectionReusableView.swift in Sources */,
 				0521CADF24BBADFC008BB178 /* AppController.swift in Sources */,
 				2398F1CA0B1B391FCA8EE4A1 /* ShutterButtonViewController.swift in Sources */,
 				C7FB9AFF25EC195A0010CD2C /* CitiesService.swift in Sources */,
+				BDAC956A2662B22000216B35 /* ProfileCollectionViewCell.swift in Sources */,
 				BD82297D26502F6D000B286E /* AuthResponse.swift in Sources */,
 				C75548D825FAB49700D0D9BE /* ChallengeHeaderView.swift in Sources */,
 				C75548EE25FAE23200D0D9BE /* ChallengeDetailInfoViewController.swift in Sources */,
@@ -834,6 +873,7 @@
 				BD8229D92651172F000B286E /* RegistrationViewController.swift in Sources */,
 				BD8229CF26511708000B286E /* RegistrationConfigurator.swift in Sources */,
 				C7FB9AE025EC13C90010CD2C /* MainRequestRouter.swift in Sources */,
+				BDAC95502662882000216B35 /* ProfilePresenter.swift in Sources */,
 				C75548DF25FAC46100D0D9BE /* ChallengesDetailViewController.swift in Sources */,
 				2398FC94704549997E8B3F9E /* Photo.swift in Sources */,
 				2398F6CDA780662CF40BF311 /* ChallengeInfoView.swift in Sources */,

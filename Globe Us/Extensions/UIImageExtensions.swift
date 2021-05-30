@@ -26,6 +26,15 @@ enum IconIdentifier: String {
     case signInWithGoogleIcon = "sign_in_with_google_icon"
     case signInWithVKIcon = "sign_in_with_vk_icon"
     case signInWithFacebookIcon = "sign_in_with_facebook_icon"
+    case userSettingsIcon = "user_settings_icon"
+    case settingsIcon = "settings_icon"
+    case demoPhoto = "demo_photo"
+    case photoCameraIcon = "photo_camera_icon"
+    case stepIcon = "step_icon"
+    case starIcon = "star_icon"
+    case pinIcon = "pin_icon"
+    case nextIcon = "next_icon"
+    case bannerImage = "banner_image"
 }
 
 extension UIImage {
