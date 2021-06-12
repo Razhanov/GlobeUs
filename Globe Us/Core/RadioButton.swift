@@ -1,27 +1,28 @@
 //
-//  DefaultButton.swift
+//  RadioButton.swift
 //  Globe Us
 //
-//  Created by Михаил Беленко on 29.05.2021.
+//  Created by Михаил Беленко on 12.06.2021.
 //
 
 import UIKit
 
-class DefaultButton: UIButton {
+class RadioButton: UIButton {
 
     override var isSelected: Bool {
         didSet {
-            backgroundColor = UIColor(colorNamed: isSelected ? .mainColor : .mainSecondaryColor)
-            setTitleColor(isSelected ? UIColor(colorNamed: .textColor) : UIColor(colorNamed: .textColor).withAlphaComponent(0.4), for: .normal)
+            setImage(UIImage(iconNamed: isSelected ? .radioButtonSelect : .radioButtonUnselect), for: .normal)
         }
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        backgroundColor = UIColor(colorNamed: .mainColor)
+        setImage(UIImage(iconNamed: isSelected ? .radioButtonSelect : .radioButtonUnselect), for: .normal)
         setTitleColor(UIColor(colorNamed: .textColor), for: .normal)
-        titleLabel?.font = .systemFont(ofSize: 12)
+        titleLabel?.font = .systemFont(ofSize: 14)
+        
+        titleEdgeInsets = .init(top: 0, left: 0, bottom: 0, right: -8)
     }
     
     convenience init(title: String) {
@@ -33,4 +34,5 @@ class DefaultButton: UIButton {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+
 }

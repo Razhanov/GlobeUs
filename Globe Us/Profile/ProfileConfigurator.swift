@@ -14,7 +14,7 @@ protocol ProfileConfigurator {
 
 final class ProfileConfiguratorImplementation : ProfileConfigurator {
     func configure(viewController: ProfileViewController) {
-        let presenter = ProfilePresenterImplementation(view: viewController)
+        let presenter = ProfilePresenterImplementation(view: viewController, navigationController: viewController.navigationController)
         viewController.presenter = presenter
     }
 }

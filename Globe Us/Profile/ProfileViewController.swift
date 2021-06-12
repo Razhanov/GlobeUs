@@ -29,6 +29,7 @@ final class ProfileViewController: UIViewController {
         view.allPhotoButton.addTarget(self, action: #selector(changePhotoSourceTapped), for: .touchUpInside)
         view.fromGlobeUsPhotoButton.addTarget(self, action: #selector(changePhotoSourceTapped), for: .touchUpInside)
         view.fromGalleryPhotoButton.addTarget(self, action: #selector(changePhotoSourceTapped), for: .touchUpInside)
+        view.userSettingsButton.addTarget(self, action: #selector(clickUserSettingsButton), for: .touchUpInside)
         return view
     }()
     
@@ -39,13 +40,15 @@ final class ProfileViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        presenter?.viewWillAppear()
+        
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.view.backgroundColor = UIColor.clear
         
         DispatchQueue.main.async {
-            self.mainView.updateBannerView(height: self.mainView.bannerHeight)
+            self.scrollViewDidScroll(self.mainView.collectionView)
         }
     }
     
@@ -89,10 +92,14 @@ final class ProfileViewController: UIViewController {
             mainView.fromGalleryPhotoButton.isSelected = true
         }
     }
+    
+    @objc private func clickUserSettingsButton() {
+        presenter?.openProfileSettingsScreen()
+    }
 }
 
 extension ProfileViewController: ProfileViewProtocol {
-    func setData(_ data: ProfileResponsce) {
+    func setData(_ data: ProfileResponse) {
         mainView.setData(data)
     }
 }

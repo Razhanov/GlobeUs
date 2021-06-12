@@ -35,6 +35,12 @@ enum IconIdentifier: String {
     case pinIcon = "pin_icon"
     case nextIcon = "next_icon"
     case bannerImage = "banner_image"
+    case addPhotoIcon = "add_photo_icon"
+    case backIconBlack = "back_icon_black"
+    case doneIcon = "done_icon"
+    case radioButtonSelect = "radio_button_select"
+    case radioButtonUnselect = "radio_button_unselect"
+    case locationIcon = "location_icon"
 }
 
 extension UIImage {

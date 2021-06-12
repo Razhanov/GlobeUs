@@ -127,8 +127,7 @@ final class ProfileView: UIView {
     }()
     
     private(set) lazy var allPhotoButton: DefaultButton = {
-        let button = DefaultButton()
-        button.setTitle("Все фото", for: .normal)
+        let button = DefaultButton(title: "Все фото")
         button.isSelected = true
         button.tag = 0
         button.layer.cornerRadius = 10
@@ -136,8 +135,7 @@ final class ProfileView: UIView {
     }()
     
     private(set) lazy var fromGlobeUsPhotoButton: DefaultButton = {
-        let button = DefaultButton()
-        button.setTitle("Globe Us!", for: .normal)
+        let button = DefaultButton(title: "Globe Us!")
         button.isSelected = false
         button.tag = 1
         button.layer.cornerRadius = 10
@@ -145,8 +143,7 @@ final class ProfileView: UIView {
     }()
     
     private(set) lazy var fromGalleryPhotoButton: DefaultButton = {
-        let button = DefaultButton()
-        button.setTitle("с телефона", for: .normal)
+        let button = DefaultButton(title: "с телефона")
         button.isSelected = false
         button.tag = 2
         button.layer.cornerRadius = 10
@@ -182,7 +179,7 @@ final class ProfileView: UIView {
         return view
     }
     
-    func setData(_ data: ProfileResponsce) {
+    func setData(_ data: ProfileResponse) {
         collectionView.reloadData()
         photoImageView.loadWithAlamofire(urlStringFull: data.photoURL)
         nameLabel.text = "\(data.firstName)\n\(data.lastName)"
@@ -192,13 +189,20 @@ final class ProfileView: UIView {
     }
     
     func updateBannerView(height: CGFloat) {
-        if height == 0 {
-            photoImageView.snp.remakeConstraints { make in
-                make.top.equalTo(bannerImageView.snp.bottom).offset(24)
-                make.leading.equalTo(safeAreaLayoutGuide).inset(16)
-                make.size.equalTo(photoSize)
+        UIView.animate(withDuration: 0.5, animations: {
+            self.photoImageView.snp.remakeConstraints { make in
+                if let orientation = UIApplication.shared.windows.first?.windowScene?.interfaceOrientation, orientation == .portrait {
+                    make.top.equalTo(self.bannerImageView.snp.bottom).offset(height == 0 ? 40 : 8)
+                } else {
+                    make.top.equalTo(self.bannerImageView.snp.bottom).offset(height == 0 ? 16 : 8)
+                }
+                
+                make.leading.equalTo(self.safeAreaLayoutGuide).inset(16)
+                make.size.equalTo(self.photoSize)
             }
-        }
+            
+            self.layoutIfNeeded()
+        })
         
         bannerImageView.snp.remakeConstraints { make in
             make.top.leading.trailing.equalToSuperview()

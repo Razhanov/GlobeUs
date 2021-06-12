@@ -33,6 +33,8 @@
 		2398F7342F36A48AFEDECA51 /* DataEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2398F87DF879B1B9DE892350 /* DataEngine.swift */; };
 		2398FC94704549997E8B3F9E /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2398FEE3B0DAA87F648F8A23 /* Photo.swift */; };
 		BD2D3226264B1F32008489BF /* KeyboardObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2D3225264B1F32008489BF /* KeyboardObserver.swift */; };
+		BD2D9B732674B9090082BC1A /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2D9B722674B9090082BC1A /* RadioButton.swift */; };
+		BD2D9B752674D5D00082BC1A /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2D9B742674D5CF0082BC1A /* ProfileService.swift */; };
 		BD82297D26502F6D000B286E /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD82297C26502F6C000B286E /* AuthResponse.swift */; };
 		BD8229812650308D000B286E /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8229802650308D000B286E /* AuthService.swift */; };
 		BD82299126503B6F000B286E /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD82299026503B6F000B286E /* AudioToolbox.framework */; };
@@ -48,9 +50,13 @@
 		BDAC955A2662883C00216B35 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAC95592662883C00216B35 /* ProfileView.swift */; };
 		BDAC955E2662884A00216B35 /* ProfileConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAC955D2662884A00216B35 /* ProfileConfigurator.swift */; };
 		BDAC95622662A09D00216B35 /* DefaultButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAC95612662A09D00216B35 /* DefaultButton.swift */; };
-		BDAC95662662A8F100216B35 /* ProfileResponsce.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAC95652662A8F100216B35 /* ProfileResponsce.swift */; };
+		BDAC95662662A8F100216B35 /* ProfileResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAC95652662A8F100216B35 /* ProfileResponse.swift */; };
 		BDAC956A2662B22000216B35 /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAC95692662B21F00216B35 /* ProfileCollectionViewCell.swift */; };
 		BDAC956E2662E67600216B35 /* ProfileHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAC956D2662E67600216B35 /* ProfileHeaderCollectionReusableView.swift */; };
+		BDAC95752663D1A600216B35 /* ProfileSettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAC95742663D1A600216B35 /* ProfileSettingsPresenter.swift */; };
+		BDAC957B2663D1B300216B35 /* ProfileSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAC957A2663D1B300216B35 /* ProfileSettingsViewController.swift */; };
+		BDAC957F2663D1BB00216B35 /* ProfileSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAC957E2663D1BB00216B35 /* ProfileSettingsView.swift */; };
+		BDAC95832663D1C500216B35 /* ProfileSettingsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAC95822663D1C500216B35 /* ProfileSettingsConfigurator.swift */; };
 		BDCBA974264B121500D894D1 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCBA973264B121500D894D1 /* UIImageExtensions.swift */; };
 		BDCBA978264B160F00D894D1 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCBA977264B160F00D894D1 /* UIColorExtensions.swift */; };
 		C72C9F7425F988FA00A0A6F5 /* ChallengesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72C9F7325F988FA00A0A6F5 /* ChallengesViewController.swift */; };
@@ -160,6 +166,8 @@
 		87B8CCC842DB471D11D8D71B /* Pods-Globe Us.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Globe Us.release.xcconfig"; path = "Target Support Files/Pods-Globe Us/Pods-Globe Us.release.xcconfig"; sourceTree = "<group>"; };
 		8964DCD05CB9F3D8DD4CDC14 /* Pods_Globe_Us.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Globe_Us.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD2D3225264B1F32008489BF /* KeyboardObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardObserver.swift; sourceTree = "<group>"; };
+		BD2D9B722674B9090082BC1A /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
+		BD2D9B742674D5CF0082BC1A /* ProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
 		BD82297C26502F6C000B286E /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
 		BD8229802650308D000B286E /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		BD82299026503B6F000B286E /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -175,9 +183,13 @@
 		BDAC95592662883C00216B35 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		BDAC955D2662884A00216B35 /* ProfileConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileConfigurator.swift; sourceTree = "<group>"; };
 		BDAC95612662A09D00216B35 /* DefaultButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultButton.swift; sourceTree = "<group>"; };
-		BDAC95652662A8F100216B35 /* ProfileResponsce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileResponsce.swift; sourceTree = "<group>"; };
+		BDAC95652662A8F100216B35 /* ProfileResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileResponse.swift; sourceTree = "<group>"; };
 		BDAC95692662B21F00216B35 /* ProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewCell.swift; sourceTree = "<group>"; };
 		BDAC956D2662E67600216B35 /* ProfileHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
+		BDAC95742663D1A600216B35 /* ProfileSettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingsPresenter.swift; sourceTree = "<group>"; };
+		BDAC957A2663D1B300216B35 /* ProfileSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingsViewController.swift; sourceTree = "<group>"; };
+		BDAC957E2663D1BB00216B35 /* ProfileSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingsView.swift; sourceTree = "<group>"; };
+		BDAC95822663D1C500216B35 /* ProfileSettingsConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingsConfigurator.swift; sourceTree = "<group>"; };
 		BDCBA973264B121500D894D1 /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
 		BDCBA977264B160F00D894D1 /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 		C72C9F7325F988FA00A0A6F5 /* ChallengesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengesViewController.swift; sourceTree = "<group>"; };
@@ -297,6 +309,7 @@
 				052B1E4724C39B8F0068B701 /* Authorization */,
 				BD8229CD265116DE000B286E /* Registration */,
 				BDAC954E266287FC00216B35 /* Profile */,
+				BDAC95732663D18700216B35 /* ProfileSettings */,
 				0521CAE024BBB0C1008BB178 /* Main */,
 				0517B03024BA474100008884 /* Assets.xcassets */,
 				0517B03224BA474100008884 /* LaunchScreen.storyboard */,
@@ -378,6 +391,7 @@
 			children = (
 				BD2D3225264B1F32008489BF /* KeyboardObserver.swift */,
 				BDAC95612662A09D00216B35 /* DefaultButton.swift */,
+				BD2D9B722674B9090082BC1A /* RadioButton.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -404,6 +418,17 @@
 				BDAC95692662B21F00216B35 /* ProfileCollectionViewCell.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		BDAC95732663D18700216B35 /* ProfileSettings */ = {
+			isa = PBXGroup;
+			children = (
+				BDAC95742663D1A600216B35 /* ProfileSettingsPresenter.swift */,
+				BDAC957A2663D1B300216B35 /* ProfileSettingsViewController.swift */,
+				BDAC957E2663D1BB00216B35 /* ProfileSettingsView.swift */,
+				BDAC95822663D1C500216B35 /* ProfileSettingsConfigurator.swift */,
+			);
+			path = ProfileSettings;
 			sourceTree = "<group>";
 		};
 		C72C9F7225F988D700A0A6F5 /* Challenge */ = {
@@ -494,6 +519,7 @@
 			children = (
 				BD8229802650308D000B286E /* AuthService.swift */,
 				C7FB9AFE25EC195A0010CD2C /* CitiesService.swift */,
+				BD2D9B742674D5CF0082BC1A /* ProfileService.swift */,
 				C7FB9AF825EC188D0010CD2C /* NetworkError.swift */,
 				C7FB9AD125EC102A0010CD2C /* Request Router */,
 				C7FB9AD025EC10180010CD2C /* Factory */,
@@ -527,7 +553,7 @@
 				C7FB9AF425EC17250010CD2C /* CitiesResponse.swift */,
 				BD82297C26502F6C000B286E /* AuthResponse.swift */,
 				BD8229E626511C2F000B286E /* RegisterResponse.swift */,
-				BDAC95652662A8F100216B35 /* ProfileResponsce.swift */,
+				BDAC95652662A8F100216B35 /* ProfileResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -818,6 +844,7 @@
 				C7FB9AE625EC158B0010CD2C /* AbstractRequestFactory.swift in Sources */,
 				C75548E325FAC48900D0D9BE /* ChallengesDetailView.swift in Sources */,
 				BDAC955E2662884A00216B35 /* ProfileConfigurator.swift in Sources */,
+				BDAC95832663D1C500216B35 /* ProfileSettingsConfigurator.swift in Sources */,
 				0521CAE824BBB0DA008BB178 /* MainConfigurator.swift in Sources */,
 				C7FB9AC425EC05AC0010CD2C /* ViewControllerExtensions.swift in Sources */,
 				C75548E725FAC98400D0D9BE /* ChallengesDetailTableViewCell.swift in Sources */,
@@ -833,11 +860,13 @@
 				C72C9F7E25F98F9100A0A6F5 /* ChallengeInfoTableViewCell.swift in Sources */,
 				C7FB9AEC25EC159D0010CD2C /* SessionManagerFactory.swift in Sources */,
 				0521CAF324BBDAED008BB178 /* CameraController.swift in Sources */,
+				BDAC95752663D1A600216B35 /* ProfileSettingsPresenter.swift in Sources */,
 				0517B02824BA473C00008884 /* AppDelegate.swift in Sources */,
 				BDAC95622662A09D00216B35 /* DefaultButton.swift in Sources */,
 				0521CADC24BBADC7008BB178 /* LaunchScreenViewController.swift in Sources */,
 				BDAC955A2662883C00216B35 /* ProfileView.swift in Sources */,
 				C7A31AC525EBAA2B008D5E20 /* TapticHelper.swift in Sources */,
+				BD2D9B752674D5D00082BC1A /* ProfileService.swift in Sources */,
 				C7FB9AEB25EC159D0010CD2C /* RequestFactory.swift in Sources */,
 				0521CAE624BBB0DA008BB178 /* MainViewController.swift in Sources */,
 				051D060424BE0EC400E61520 /* AccelerometerOrientation.swift in Sources */,
@@ -851,7 +880,7 @@
 				C75548FB25FAEBBB00D0D9BE /* AboutChallengeView.swift in Sources */,
 				BDCBA974264B121500D894D1 /* UIImageExtensions.swift in Sources */,
 				BD2D3226264B1F32008489BF /* KeyboardObserver.swift in Sources */,
-				BDAC95662662A8F100216B35 /* ProfileResponsce.swift in Sources */,
+				BDAC95662662A8F100216B35 /* ProfileResponse.swift in Sources */,
 				052B1E4F24C39C030068B701 /* AuthorizationConfigurator.swift in Sources */,
 				C7A31AB725EBA6C3008D5E20 /* CameraViewController.swift in Sources */,
 				C75548F725FAEBA800D0D9BE /* AboutChallengeViewController.swift in Sources */,
@@ -861,10 +890,12 @@
 				C7FB9AF925EC188D0010CD2C /* NetworkError.swift in Sources */,
 				BDAC956E2662E67600216B35 /* ProfileHeaderCollectionReusableView.swift in Sources */,
 				0521CADF24BBADFC008BB178 /* AppController.swift in Sources */,
+				BDAC957B2663D1B300216B35 /* ProfileSettingsViewController.swift in Sources */,
 				2398F1CA0B1B391FCA8EE4A1 /* ShutterButtonViewController.swift in Sources */,
 				C7FB9AFF25EC195A0010CD2C /* CitiesService.swift in Sources */,
 				BDAC956A2662B22000216B35 /* ProfileCollectionViewCell.swift in Sources */,
 				BD82297D26502F6D000B286E /* AuthResponse.swift in Sources */,
+				BDAC957F2663D1BB00216B35 /* ProfileSettingsView.swift in Sources */,
 				C75548D825FAB49700D0D9BE /* ChallengeHeaderView.swift in Sources */,
 				C75548EE25FAE23200D0D9BE /* ChallengeDetailInfoViewController.swift in Sources */,
 				C7FB9B0525EC23310010CD2C /* SafeCollection.swift in Sources */,
@@ -875,6 +906,7 @@
 				C7FB9AE025EC13C90010CD2C /* MainRequestRouter.swift in Sources */,
 				BDAC95502662882000216B35 /* ProfilePresenter.swift in Sources */,
 				C75548DF25FAC46100D0D9BE /* ChallengesDetailViewController.swift in Sources */,
+				BD2D9B732674B9090082BC1A /* RadioButton.swift in Sources */,
 				2398FC94704549997E8B3F9E /* Photo.swift in Sources */,
 				2398F6CDA780662CF40BF311 /* ChallengeInfoView.swift in Sources */,
 			);
