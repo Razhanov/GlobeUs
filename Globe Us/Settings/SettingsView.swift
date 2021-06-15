@@ -157,6 +157,7 @@ final class SettingsView: UIView {
     
     func bottomConstraintActive() {
         bottomViewConstraint?.isActive = bounds.height >= scrollView.contentSize.height
+        layoutIfNeeded()
     }
     
     private func configureSelectMainScreenAppStackView() {
@@ -250,7 +251,7 @@ final class SettingsView: UIView {
         citiesCollectionView.snp.makeConstraints { make in
             make.top.equalTo(selectCityLabel.snp.bottom).offset(8)
             make.leading.trailing.equalTo(safeAreaLayoutGuide).inset(16)
-            make.height.equalTo(citiesCollectionViewHeight)
+            make.height.greaterThanOrEqualTo(citiesCollectionViewHeight)
         }
         
         bottomView.snp.makeConstraints { make in
@@ -305,8 +306,9 @@ final class SettingsView: UIView {
 
 extension SettingsView {
     func keyboardWillShow(keyboardFrame: CGRect, animationDuration: Double) {
-        if let orientation = UIApplication.shared.windows.first?.windowScene?.interfaceOrientation, orientation == .portrait {
-            bottomViewConstraint?.deactivate()
+        if let bottomViewConstraint = bottomViewConstraint, bottomViewConstraint.isActive {
+            bottomViewConstraint.deactivate()
+            layoutIfNeeded()
         }
         
         let keyboardHeight = keyboardFrame.height - scrollView.safeAreaInsets.bottom
@@ -319,12 +321,13 @@ extension SettingsView {
     }
 
     func keyboardWillHide(keyboardFrame: CGRect, animationDuration: Double) {
-        if let orientation = UIApplication.shared.windows.first?.windowScene?.interfaceOrientation, orientation == .portrait {
-            bottomViewConstraint?.activate()
-        }
-        
         let contentInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         scrollView.contentInset = contentInsets
         scrollView.scrollIndicatorInsets = contentInsets
+        
+        if bounds.height >= scrollView.contentSize.height {
+            bottomViewConstraint?.activate()
+            layoutIfNeeded()
+        }
     }
 }

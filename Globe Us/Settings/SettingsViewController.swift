@@ -13,7 +13,7 @@ final class SettingsViewController: UIViewController {
     
     private let keyboardObserver = KeyboardObserver()
     private var selectedRow: Int?
-    private var countElementsCV: Int = 4
+    private var countElementsInRowCV: Int = 4
     
     private let cellReuseIdentifier = "SettingsCityCollectionViewCell"
     
@@ -42,14 +42,17 @@ final class SettingsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.keyboardObserver.onKeyboardWillShow = { [weak self] frame, animationDuration in
             self?.mainView.keyboardWillShow(keyboardFrame: frame, animationDuration: animationDuration)
+            self?.configureCountCollectionElementsInRow()
         }
         
         self.keyboardObserver.onKeyboardWillHide = { [weak self] frame, animationDuration in
             self?.mainView.keyboardWillHide(keyboardFrame: frame, animationDuration: animationDuration)
+            self?.configureCountCollectionElementsInRow()
         }
         
         self.keyboardObserver.onKeyboardFrameWillChange = { [weak self] frame, animationDuration in
             self?.mainView.keyboardWillShow(keyboardFrame: frame, animationDuration: animationDuration)
+            self?.configureCountCollectionElementsInRow()
         }
     }
     
@@ -57,7 +60,6 @@ final class SettingsViewController: UIViewController {
         super.viewDidAppear(animated)
         
         checkScreenOrientation()
-        configureCountCollectionElements()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -79,20 +81,19 @@ final class SettingsViewController: UIViewController {
         super.viewWillTransition(to: size, with: coordinator)
         
         checkScreenOrientation()
-        configureCountCollectionElements()
     }
     
-    private func configureCountCollectionElements() {
+    private func configureCountCollectionElementsInRow() {
         DispatchQueue.main.async {
             guard let selectedRow = self.selectedRow, let count = self.presenter?.getCitiesCount(selectedCountryRow: selectedRow) else {
-                self.countElementsCV = 0
+                self.countElementsInRowCV = 0
                 return
             }
             
             let possibleCount: Int = Int(self.mainView.citiesCollectionView.bounds.width) / 200
-            let maxCountElements = possibleCount < 2 ? 4 : (possibleCount > 5 ? 10 : (possibleCount * 2))
+            let maxCountElements = possibleCount < 2 ? 2 : (possibleCount > 5 ? 5 : possibleCount)
             
-            self.countElementsCV = count > maxCountElements ? maxCountElements : count
+            self.countElementsInRowCV = count > maxCountElements ? maxCountElements : count
             
             self.mainView.citiesCollectionView.reloadData()
         }
@@ -101,6 +102,7 @@ final class SettingsViewController: UIViewController {
     private func checkScreenOrientation() {
         DispatchQueue.main.async {
             self.mainView.bottomConstraintActive()
+            self.configureCountCollectionElementsInRow()
         }
     }
     
@@ -166,7 +168,7 @@ final class SettingsViewController: UIViewController {
             return
         }
         mainView.selectCountryTextField.text = presenter?.getCountry(row: row)?.title
-        configureCountCollectionElements()
+        configureCountCollectionElementsInRow()
         view.endEditing(true)
     }
     
@@ -226,7 +228,14 @@ extension SettingsViewController: UIPickerViewDataSource, UIPickerViewDelegate {
 
 extension SettingsViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        countElementsCV
+        guard let selectedRow = selectedRow, let countCities = presenter?.getCitiesCount(selectedCountryRow: selectedRow) else {
+            return 0
+        }
+        
+        let rows = Int(collectionView.bounds.height.rounded(.down)) / 58
+        let maxElements = countElementsInRowCV * rows
+        
+        return countCities < maxElements ? countCities : maxElements
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -251,13 +260,8 @@ extension SettingsViewController: UICollectionViewDataSource {
 extension SettingsViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let collectionViewWidth = collectionView.bounds.width
-        let countElementInRow = CGFloat(countElementsCV / 2)
-        let width: CGFloat = collectionViewWidth / countElementInRow - (12 * (countElementInRow - 1))
+        let width: CGFloat = collectionViewWidth / CGFloat(countElementsInRowCV) - (12 * CGFloat(countElementsInRowCV - 1))
         return CGSize(width: width, height: 50)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        UIEdgeInsets(top: 0, left: 0, bottom: 16, right: 0)
     }
 }
 
