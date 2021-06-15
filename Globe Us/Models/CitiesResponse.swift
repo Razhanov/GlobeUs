@@ -42,6 +42,7 @@ struct CityData: Codable {
 
 struct City: Codable {
     let id: Int
+    let countryId: Int
     let title: String
     let images: [String?]
     let places: [Place]?
@@ -52,6 +53,7 @@ struct City: Codable {
              title,
              images,
              clouds
+        case countryId = "CountryId"
         case places = "Places"
     }
 }

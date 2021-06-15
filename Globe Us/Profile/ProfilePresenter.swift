@@ -25,6 +25,7 @@ protocol ProfilePresenter {
     func sharePhoto(_ indexPath: IndexPath)
     func deletePhoto(indexPath: IndexPath, collectionView: UICollectionView)
     func openProfileSettingsScreen()
+    func openSettingsScreen()
 }
 
 final class ProfilePresenterImplementation: ProfilePresenter {
@@ -111,5 +112,11 @@ final class ProfilePresenterImplementation: ProfilePresenter {
         let profileSettingsVC = ProfileSettingsViewController()
         
         navigationController?.pushViewController(profileSettingsVC, animated: true)
+    }
+    
+    func openSettingsScreen() {
+        let settingsVC = SettingsViewController()
+        
+        navigationController?.pushViewController(settingsVC, animated: true)
     }
 }

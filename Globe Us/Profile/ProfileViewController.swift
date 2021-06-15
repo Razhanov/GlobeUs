@@ -30,6 +30,7 @@ final class ProfileViewController: UIViewController {
         view.fromGlobeUsPhotoButton.addTarget(self, action: #selector(changePhotoSourceTapped), for: .touchUpInside)
         view.fromGalleryPhotoButton.addTarget(self, action: #selector(changePhotoSourceTapped), for: .touchUpInside)
         view.userSettingsButton.addTarget(self, action: #selector(clickUserSettingsButton), for: .touchUpInside)
+        view.settingsButton.addTarget(self, action: #selector(clickSettingsButton), for: .touchUpInside)
         return view
     }()
     
@@ -95,6 +96,10 @@ final class ProfileViewController: UIViewController {
     
     @objc private func clickUserSettingsButton() {
         presenter?.openProfileSettingsScreen()
+    }
+    
+    @objc private func clickSettingsButton() {
+        presenter?.openSettingsScreen()
     }
 }
 

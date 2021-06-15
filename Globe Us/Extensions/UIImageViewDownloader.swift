@@ -29,7 +29,7 @@ extension UIImageView {
     /// - Parameters:
     ///   - url: image url
     ///   - completion: code executed after image loading
-    func loadWithAlamofire(urlString: String, placeholderImage: UIImage = UIImage(imageLiteralResourceName: "demo_image"), completion: @escaping () -> Void = {}) {
+    func loadWithAlamofire(urlString: String, placeholderImage: UIImage = UIImage(iconNamed: .loadIcon), completion: @escaping () -> Void = {}) {
         if let cachedImage = imageCache.image(withIdentifier: urlString) {
             self.image = cachedImage
         } else {
@@ -49,7 +49,7 @@ extension UIImageView {
     /// - Parameters:
     ///   - fullUrl: image url
     ///   - completion: code executed after image loading
-    func loadWithAlamofire(urlStringFull: String, placeholderImage: UIImage = UIImage(imageLiteralResourceName: "demo_image"), completion: @escaping () -> Void = {}) {
+    func loadWithAlamofire(urlStringFull: String, placeholderImage: UIImage = UIImage(iconNamed: .loadIcon), completion: @escaping () -> Void = {}) {
         if let cachedImage = imageCache.image(withIdentifier: urlStringFull) {
             self.image = cachedImage
         } else {

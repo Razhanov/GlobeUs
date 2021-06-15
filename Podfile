@@ -11,6 +11,7 @@ target 'Globe Us' do
   pod 'AlamofireImage'
   pod 'GoogleSignIn'
   pod 'FBSDKLoginKit'
+  pod 'RealmSwift'
 
   target 'Globe UsTests' do
     inherit! :search_paths

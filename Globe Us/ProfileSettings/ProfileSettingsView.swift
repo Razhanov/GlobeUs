@@ -285,12 +285,13 @@ final class ProfileSettingsView: UIView {
         
         genderScrollView.snp.makeConstraints { make in
             make.top.equalTo(genderLabel.snp.bottom).offset(4)
-            make.leading.trailing.equalTo(safeAreaLayoutGuide).inset(16)
+            make.leading.trailing.equalTo(safeAreaLayoutGuide)
             make.height.equalTo(24)
         }
         
         genderButtonsStackView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.top.bottom.equalToSuperview()
+            make.leading.trailing.equalToSuperview().inset(16)
         }
         
         homeCityLabel.snp.makeConstraints { make in

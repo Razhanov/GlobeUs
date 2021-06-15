@@ -41,6 +41,13 @@ enum IconIdentifier: String {
     case radioButtonSelect = "radio_button_select"
     case radioButtonUnselect = "radio_button_unselect"
     case locationIcon = "location_icon"
+    case expandMoreIcon = "expand_more_icon"
+    case visibilityOffIcon = "visibility_off_icon"
+    case exitIcon = "exit_icon"
+    case downloadIcon = "download_icon"
+    case downloadDoneIcon = "download_done_icon"
+    // TODO: Need replace. Resourse from internet
+    case loadIcon = "load_icon"
 }
 
 extension UIImage {

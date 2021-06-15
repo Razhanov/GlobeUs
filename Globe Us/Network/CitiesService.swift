@@ -18,9 +18,9 @@ class CitiesService {
         })
     }
     
-    static func getCities(completion: @escaping (Result<CitiesResponse, Error>) -> Void) {
+    static func getCities(countryId: Int, completion: @escaping (Result<CitiesResponse, Error>) -> Void) {
         mainFactory = factory.makeMainFactory()
-        mainFactory?.getCities(completion: { (result) in
+        mainFactory?.getCities(countryId: countryId, completion: { (result) in
             completion(result)
         })
     }

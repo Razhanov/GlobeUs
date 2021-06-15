@@ -9,18 +9,19 @@ import Foundation
 import Alamofire
 
 enum MainRequestRouter: AbstractRequestRouter {
-    case getCities
+    case getCities(countryId: Int)
     case getAllClouds(parameters: Parameters)
     case login(parameters: Parameters)
     case register(parameters: Parameters)
     case signInWithGoogle(parameters: Parameters)
     case signInWithApple(parameters: Parameters)
     case signInWithFacebook(parameters: Parameters)
+    case getCountries(langId: Int)
 
     
     var method: HTTPMethod {
         switch self {
-        case .getCities:
+        case .getCities, .getCountries:
             return .get
         case .getAllClouds, .login, .register, .signInWithGoogle, .signInWithApple, .signInWithFacebook:
             return .post
@@ -29,8 +30,8 @@ enum MainRequestRouter: AbstractRequestRouter {
     
     var path: String {
         switch self {
-        case .getCities:
-            return "city/6"
+        case .getCities(let countryId):
+            return "city/\(countryId)"
         case .getAllClouds:
             return "cloud/city"
         case .login:
@@ -43,13 +44,15 @@ enum MainRequestRouter: AbstractRequestRouter {
             return "v1/auth/apple"
         case .signInWithFacebook:
             return "v1/auth/facebook"
+        case .getCountries(let langId):
+            return "country/\(langId)"
         }
     }
     
     var headers: HTTPHeaders {
         
         switch self {
-        case .getCities, .getAllClouds, .login, .register, .signInWithGoogle, .signInWithApple, .signInWithFacebook:
+        case .getCities, .getAllClouds, .login, .register, .signInWithGoogle, .signInWithApple, .signInWithFacebook, .getCountries:
             return [
                 "Content-Type": "application/json",
                 "Accept": "application/json"
@@ -76,7 +79,7 @@ enum MainRequestRouter: AbstractRequestRouter {
         urlRequest.httpMethod = method.rawValue
         
         switch self {
-        case .getCities:
+        case .getCities, .getCountries:
             urlRequest.headers = headers
             urlRequest = try URLEncoding.default.encode(urlRequest, with: nil)
         case .getAllClouds(let parameters), .login(let parameters), .register(let parameters), .signInWithGoogle(let parameters), .signInWithApple(let parameters), .signInWithFacebook(let parameters):

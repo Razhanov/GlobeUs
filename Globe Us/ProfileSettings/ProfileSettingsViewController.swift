@@ -109,9 +109,7 @@ final class ProfileSettingsViewController: UIViewController {
     }
     
     @objc func handleDatePicker(sender: UIDatePicker) {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd.MM.yyyy"
-        mainView.birthdayTextField.text = dateFormatter.string(from: sender.date)
+        mainView.birthdayTextField.text = ProfileService.dateFormatter.string(from: sender.date)
     }
 }
 
