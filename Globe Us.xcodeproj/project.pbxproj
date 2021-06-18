@@ -55,6 +55,11 @@
 		BD8229D92651172F000B286E /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8229D82651172F000B286E /* RegistrationViewController.swift */; };
 		BD8229E12651173D000B286E /* RegistrationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8229E02651173D000B286E /* RegistrationPresenter.swift */; };
 		BD8229E726511C2F000B286E /* RegisterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8229E626511C2F000B286E /* RegisterResponse.swift */; };
+		BD8835EB267CA0FC00D94E1D /* AboutAppTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8835EA267CA0FC00D94E1D /* AboutAppTableViewCell.swift */; };
+		BDA58FA4267C8DF800A32161 /* AboutAppPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA58FA3267C8DF800A32161 /* AboutAppPresenter.swift */; };
+		BDA58FA6267C8E9800A32161 /* AboutAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA58FA5267C8E9800A32161 /* AboutAppViewController.swift */; };
+		BDA58FA8267C8EA700A32161 /* AboutAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA58FA7267C8EA700A32161 /* AboutAppView.swift */; };
+		BDA58FAA267C8EBC00A32161 /* AboutAppConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA58FA9267C8EBC00A32161 /* AboutAppConfigurator.swift */; };
 		BDAC95502662882000216B35 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAC954F2662882000216B35 /* ProfilePresenter.swift */; };
 		BDAC95562662883300216B35 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAC95552662883300216B35 /* ProfileViewController.swift */; };
 		BDAC955A2662883C00216B35 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAC95592662883C00216B35 /* ProfileView.swift */; };
@@ -198,6 +203,11 @@
 		BD8229D82651172F000B286E /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		BD8229E02651173D000B286E /* RegistrationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPresenter.swift; sourceTree = "<group>"; };
 		BD8229E626511C2F000B286E /* RegisterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterResponse.swift; sourceTree = "<group>"; };
+		BD8835EA267CA0FC00D94E1D /* AboutAppTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppTableViewCell.swift; sourceTree = "<group>"; };
+		BDA58FA3267C8DF800A32161 /* AboutAppPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppPresenter.swift; sourceTree = "<group>"; };
+		BDA58FA5267C8E9800A32161 /* AboutAppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppViewController.swift; sourceTree = "<group>"; };
+		BDA58FA7267C8EA700A32161 /* AboutAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppView.swift; sourceTree = "<group>"; };
+		BDA58FA9267C8EBC00A32161 /* AboutAppConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppConfigurator.swift; sourceTree = "<group>"; };
 		BDAC954F2662882000216B35 /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
 		BDAC95552662883300216B35 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		BDAC95592662883C00216B35 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
@@ -421,6 +431,7 @@
 		BD2D9B762675FAB20082BC1A /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				BDA58FA2267C8DCF00A32161 /* AboutApp */,
 				BD2D9B8A26777ED40082BC1A /* Cells */,
 				BD2D9B772675FAE00082BC1A /* SettingsPresenter.swift */,
 				BD2D9B792675FAFA0082BC1A /* SettingsViewController.swift */,
@@ -456,6 +467,26 @@
 				BD8229CE26511708000B286E /* RegistrationConfigurator.swift */,
 			);
 			path = Registration;
+			sourceTree = "<group>";
+		};
+		BD8835E9267CA0E600D94E1D /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				BD8835EA267CA0FC00D94E1D /* AboutAppTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		BDA58FA2267C8DCF00A32161 /* AboutApp */ = {
+			isa = PBXGroup;
+			children = (
+				BD8835E9267CA0E600D94E1D /* Cells */,
+				BDA58FA3267C8DF800A32161 /* AboutAppPresenter.swift */,
+				BDA58FA5267C8E9800A32161 /* AboutAppViewController.swift */,
+				BDA58FA7267C8EA700A32161 /* AboutAppView.swift */,
+				BDA58FA9267C8EBC00A32161 /* AboutAppConfigurator.swift */,
+			);
+			path = AboutApp;
 			sourceTree = "<group>";
 		};
 		BDAC954E266287FC00216B35 /* Profile */ = {
@@ -917,6 +948,7 @@
 				052B1E4D24C39C030068B701 /* AuthorizationViewController.swift in Sources */,
 				C72C9F7E25F98F9100A0A6F5 /* ChallengeInfoTableViewCell.swift in Sources */,
 				C7FB9AEC25EC159D0010CD2C /* SessionManagerFactory.swift in Sources */,
+				BDA58FAA267C8EBC00A32161 /* AboutAppConfigurator.swift in Sources */,
 				0521CAF324BBDAED008BB178 /* CameraController.swift in Sources */,
 				BDAC95752663D1A600216B35 /* ProfileSettingsPresenter.swift in Sources */,
 				0517B02824BA473C00008884 /* AppDelegate.swift in Sources */,
@@ -933,6 +965,7 @@
 				BDCBA978264B160F00D894D1 /* UIColorExtensions.swift in Sources */,
 				BD2D9B7E2675FB180082BC1A /* SettingsConfigurator.swift in Sources */,
 				C72C9F7425F988FA00A0A6F5 /* ChallengesViewController.swift in Sources */,
+				BDA58FA8267C8EA700A32161 /* AboutAppView.swift in Sources */,
 				C72C9F7A25F9891900A0A6F5 /* ChallengesView.swift in Sources */,
 				0517B02A24BA473C00008884 /* SceneDelegate.swift in Sources */,
 				C7FB9AC825EC05F40010CD2C /* UIViewExtensions.swift in Sources */,
@@ -944,6 +977,7 @@
 				052B1E4F24C39C030068B701 /* AuthorizationConfigurator.swift in Sources */,
 				BD2D9B87267770B00082BC1A /* SettingsService.swift in Sources */,
 				C7A31AB725EBA6C3008D5E20 /* CameraViewController.swift in Sources */,
+				BD8835EB267CA0FC00D94E1D /* AboutAppTableViewCell.swift in Sources */,
 				C75548F725FAEBA800D0D9BE /* AboutChallengeViewController.swift in Sources */,
 				C7A31AD025EBB6FC008D5E20 /* CameraActionViewController.swift in Sources */,
 				052B1E4E24C39C030068B701 /* AuthorizationView.swift in Sources */,
@@ -953,7 +987,9 @@
 				0521CADF24BBADFC008BB178 /* AppController.swift in Sources */,
 				BDAC957B2663D1B300216B35 /* ProfileSettingsViewController.swift in Sources */,
 				2398F1CA0B1B391FCA8EE4A1 /* ShutterButtonViewController.swift in Sources */,
+				BDA58FA6267C8E9800A32161 /* AboutAppViewController.swift in Sources */,
 				BD2D9B84267610A50082BC1A /* CountriesService.swift in Sources */,
+				BDA58FA4267C8DF800A32161 /* AboutAppPresenter.swift in Sources */,
 				C7FB9AFF25EC195A0010CD2C /* CitiesService.swift in Sources */,
 				BDAC956A2662B22000216B35 /* ProfileCollectionViewCell.swift in Sources */,
 				BD82297D26502F6D000B286E /* AuthResponse.swift in Sources */,

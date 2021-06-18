@@ -151,7 +151,17 @@ final class ProfileSettingsView: UIView {
         textField.font = .systemFont(ofSize: 18)
         textField.textColor = UIColor(colorNamed: .textColor)
         textField.placeholder = "День рождения не может быть пустым"
+        textField.inputView = datePickerView
         return textField
+    }()
+    
+    private(set) lazy var datePickerView: UIDatePicker = {
+        let datePickerView = UIDatePicker()
+        datePickerView.datePickerMode = .date
+        if #available(iOS 13.4, *) {
+            datePickerView.preferredDatePickerStyle = .wheels
+        }
+        return datePickerView
     }()
     
     func setData(_ data: ProfileResponse) {
@@ -168,6 +178,7 @@ final class ProfileSettingsView: UIView {
         
         homeCityTextField.text = data.homeCity
         birthdayTextField.text = ProfileService.dateFormatter.string(from: data.birthday)
+        datePickerView.setDate(data.birthday, animated: true)
     }
     
     override init(frame: CGRect) {

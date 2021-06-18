@@ -41,7 +41,13 @@ final class SettingsView: UIView {
         textField.font = .systemFont(ofSize: 18)
         textField.textColor = UIColor(colorNamed: .textColor)
         textField.placeholder = "Нет доступных стран"
+        textField.inputView = selectCountryPickerView
         return textField
+    }()
+    
+    private(set) lazy var selectCountryPickerView: UIPickerView = {
+        let pickerView = UIPickerView()
+        return pickerView
     }()
     
     private(set) lazy var selectCountryButton: UIButton = {

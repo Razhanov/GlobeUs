@@ -22,13 +22,7 @@ final class ProfileSettingsViewController: UIViewController {
             }
         }
         
-        let datePickerView = UIDatePicker()
-        datePickerView.datePickerMode = .date
-        if #available(iOS 13.4, *) {
-            datePickerView.preferredDatePickerStyle = .wheels
-        }
-        view.birthdayTextField.inputView = datePickerView
-        datePickerView.addTarget(self, action: #selector(handleDatePicker), for: .valueChanged)
+        view.datePickerView.addTarget(self, action: #selector(handleDatePicker), for: .valueChanged)
         
         return view
     }()

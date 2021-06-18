@@ -9,6 +9,7 @@ import UIKit
 
 final class ProfileView: UIView {
     private let photoSize: CGFloat = 66
+    private var bannerIsHidden: Bool = false
     
     var bannerHeight: CGFloat {
         bounds.height / 4
@@ -189,24 +190,29 @@ final class ProfileView: UIView {
     }
     
     func updateBannerView(height: CGFloat) {
-        UIView.animate(withDuration: 0.5, animations: {
-            self.photoImageView.snp.remakeConstraints { make in
-                if let orientation = UIApplication.shared.windows.first?.windowScene?.interfaceOrientation, orientation == .portrait {
-                    make.top.equalTo(self.bannerImageView.snp.bottom).offset(height == 0 ? 40 : 8)
-                } else {
-                    make.top.equalTo(self.bannerImageView.snp.bottom).offset(height == 0 ? 16 : 8)
-                }
-                
-                make.leading.equalTo(self.safeAreaLayoutGuide).inset(16)
-                make.size.equalTo(self.photoSize)
+        let bannerIsHidden = height == 0
+        
+        self.photoImageView.snp.remakeConstraints { make in
+            if let orientation = UIApplication.shared.windows.first?.windowScene?.interfaceOrientation, orientation == .portrait {
+                make.top.equalTo(self.bannerImageView.snp.bottom).offset(height == 0 ? 66 : 8)
+            } else {
+                make.top.equalTo(self.bannerImageView.snp.bottom).offset(height == 0 ? 16 : 8)
             }
-            
-            self.layoutIfNeeded()
-        })
+
+            make.leading.equalTo(self.safeAreaLayoutGuide).inset(16)
+            make.size.equalTo(self.photoSize)
+        }
         
         bannerImageView.snp.remakeConstraints { make in
             make.top.leading.trailing.equalToSuperview()
             make.height.equalTo(height)
+        }
+
+        if self.bannerIsHidden != bannerIsHidden {
+            self.bannerIsHidden = bannerIsHidden
+            UIView.animate(withDuration: 0.5, animations: {
+                self.layoutIfNeeded()
+            })
         }
     }
     

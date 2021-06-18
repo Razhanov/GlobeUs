@@ -32,6 +32,8 @@ final class SettingsViewController: UIViewController {
         view.citiesCollectionView.dataSource = self
         view.citiesCollectionView.register(SettingsCityCollectionViewCell.self, forCellWithReuseIdentifier: cellReuseIdentifier)
         
+        view.aboutAppButton.addTarget(self, action: #selector(aboutAppButtonClick), for: .touchUpInside)
+        
         return view
     }()
     
@@ -124,7 +126,7 @@ final class SettingsViewController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: doneButton)
     }
     
-    func configureSelectCountyPickerView(textField: UITextField) {
+    func configureSelectCountyPickerView(textField: UITextField, pickerView: UIPickerView) {
         let toolBar = UIToolbar()
         toolBar.sizeToFit()
         
@@ -136,11 +138,8 @@ final class SettingsViewController: UIViewController {
         
         textField.inputAccessoryView = toolBar
         
-        let pickerView = UIPickerView()
         pickerView.delegate = self
         pickerView.dataSource = self
-        
-        textField.inputView = pickerView
         
         mainView.citiesCollectionView.reloadData()
     }
@@ -183,22 +182,27 @@ final class SettingsViewController: UIViewController {
             }
         }
     }
+    
+    @objc func aboutAppButtonClick() {
+        presenter?.openAboutAppScreen()
+    }
 }
 
 extension SettingsViewController: SettingsViewProtocol {
     func setCountries() {
-        configureSelectCountyPickerView(textField: mainView.selectCountryTextField)
+        configureSelectCountyPickerView(textField: mainView.selectCountryTextField, pickerView: mainView.selectCountryPickerView)
         
         if presenter?.getCountriesCount() ?? 0 > 0 && mainView.selectCountryTextField.text?.isEmpty ?? true {
             mainView.selectCountryTextField.text = presenter?.getCountry(countryId: SettingsService.shared.settings.countryId)?.title
             if let selectedRow = presenter?.getCountryRow(countryId: SettingsService.shared.settings.countryId) {
                 self.selectedRow = selectedRow
+                mainView.selectCountryPickerView.selectRow(selectedRow, inComponent: 0, animated: true)
             }
-            
-            mainView.selectMainScreenAppButtonsStackView.arrangedSubviews.forEach { subview in
-                if let button = subview as? UIButton {
-                    button.isSelected = button.tag == SettingsService.shared.settings.mainScreenApp.rawValue
-                }
+        }
+        
+        mainView.selectMainScreenAppButtonsStackView.arrangedSubviews.forEach { subview in
+            if let button = subview as? UIButton {
+                button.isSelected = button.tag == SettingsService.shared.settings.mainScreenApp.rawValue
             }
         }
     }

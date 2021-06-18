@@ -71,8 +71,8 @@ final class ProfileViewController: UIViewController {
         
         DispatchQueue.main.async {
             self.scrollViewDidScroll(self.mainView.collectionView)
+            self.mainView.collectionView.reloadData()
         }
-        mainView.collectionView.reloadData()
     }
     
     @objc private func changePhotoSourceTapped(_ sender : UIButton){

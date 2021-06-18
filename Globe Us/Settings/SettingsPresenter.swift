@@ -23,6 +23,7 @@ protocol SettingsPresenter {
     func getCountryRow(countryId: Int) -> Int?
     func configureCell(_ cell: SettingsCityCollectionViewCell, row: Int, selectedCountryRow: Int)
     func saveLoadedCity(countryId: Int, cityId: Int, completition: @escaping () -> ())
+    func openAboutAppScreen()
 }
 
 final class SettingsPresenterImplementation: SettingsPresenter {
@@ -122,5 +123,11 @@ final class SettingsPresenterImplementation: SettingsPresenter {
         }
         
         completition()
+    }
+    
+    func openAboutAppScreen() {
+        let aboutAppVC = AboutAppViewController()
+        
+        navigationController?.pushViewController(aboutAppVC, animated: true)
     }
 }
