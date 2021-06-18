@@ -57,6 +57,11 @@
 		BD8229E726511C2F000B286E /* RegisterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8229E626511C2F000B286E /* RegisterResponse.swift */; };
 		BD8835EB267CA0FC00D94E1D /* AboutAppTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8835EA267CA0FC00D94E1D /* AboutAppTableViewCell.swift */; };
 		BD8835ED267CBCC100D94E1D /* LoadedCityEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8835EC267CBCC100D94E1D /* LoadedCityEntity.swift */; };
+		BD8835F0267CC34400D94E1D /* SelectCityPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8835EF267CC34400D94E1D /* SelectCityPresenter.swift */; };
+		BD8835F2267CC35100D94E1D /* SelectCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8835F1267CC35100D94E1D /* SelectCityViewController.swift */; };
+		BD8835F4267CC35E00D94E1D /* SelectCityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8835F3267CC35E00D94E1D /* SelectCityView.swift */; };
+		BD8835F6267CC37000D94E1D /* SelectCityConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8835F5267CC37000D94E1D /* SelectCityConfigurator.swift */; };
+		BD8835F9267CC44C00D94E1D /* SelectCityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8835F8267CC44C00D94E1D /* SelectCityTableViewCell.swift */; };
 		BDA58FA4267C8DF800A32161 /* AboutAppPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA58FA3267C8DF800A32161 /* AboutAppPresenter.swift */; };
 		BDA58FA6267C8E9800A32161 /* AboutAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA58FA5267C8E9800A32161 /* AboutAppViewController.swift */; };
 		BDA58FA8267C8EA700A32161 /* AboutAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA58FA7267C8EA700A32161 /* AboutAppView.swift */; };
@@ -206,6 +211,11 @@
 		BD8229E626511C2F000B286E /* RegisterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterResponse.swift; sourceTree = "<group>"; };
 		BD8835EA267CA0FC00D94E1D /* AboutAppTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppTableViewCell.swift; sourceTree = "<group>"; };
 		BD8835EC267CBCC100D94E1D /* LoadedCityEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadedCityEntity.swift; sourceTree = "<group>"; };
+		BD8835EF267CC34400D94E1D /* SelectCityPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCityPresenter.swift; sourceTree = "<group>"; };
+		BD8835F1267CC35100D94E1D /* SelectCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCityViewController.swift; sourceTree = "<group>"; };
+		BD8835F3267CC35E00D94E1D /* SelectCityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCityView.swift; sourceTree = "<group>"; };
+		BD8835F5267CC37000D94E1D /* SelectCityConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCityConfigurator.swift; sourceTree = "<group>"; };
+		BD8835F8267CC44C00D94E1D /* SelectCityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCityTableViewCell.swift; sourceTree = "<group>"; };
 		BDA58FA3267C8DF800A32161 /* AboutAppPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppPresenter.swift; sourceTree = "<group>"; };
 		BDA58FA5267C8E9800A32161 /* AboutAppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppViewController.swift; sourceTree = "<group>"; };
 		BDA58FA7267C8EA700A32161 /* AboutAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppView.swift; sourceTree = "<group>"; };
@@ -342,8 +352,6 @@
 				052B1E4724C39B8F0068B701 /* Authorization */,
 				BD8229CD265116DE000B286E /* Registration */,
 				BDAC954E266287FC00216B35 /* Profile */,
-				BDAC95732663D18700216B35 /* ProfileSettings */,
-				BD2D9B762675FAB20082BC1A /* Settings */,
 				0521CAE024BBB0C1008BB178 /* Main */,
 				0517B03024BA474100008884 /* Assets.xcassets */,
 				0517B03224BA474100008884 /* LaunchScreen.storyboard */,
@@ -433,6 +441,7 @@
 		BD2D9B762675FAB20082BC1A /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				BD8835EE267CC32E00D94E1D /* SelectCity */,
 				BDA58FA2267C8DCF00A32161 /* AboutApp */,
 				BD2D9B8A26777ED40082BC1A /* Cells */,
 				BD2D9B772675FAE00082BC1A /* SettingsPresenter.swift */,
@@ -479,6 +488,26 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		BD8835EE267CC32E00D94E1D /* SelectCity */ = {
+			isa = PBXGroup;
+			children = (
+				BD8835F7267CC44000D94E1D /* Cells */,
+				BD8835EF267CC34400D94E1D /* SelectCityPresenter.swift */,
+				BD8835F1267CC35100D94E1D /* SelectCityViewController.swift */,
+				BD8835F3267CC35E00D94E1D /* SelectCityView.swift */,
+				BD8835F5267CC37000D94E1D /* SelectCityConfigurator.swift */,
+			);
+			path = SelectCity;
+			sourceTree = "<group>";
+		};
+		BD8835F7267CC44000D94E1D /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				BD8835F8267CC44C00D94E1D /* SelectCityTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		BDA58FA2267C8DCF00A32161 /* AboutApp */ = {
 			isa = PBXGroup;
 			children = (
@@ -494,6 +523,8 @@
 		BDAC954E266287FC00216B35 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				BDAC95732663D18700216B35 /* ProfileSettings */,
+				BD2D9B762675FAB20082BC1A /* Settings */,
 				BDAC954F2662882000216B35 /* ProfilePresenter.swift */,
 				BDAC95552662883300216B35 /* ProfileViewController.swift */,
 				BDAC95592662883C00216B35 /* ProfileView.swift */,
@@ -943,6 +974,7 @@
 				C7D62D2825ED06730021E642 /* WorkModeCollectionViewCell.swift in Sources */,
 				BD2D9B802676040B0082BC1A /* SettingsEntity.swift in Sources */,
 				C7A31AC125EBA938008D5E20 /* PreviewMetalView.swift in Sources */,
+				BD8835F9267CC44C00D94E1D /* SelectCityTableViewCell.swift in Sources */,
 				BD8229D52651171C000B286E /* RegistrationView.swift in Sources */,
 				0521CAF524BBE0E9008BB178 /* PreviewView.swift in Sources */,
 				C7A31ABD25EBA8D4008D5E20 /* CameraEngine.swift in Sources */,
@@ -963,6 +995,7 @@
 				BD2D9B752674D5D00082BC1A /* ProfileService.swift in Sources */,
 				C7FB9AEB25EC159D0010CD2C /* RequestFactory.swift in Sources */,
 				0521CAE624BBB0DA008BB178 /* MainViewController.swift in Sources */,
+				BD8835F4267CC35E00D94E1D /* SelectCityView.swift in Sources */,
 				BD2D9B8226760D790082BC1A /* CountriesResponse.swift in Sources */,
 				051D060424BE0EC400E61520 /* AccelerometerOrientation.swift in Sources */,
 				BD8229E12651173D000B286E /* RegistrationPresenter.swift in Sources */,
@@ -982,10 +1015,12 @@
 				BD2D9B87267770B00082BC1A /* SettingsService.swift in Sources */,
 				C7A31AB725EBA6C3008D5E20 /* CameraViewController.swift in Sources */,
 				BD8835EB267CA0FC00D94E1D /* AboutAppTableViewCell.swift in Sources */,
+				BD8835F2267CC35100D94E1D /* SelectCityViewController.swift in Sources */,
 				C75548F725FAEBA800D0D9BE /* AboutChallengeViewController.swift in Sources */,
 				C7A31AD025EBB6FC008D5E20 /* CameraActionViewController.swift in Sources */,
 				052B1E4E24C39C030068B701 /* AuthorizationView.swift in Sources */,
 				C7A31ACC25EBB4DD008D5E20 /* PassThrough.metal in Sources */,
+				BD8835F6267CC37000D94E1D /* SelectCityConfigurator.swift in Sources */,
 				C7FB9AF925EC188D0010CD2C /* NetworkError.swift in Sources */,
 				BDAC956E2662E67600216B35 /* ProfileHeaderCollectionReusableView.swift in Sources */,
 				0521CADF24BBADFC008BB178 /* AppController.swift in Sources */,
@@ -1010,6 +1045,7 @@
 				C7FB9AE025EC13C90010CD2C /* MainRequestRouter.swift in Sources */,
 				BDAC95502662882000216B35 /* ProfilePresenter.swift in Sources */,
 				C75548DF25FAC46100D0D9BE /* ChallengesDetailViewController.swift in Sources */,
+				BD8835F0267CC34400D94E1D /* SelectCityPresenter.swift in Sources */,
 				BD2D9B732674B9090082BC1A /* RadioButton.swift in Sources */,
 				2398FC94704549997E8B3F9E /* Photo.swift in Sources */,
 				2398F6CDA780662CF40BF311 /* ChallengeInfoView.swift in Sources */,

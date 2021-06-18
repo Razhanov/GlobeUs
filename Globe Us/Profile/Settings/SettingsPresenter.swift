@@ -10,10 +10,13 @@ import UIKit
 
 protocol SettingsViewProtocol: AnyObject {
     func setCountries()
+    func collectionViewReloadData()
 }
 
-protocol SettingsPresenter {
+protocol SettingsPresenter: LoadCityDelegate {
+    var selectedCountryId: Int? { get set }
     func viewDidLoad()
+    func viewWillAppear()
     func backAction()
     func doneAction(selectedCountryRow: Int, mainScreenAppRawValue: Int)
     func getCountriesCount() -> Int
@@ -22,8 +25,8 @@ protocol SettingsPresenter {
     func getCountry(countryId: Int) -> CountryResponse?
     func getCountryRow(countryId: Int) -> Int?
     func configureCell(_ cell: SettingsCityCollectionViewCell, row: Int, selectedCountryRow: Int)
-    func saveLoadedCity(countryId: Int, cityId: Int, completition: @escaping () -> ())
     func openAboutAppScreen()
+    func openSelectCityScreen()
 }
 
 final class SettingsPresenterImplementation: SettingsPresenter {
@@ -31,7 +34,12 @@ final class SettingsPresenterImplementation: SettingsPresenter {
     fileprivate weak var view: SettingsViewProtocol?
     fileprivate weak var navigationController: UINavigationController?
     
-    fileprivate var loadedCities: [Int: Set<Int>] = [:]
+    fileprivate var loadedCities: [Int: Set<Int>] = [:] {
+        didSet {
+            view?.collectionViewReloadData()
+        }
+    }
+    var selectedCountryId: Int? = SettingsService.shared.settings.countryId
     
     private var countries: [CountryResponse]? {
         didSet {
@@ -42,6 +50,10 @@ final class SettingsPresenterImplementation: SettingsPresenter {
     init(view: SettingsViewProtocol, navigationController: UINavigationController?) {
         self.view = view
         self.navigationController = navigationController
+    }
+    
+    func viewWillAppear() {
+        configureLoadedCities()
     }
     
     func viewDidLoad() {
@@ -124,16 +136,29 @@ final class SettingsPresenterImplementation: SettingsPresenter {
         cell.setData(city: city, isLoad: loadedCities[city.countryId]?.contains(city.id) ?? false)
     }
     
-    func saveLoadedCity(countryId: Int, cityId: Int, completition: @escaping () -> ()) {
-        SettingsService.shared.loadCity(countryId: countryId, cityId: cityId)
-        configureLoadedCities()
-        
-        completition()
-    }
-    
     func openAboutAppScreen() {
         let aboutAppVC = AboutAppViewController()
         
         navigationController?.pushViewController(aboutAppVC, animated: true)
+    }
+    
+    func openSelectCityScreen() {
+        guard let country = countries?.first(where: { $0.id == selectedCountryId }) else {
+            return
+        }
+        
+        let selectCityVC = SelectCityViewController()
+        let configurator = SelectCityConfiguratorImplementation()
+        
+        configurator.configure(viewController: selectCityVC, navigationController: navigationController, countryId: country.id, cities: country.cities)
+        
+        navigationController?.pushViewController(selectCityVC, animated: true)
+    }
+    
+    func loadCity(_ city: City, completition: () -> ()) {
+        SettingsService.shared.loadCity(countryId: city.countryId, cityId: city.id)
+        configureLoadedCities()
+        
+        completition()
     }
 }

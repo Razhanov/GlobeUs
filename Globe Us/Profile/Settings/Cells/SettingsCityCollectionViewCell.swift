@@ -7,15 +7,15 @@
 
 import UIKit
 
-protocol SettingsCityCollectionViewCellDelegate: AnyObject {
-    func loadCity(_ city: City, completition: @escaping () -> ())
+protocol LoadCityDelegate: AnyObject {
+    func loadCity(_ city: City, completition: () -> ())
 }
 
 class SettingsCityCollectionViewCell: UICollectionViewCell {
     
     var city: City?
     
-    weak var delegate: SettingsCityCollectionViewCellDelegate?
+    weak var delegate: LoadCityDelegate?
     
     private var isLoad: Bool = false {
         didSet {
@@ -79,6 +79,7 @@ class SettingsCityCollectionViewCell: UICollectionViewCell {
     
     override func prepareForReuse() {
         loadButton.setImage(UIImage(iconNamed: .downloadIcon), for: .normal)
+        loadButton.removeTarget(self, action: #selector(clickLoadButton), for: .touchUpInside)
     }
     
     private func initilizate() {

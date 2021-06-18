@@ -33,6 +33,7 @@ final class SettingsViewController: UIViewController {
         view.citiesCollectionView.register(SettingsCityCollectionViewCell.self, forCellWithReuseIdentifier: cellReuseIdentifier)
         
         view.aboutAppButton.addTarget(self, action: #selector(aboutAppButtonClick), for: .touchUpInside)
+        view.selectCityButton.addTarget(self, action: #selector(showAllCitiesButtonClick), for: .touchUpInside)
         
         return view
     }()
@@ -56,6 +57,8 @@ final class SettingsViewController: UIViewController {
             self?.mainView.keyboardWillShow(keyboardFrame: frame, animationDuration: animationDuration)
             self?.configureCountCollectionElementsInRow()
         }
+        
+        presenter?.viewWillAppear()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -166,7 +169,9 @@ final class SettingsViewController: UIViewController {
             view.endEditing(true)
             return
         }
-        mainView.selectCountryTextField.text = presenter?.getCountry(row: row)?.title
+        let country = presenter?.getCountry(row: row)
+        mainView.selectCountryTextField.text = country?.title
+        presenter?.selectedCountryId = country?.id
         configureCountCollectionElementsInRow()
         view.endEditing(true)
     }
@@ -185,6 +190,10 @@ final class SettingsViewController: UIViewController {
     
     @objc func aboutAppButtonClick() {
         presenter?.openAboutAppScreen()
+    }
+    
+    @objc func showAllCitiesButtonClick() {
+        presenter?.openSelectCityScreen()
     }
 }
 
@@ -205,6 +214,10 @@ extension SettingsViewController: SettingsViewProtocol {
                 button.isSelected = button.tag == SettingsService.shared.settings.mainScreenApp.rawValue
             }
         }
+    }
+    
+    func collectionViewReloadData() {
+        mainView.citiesCollectionView.reloadData()
     }
 }
 
@@ -248,14 +261,14 @@ extension SettingsViewController: UICollectionViewDataSource {
             if let selectedRow = selectedRow {
                 presenter?.configureCell(cell, row: indexPath.row, selectedCountryRow: selectedRow)
             }
-            cell.delegate = self
+            cell.delegate = presenter
             return cell
         }
         
         if let selectedRow = selectedRow {
             presenter?.configureCell(cell, row: indexPath.row, selectedCountryRow: selectedRow)
         }
-        cell.delegate = self
+        cell.delegate = presenter
         
         return cell
     }
@@ -266,11 +279,5 @@ extension SettingsViewController: UICollectionViewDelegate, UICollectionViewDele
         let collectionViewWidth = collectionView.bounds.width
         let width: CGFloat = collectionViewWidth / CGFloat(countElementsInRowCV) - (12 * CGFloat(countElementsInRowCV - 1))
         return CGSize(width: width, height: 50)
-    }
-}
-
-extension SettingsViewController: SettingsCityCollectionViewCellDelegate {
-    func loadCity(_ city: City, completition: @escaping () -> ()) {
-        presenter?.saveLoadedCity(countryId: city.countryId, cityId: city.id, completition: completition)
     }
 }
