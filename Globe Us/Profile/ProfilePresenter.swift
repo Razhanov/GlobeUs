@@ -26,10 +26,12 @@ protocol ProfilePresenter {
     func deletePhoto(indexPath: IndexPath, collectionView: UICollectionView)
     func openProfileSettingsScreen()
     func openSettingsScreen()
+    func openImage(indexPath: IndexPath)
 }
 
 final class ProfilePresenterImplementation: ProfilePresenter {
     
+    weak var viewController: UIViewController?
     fileprivate weak var view: ProfileViewProtocol?
     fileprivate weak var navigationController: UINavigationController?
     private var data: ProfileResponse? {
@@ -118,5 +120,24 @@ final class ProfilePresenterImplementation: ProfilePresenter {
         let settingsVC = SettingsViewController()
         
         navigationController?.pushViewController(settingsVC, animated: true)
+    }
+    
+    func openImage(indexPath: IndexPath) {
+        guard let data = data, indexPath.section < data.photos.count else {
+            return
+        }
+        
+        guard indexPath.row < data.photos[indexPath.section].photosURL.count else {
+            return
+        }
+        
+        let fullscreenImageVC = FullscreenPhotoViewController()
+//        fullscreenImageVC.definesPresentationContext = true
+//        fullscreenImageVC.modalTransitionStyle = .crossDissolve
+        
+        let configurator = FullscreenPhotoConfiguratorImplementation()
+        configurator.configure(viewController: fullscreenImageVC, urlImage: data.photos[indexPath.section].photosURL[indexPath.row])
+        
+        viewController?.present(fullscreenImageVC, animated: true, completion: nil)
     }
 }

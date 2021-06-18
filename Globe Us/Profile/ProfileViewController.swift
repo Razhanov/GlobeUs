@@ -150,6 +150,10 @@ extension ProfileViewController: UICollectionViewDataSource {
         
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        presenter?.openImage(indexPath: indexPath)
+    }
 }
 
 extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {

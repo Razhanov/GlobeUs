@@ -8,7 +8,6 @@
 import UIKit
 
 final class SelectCityViewController: UIViewController {
-    var configurator = SelectCityConfiguratorImplementation()
     var presenter: SelectCityPresenter?
     
     private let reuseIdentifier = "SelectCityTableViewCell"

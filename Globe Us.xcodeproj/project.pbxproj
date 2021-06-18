@@ -80,6 +80,10 @@
 		BDAC95832663D1C500216B35 /* ProfileSettingsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAC95822663D1C500216B35 /* ProfileSettingsConfigurator.swift */; };
 		BDCBA974264B121500D894D1 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCBA973264B121500D894D1 /* UIImageExtensions.swift */; };
 		BDCBA978264B160F00D894D1 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCBA977264B160F00D894D1 /* UIColorExtensions.swift */; };
+		BDF2E74C267D4E5100F2ECC7 /* FullscreenPhotoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF2E74B267D4E5100F2ECC7 /* FullscreenPhotoPresenter.swift */; };
+		BDF2E74E267D4E6300F2ECC7 /* FullscreenPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF2E74D267D4E6300F2ECC7 /* FullscreenPhotoViewController.swift */; };
+		BDF2E750267D4E7400F2ECC7 /* FullscreenPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF2E74F267D4E7400F2ECC7 /* FullscreenPhotoView.swift */; };
+		BDF2E752267D4E8900F2ECC7 /* FullscreenPhotoConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF2E751267D4E8900F2ECC7 /* FullscreenPhotoConfigurator.swift */; };
 		C72C9F7425F988FA00A0A6F5 /* ChallengesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72C9F7325F988FA00A0A6F5 /* ChallengesViewController.swift */; };
 		C72C9F7A25F9891900A0A6F5 /* ChallengesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72C9F7925F9891900A0A6F5 /* ChallengesView.swift */; };
 		C72C9F7E25F98F9100A0A6F5 /* ChallengeInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72C9F7D25F98F9100A0A6F5 /* ChallengeInfoTableViewCell.swift */; };
@@ -234,6 +238,10 @@
 		BDAC95822663D1C500216B35 /* ProfileSettingsConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingsConfigurator.swift; sourceTree = "<group>"; };
 		BDCBA973264B121500D894D1 /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
 		BDCBA977264B160F00D894D1 /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
+		BDF2E74B267D4E5100F2ECC7 /* FullscreenPhotoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullscreenPhotoPresenter.swift; sourceTree = "<group>"; };
+		BDF2E74D267D4E6300F2ECC7 /* FullscreenPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullscreenPhotoViewController.swift; sourceTree = "<group>"; };
+		BDF2E74F267D4E7400F2ECC7 /* FullscreenPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullscreenPhotoView.swift; sourceTree = "<group>"; };
+		BDF2E751267D4E8900F2ECC7 /* FullscreenPhotoConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullscreenPhotoConfigurator.swift; sourceTree = "<group>"; };
 		C72C9F7325F988FA00A0A6F5 /* ChallengesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengesViewController.swift; sourceTree = "<group>"; };
 		C72C9F7925F9891900A0A6F5 /* ChallengesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengesView.swift; sourceTree = "<group>"; };
 		C72C9F7D25F98F9100A0A6F5 /* ChallengeInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeInfoTableViewCell.swift; sourceTree = "<group>"; };
@@ -523,6 +531,7 @@
 		BDAC954E266287FC00216B35 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				BDF2E74A267D4E2700F2ECC7 /* FullscreenPhoto */,
 				BDAC95732663D18700216B35 /* ProfileSettings */,
 				BD2D9B762675FAB20082BC1A /* Settings */,
 				BDAC954F2662882000216B35 /* ProfilePresenter.swift */,
@@ -544,6 +553,17 @@
 				BDAC95822663D1C500216B35 /* ProfileSettingsConfigurator.swift */,
 			);
 			path = ProfileSettings;
+			sourceTree = "<group>";
+		};
+		BDF2E74A267D4E2700F2ECC7 /* FullscreenPhoto */ = {
+			isa = PBXGroup;
+			children = (
+				BDF2E74B267D4E5100F2ECC7 /* FullscreenPhotoPresenter.swift */,
+				BDF2E74D267D4E6300F2ECC7 /* FullscreenPhotoViewController.swift */,
+				BDF2E74F267D4E7400F2ECC7 /* FullscreenPhotoView.swift */,
+				BDF2E751267D4E8900F2ECC7 /* FullscreenPhotoConfigurator.swift */,
+			);
+			path = FullscreenPhoto;
 			sourceTree = "<group>";
 		};
 		C72C9F7225F988D700A0A6F5 /* Challenge */ = {
@@ -953,6 +973,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				052B1E4C24C39C030068B701 /* AuthorizationPresenter.swift in Sources */,
+				BDF2E74E267D4E6300F2ECC7 /* FullscreenPhotoViewController.swift in Sources */,
 				BD8835ED267CBCC100D94E1D /* LoadedCityEntity.swift in Sources */,
 				C7FB9B0925EC23E00010CD2C /* UIImageViewDownloader.swift in Sources */,
 				0521CAE524BBB0DA008BB178 /* MainPresenter.swift in Sources */,
@@ -1006,6 +1027,7 @@
 				C72C9F7A25F9891900A0A6F5 /* ChallengesView.swift in Sources */,
 				0517B02A24BA473C00008884 /* SceneDelegate.swift in Sources */,
 				C7FB9AC825EC05F40010CD2C /* UIViewExtensions.swift in Sources */,
+				BDF2E74C267D4E5100F2ECC7 /* FullscreenPhotoPresenter.swift in Sources */,
 				C7FB9ACC25EC09690010CD2C /* StickersCollectionViewCell.swift in Sources */,
 				C75548FB25FAEBBB00D0D9BE /* AboutChallengeView.swift in Sources */,
 				BDCBA974264B121500D894D1 /* UIImageExtensions.swift in Sources */,
@@ -1026,6 +1048,7 @@
 				0521CADF24BBADFC008BB178 /* AppController.swift in Sources */,
 				BDAC957B2663D1B300216B35 /* ProfileSettingsViewController.swift in Sources */,
 				2398F1CA0B1B391FCA8EE4A1 /* ShutterButtonViewController.swift in Sources */,
+				BDF2E750267D4E7400F2ECC7 /* FullscreenPhotoView.swift in Sources */,
 				BDA58FA6267C8E9800A32161 /* AboutAppViewController.swift in Sources */,
 				BD2D9B84267610A50082BC1A /* CountriesService.swift in Sources */,
 				BDA58FA4267C8DF800A32161 /* AboutAppPresenter.swift in Sources */,
@@ -1039,6 +1062,7 @@
 				C75548EE25FAE23200D0D9BE /* ChallengeDetailInfoViewController.swift in Sources */,
 				C7FB9B0525EC23310010CD2C /* SafeCollection.swift in Sources */,
 				2398F7342F36A48AFEDECA51 /* DataEngine.swift in Sources */,
+				BDF2E752267D4E8900F2ECC7 /* FullscreenPhotoConfigurator.swift in Sources */,
 				C75548F225FAE24E00D0D9BE /* ChallengeDetailInfoView.swift in Sources */,
 				BD8229D92651172F000B286E /* RegistrationViewController.swift in Sources */,
 				BD8229CF26511708000B286E /* RegistrationConfigurator.swift in Sources */,
