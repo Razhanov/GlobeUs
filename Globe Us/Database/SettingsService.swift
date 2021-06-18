@@ -51,4 +51,30 @@ final class SettingsService {
             #endif
         }
     }
+    
+    func loadCity(countryId: Int, cityId: Int) {
+        do {
+            try RealmService.shared.realm?.write {
+                if let entity = settings.loadedCitiesId.first(where: { $0.countryId == countryId }) {
+                    if entity.loadedCitiesId.contains(cityId) {
+                        return
+                    }
+                    
+                    entity.loadedCitiesId.append(cityId)
+                } else {
+                    let entity = LoadedCityEntity()
+                    entity.countryId = countryId
+                    entity.loadedCitiesId = RealmService.shared.getList(value: cityId)
+                    
+                    settings.loadedCitiesId.append(entity)
+                }
+            }
+        } catch let error {
+            #if DEBUG
+            fatalError(error.localizedDescription)
+            #else
+            print(error.localizedDescription)
+            #endif
+        }
+    }
 }

@@ -24,4 +24,10 @@ final class RealmService {
             #endif
         }
     }
+    
+    func getList<T: RealmCollectionValue>(value: T) -> List<T> {
+        let list = List<T>()
+        list.append(value)
+        return list
+    }
 }

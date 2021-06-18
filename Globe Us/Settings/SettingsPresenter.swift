@@ -46,6 +46,7 @@ final class SettingsPresenterImplementation: SettingsPresenter {
     
     func viewDidLoad() {
         loadCountries()
+        configureLoadedCities()
     }
     
     func backAction() {
@@ -70,6 +71,14 @@ final class SettingsPresenterImplementation: SettingsPresenter {
                 self?.backAction()
                 print(error.localizedDescription)
             }
+        }
+    }
+    
+    func configureLoadedCities() {
+        loadedCities.removeAll()
+        
+        SettingsService.shared.settings.loadedCitiesId.forEach { countryLoaded in
+            loadedCities[countryLoaded.countryId] = Set(countryLoaded.loadedCitiesId)
         }
     }
     
@@ -116,11 +125,8 @@ final class SettingsPresenterImplementation: SettingsPresenter {
     }
     
     func saveLoadedCity(countryId: Int, cityId: Int, completition: @escaping () -> ()) {
-        if loadedCities.keys.contains(countryId) {
-            loadedCities[countryId]?.insert(cityId)
-        } else {
-            loadedCities[countryId] = Set([cityId])
-        }
+        SettingsService.shared.loadCity(countryId: countryId, cityId: cityId)
+        configureLoadedCities()
         
         completition()
     }

@@ -56,6 +56,7 @@
 		BD8229E12651173D000B286E /* RegistrationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8229E02651173D000B286E /* RegistrationPresenter.swift */; };
 		BD8229E726511C2F000B286E /* RegisterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8229E626511C2F000B286E /* RegisterResponse.swift */; };
 		BD8835EB267CA0FC00D94E1D /* AboutAppTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8835EA267CA0FC00D94E1D /* AboutAppTableViewCell.swift */; };
+		BD8835ED267CBCC100D94E1D /* LoadedCityEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8835EC267CBCC100D94E1D /* LoadedCityEntity.swift */; };
 		BDA58FA4267C8DF800A32161 /* AboutAppPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA58FA3267C8DF800A32161 /* AboutAppPresenter.swift */; };
 		BDA58FA6267C8E9800A32161 /* AboutAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA58FA5267C8E9800A32161 /* AboutAppViewController.swift */; };
 		BDA58FA8267C8EA700A32161 /* AboutAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA58FA7267C8EA700A32161 /* AboutAppView.swift */; };
@@ -204,6 +205,7 @@
 		BD8229E02651173D000B286E /* RegistrationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPresenter.swift; sourceTree = "<group>"; };
 		BD8229E626511C2F000B286E /* RegisterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterResponse.swift; sourceTree = "<group>"; };
 		BD8835EA267CA0FC00D94E1D /* AboutAppTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppTableViewCell.swift; sourceTree = "<group>"; };
+		BD8835EC267CBCC100D94E1D /* LoadedCityEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadedCityEntity.swift; sourceTree = "<group>"; };
 		BDA58FA3267C8DF800A32161 /* AboutAppPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppPresenter.swift; sourceTree = "<group>"; };
 		BDA58FA5267C8E9800A32161 /* AboutAppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppViewController.swift; sourceTree = "<group>"; };
 		BDA58FA7267C8EA700A32161 /* AboutAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppView.swift; sourceTree = "<group>"; };
@@ -639,6 +641,7 @@
 				BD8229E626511C2F000B286E /* RegisterResponse.swift */,
 				BDAC95652662A8F100216B35 /* ProfileResponse.swift */,
 				BD2D9B7F2676040B0082BC1A /* SettingsEntity.swift */,
+				BD8835EC267CBCC100D94E1D /* LoadedCityEntity.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -919,6 +922,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				052B1E4C24C39C030068B701 /* AuthorizationPresenter.swift in Sources */,
+				BD8835ED267CBCC100D94E1D /* LoadedCityEntity.swift in Sources */,
 				C7FB9B0925EC23E00010CD2C /* UIImageViewDownloader.swift in Sources */,
 				0521CAE524BBB0DA008BB178 /* MainPresenter.swift in Sources */,
 				C75548D425FAA2D000D0D9BE /* ChallengeArrowTableViewCell.swift in Sources */,

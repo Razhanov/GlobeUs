@@ -10,6 +10,7 @@ import RealmSwift
 
 class SettingsEntity: Object {
     @objc dynamic var countryId: Int = 6
+    dynamic var loadedCitiesId = List<LoadedCityEntity>()
     @objc dynamic var mainScreenApp: MainScreenApp = MainScreenApp.photocamera
 }
 
