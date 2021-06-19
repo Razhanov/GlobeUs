@@ -17,14 +17,18 @@ enum MainRequestRouter: AbstractRequestRouter {
     case signInWithApple(parameters: Parameters)
     case signInWithFacebook(parameters: Parameters)
     case getCountries(langId: Int)
+    case getProfile
+    case updateProfile(parameters: Parameters)
 
     
     var method: HTTPMethod {
         switch self {
-        case .getCities, .getCountries:
+        case .getCities, .getCountries, .getProfile:
             return .get
         case .getAllClouds, .login, .register, .signInWithGoogle, .signInWithApple, .signInWithFacebook:
             return .post
+        case .updateProfile:
+            return .patch
         }
     }
     
@@ -46,6 +50,8 @@ enum MainRequestRouter: AbstractRequestRouter {
             return "v1/auth/facebook"
         case .getCountries(let langId):
             return "country/\(langId)"
+        case .getProfile, .updateProfile:
+            return "v1/user"
         }
     }
     
@@ -56,6 +62,12 @@ enum MainRequestRouter: AbstractRequestRouter {
             return [
                 "Content-Type": "application/json",
                 "Accept": "application/json"
+            ]
+        case .getProfile, .updateProfile:
+            return [
+                "Content-Type": "application/json",
+                "Accept": "application/json",
+                "Authorization": AuthService.accessToken ?? ""
             ]
         }
     }
@@ -79,10 +91,10 @@ enum MainRequestRouter: AbstractRequestRouter {
         urlRequest.httpMethod = method.rawValue
         
         switch self {
-        case .getCities, .getCountries:
+        case .getCities, .getCountries, .getProfile:
             urlRequest.headers = headers
             urlRequest = try URLEncoding.default.encode(urlRequest, with: nil)
-        case .getAllClouds(let parameters), .login(let parameters), .register(let parameters), .signInWithGoogle(let parameters), .signInWithApple(let parameters), .signInWithFacebook(let parameters):
+        case .getAllClouds(let parameters), .login(let parameters), .register(let parameters), .signInWithGoogle(let parameters), .signInWithApple(let parameters), .signInWithFacebook(let parameters), .updateProfile(let parameters):
             urlRequest.headers = headers
             urlRequest = try CustomPatchEncding().encode(urlRequest, with: parameters)
         }

@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-protocol AuthorizationViewProtocol: class {
+protocol AuthorizationViewProtocol: AnyObject {
     func setView()
     func setEmail(email: String)
 }
@@ -39,7 +39,7 @@ class AuthorizationPresenterImplementation : AuthorizationPresenter {
         AuthService.login(email: email, password: password) { response in
             switch response {
             case .success(let result):
-                print(result.data.accessToken)
+                AuthService.accessToken = result.data.accessToken
             case .failure(let error):
                 print(error.localizedDescription)
             }
@@ -50,7 +50,7 @@ class AuthorizationPresenterImplementation : AuthorizationPresenter {
         AuthService.signInWithGoogle(userId: userId) { response in
             switch response {
             case .success(let result):
-                print(result.data.accessToken)
+                AuthService.accessToken = result.data.accessToken
             case .failure(let error):
                 print(error.localizedDescription)
             }
@@ -61,7 +61,7 @@ class AuthorizationPresenterImplementation : AuthorizationPresenter {
         AuthService.signInWithApple(userId: userId) { response in
             switch response {
             case .success(let result):
-                print(result.data.accessToken)
+                AuthService.accessToken = result.data.accessToken
             case .failure(let error):
                 print(error.localizedDescription)
             }
@@ -72,7 +72,7 @@ class AuthorizationPresenterImplementation : AuthorizationPresenter {
         AuthService.signInWithFacebook(userId: userId) { response in
             switch response {
             case .success(let result):
-                print(result.data.accessToken)
+                AuthService.accessToken = result.data.accessToken
             case .failure(let error):
                 print(error.localizedDescription)
             }

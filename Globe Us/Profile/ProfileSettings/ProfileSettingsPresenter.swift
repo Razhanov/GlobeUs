@@ -52,8 +52,13 @@ final class ProfileSettingsPresenterImplementation: ProfileSettingsPresenter {
     }
     
     func doneAction(firstName: String, lastName: String, gender: Int, homeCity: String, birthday: String) {
-        ProfileService.changeProfile(firstName: firstName, lastName: lastName, gender: gender, homeCity: homeCity, birthday: birthday)
-        
-        navigationController?.popViewController(animated: true)
+        ProfileService.changeProfile(firstName: firstName, lastName: lastName, gender: gender, targetPlace: homeCity, birthday: birthday) { [weak self] response in
+            switch response {
+            case .success():
+                self?.navigationController?.popViewController(animated: true)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
 }

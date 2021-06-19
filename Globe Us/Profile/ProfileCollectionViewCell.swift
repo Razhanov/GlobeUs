@@ -26,7 +26,7 @@ class ProfileCollectionViewCell: UICollectionViewCell {
     }
     
     func loadPhoto(_ url: String) {
-        photoImageView.loadWithAlamofire(urlStringFull: url)
+        _ = url.contains("http") ? photoImageView.loadWithAlamofire(urlStringFull: url) : photoImageView.loadWithAlamofire(urlString: url)
     }
     
     private func initilizate() {

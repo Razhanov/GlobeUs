@@ -182,7 +182,7 @@ final class ProfileView: UIView {
     
     func setData(_ data: ProfileResponse) {
         collectionView.reloadData()
-        photoImageView.loadWithAlamofire(urlStringFull: data.photoURL)
+        _ = data.photoURL.contains("http") ? photoImageView.loadWithAlamofire(urlStringFull: data.photoURL) : photoImageView.loadWithAlamofire(urlString: data.photoURL)
         nameLabel.text = "\(data.firstName)\n\(data.lastName)"
         subscriptionLabel.text = data.subscription
         countPhotoLabel.text = data.countPhoto.description

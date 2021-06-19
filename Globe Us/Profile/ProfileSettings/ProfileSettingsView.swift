@@ -176,7 +176,7 @@ final class ProfileSettingsView: UIView {
             }
         }
         
-        homeCityTextField.text = data.homeCity
+        homeCityTextField.text = data.targetPlace
         birthdayTextField.text = ProfileService.dateFormatter.string(from: data.birthday)
         datePickerView.setDate(data.birthday, animated: true)
     }

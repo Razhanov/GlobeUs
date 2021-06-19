@@ -358,4 +358,87 @@ final class MainRequestFactory: AbstractRequestFactory {
             }
         }
     }
+    
+    //MARK: - getProfile
+    public func getProfile(completion: @escaping (Result<ProfileFullResponse, Error>) -> Void) {
+        let request = MainRequestRouter.getProfile
+        
+        self.request(request).responseJSON { (response) in
+            guard let statusCode = response.response?.statusCode else {
+                completion(.failure(NetworkError.responseError))
+                return
+            }
+            switch statusCode {
+            case 200 ... 399:
+                if let data = response.data {
+                    do {
+                        let profileResponse = try JSONDecoder().decode(ProfileFullResponse.self, from: data)
+                        completion(.success(profileResponse))
+                    } catch let decodingError as DecodingError {
+                        print("decoding error: ", decodingError)
+                        completion(.failure(NetworkError.decodingError(error: decodingError)))
+                    } catch {
+                        completion(.failure(NetworkError.responseError))
+                    }
+                }
+            case 400...499:
+                if let error = response.value as? [String: Any] {
+                    
+                    guard let errors = error["errors"] as? [String: [String]], let msg = errors.first?.value.first, msg == NetworkError.userAlreadyExists.errorMessage else {
+                        return completion(.failure(NetworkError.responseError))
+                    }
+                    completion(.failure(NetworkError.userAlreadyExists))
+                }
+            case 500...599:
+                completion(.failure(NetworkError.serverError))
+            default:
+                return completion(.failure(NetworkError.internetError))
+            }
+        }
+    }
+    
+    //MARK: - updateProfile
+    public func updateProfile(firstName: String, lastName: String, birthday: String, targetPlace: String, photoUrl: String?, email: String?, completion: @escaping (Result<Void, Error>) -> Void) {
+        var parameters = Parameters()
+        
+        parameters = [
+            "firstname": firstName,
+            "lastname": lastName,
+            "birthday": birthday,
+            "targetPlace": targetPlace
+        ]
+        
+        if let photoUrl = photoUrl {
+            parameters["photoUrl"] = photoUrl
+        }
+        
+        if let email = email {
+            parameters["email"] = email
+        }
+        
+        let request = MainRequestRouter.updateProfile(parameters: parameters)
+        
+        self.request(request).responseJSON { (response) in
+            guard let statusCode = response.response?.statusCode else {
+                completion(.failure(NetworkError.responseError))
+                return
+            }
+            switch statusCode {
+            case 200 ... 399:
+                completion(.success(()))
+            case 400...499:
+                if let error = response.value as? [String: Any] {
+                    
+                    guard let errors = error["errors"] as? [String: [String]], let msg = errors.first?.value.first, msg == NetworkError.userAlreadyExists.errorMessage else {
+                        return completion(.failure(NetworkError.responseError))
+                    }
+                    completion(.failure(NetworkError.userAlreadyExists))
+                }
+            case 500...599:
+                completion(.failure(NetworkError.serverError))
+            default:
+                return completion(.failure(NetworkError.internetError))
+            }
+        }
+    }
 }

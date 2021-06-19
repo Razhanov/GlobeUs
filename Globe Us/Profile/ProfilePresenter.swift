@@ -132,8 +132,6 @@ final class ProfilePresenterImplementation: ProfilePresenter {
         }
         
         let fullscreenImageVC = FullscreenPhotoViewController()
-//        fullscreenImageVC.definesPresentationContext = true
-//        fullscreenImageVC.modalTransitionStyle = .crossDissolve
         
         let configurator = FullscreenPhotoConfiguratorImplementation()
         configurator.configure(viewController: fullscreenImageVC, urlImage: data.photos[indexPath.section].photosURL[indexPath.row])
