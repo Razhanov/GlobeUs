@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-protocol RegistrationViewProtocol: class {
+protocol RegistrationViewProtocol: AnyObject {
     func setView()
 }
 
@@ -25,7 +25,7 @@ class RegistrationPresenterImplementation : RegistrationPresenter {
     
     fileprivate weak var view: RegistrationViewProtocol?
     weak var loginView: AuthorizationViewProtocol?
-    weak var navigationController: UINavigationController?
+    weak var mainCoordinator: MainCoordinator?
     
     init(view: RegistrationViewProtocol) {
         self.view = view
@@ -48,10 +48,11 @@ class RegistrationPresenterImplementation : RegistrationPresenter {
     }
     
     func signInWithGoogle(userId: String) {
-        AuthService.signInWithGoogle(userId: userId) { response in
+        AuthService.signInWithGoogle(userId: userId) { [weak self] response in
             switch response {
             case .success(let result):
-                print(result.data.accessToken)
+                AuthService.setAccessToken(result.data.accessToken)
+                self?.mainCoordinator?.openProfile()
             case .failure(let error):
                 print(error.localizedDescription)
             }
@@ -59,10 +60,11 @@ class RegistrationPresenterImplementation : RegistrationPresenter {
     }
     
     func signInWithApple(userId: String) {
-        AuthService.signInWithApple(userId: userId) { response in
+        AuthService.signInWithApple(userId: userId) { [weak self] response in
             switch response {
             case .success(let result):
-                print(result.data.accessToken)
+                AuthService.setAccessToken(result.data.accessToken)
+                self?.mainCoordinator?.openProfile()
             case .failure(let error):
                 print(error.localizedDescription)
             }
@@ -70,10 +72,11 @@ class RegistrationPresenterImplementation : RegistrationPresenter {
     }
     
     func signInWithFacebook(userId: String) {
-        AuthService.signInWithFacebook(userId: userId) { response in
+        AuthService.signInWithFacebook(userId: userId) { [weak self] response in
             switch response {
             case .success(let result):
-                print(result.data.accessToken)
+                AuthService.setAccessToken(result.data.accessToken)
+                self?.mainCoordinator?.openProfile()
             case .failure(let error):
                 print(error.localizedDescription)
             }
@@ -81,6 +84,6 @@ class RegistrationPresenterImplementation : RegistrationPresenter {
     }
     
     func openLogin() {
-        navigationController?.popViewController(animated: true)
+        mainCoordinator?.openPreviousViewController()
     }
 }

@@ -29,6 +29,7 @@ class RegistrationView : UIView {
     private(set) lazy var view: UIScrollView = {
         let view = UIScrollView()
         view.showsVerticalScrollIndicator = false
+        view.contentInsetAdjustmentBehavior = .never
         return view
     }()
     
@@ -157,7 +158,7 @@ class RegistrationView : UIView {
     
     private func makeConstraints() {
         view.snp.makeConstraints { (make) in
-            make.edges.equalTo(safeAreaLayoutGuide)
+            make.edges.equalToSuperview()
         }
         iconImageView.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(40)
@@ -188,7 +189,7 @@ class RegistrationView : UIView {
         bottomView.snp.makeConstraints { make in
             make.top.equalTo(registerButton.snp.bottom).offset(32)
             make.leading.trailing.equalTo(safeAreaLayoutGuide)
-            bottomViewConstraint = make.bottom.equalTo(safeAreaLayoutGuide).priority(.high).constraint
+            bottomViewConstraint = make.bottom.equalTo(self).priority(.high).constraint
             make.bottom.equalToSuperview()
         }
         
@@ -224,7 +225,7 @@ class RegistrationView : UIView {
         loginButton.snp.makeConstraints { make in
             make.top.greaterThanOrEqualTo(signInWithVKButton.snp.bottom).offset(32)
             make.centerX.equalToSuperview()
-            make.bottom.equalToSuperview().inset(24)
+            make.bottom.equalToSuperview().inset(32)
         }
         
         bottomViewConstraint?.activate()

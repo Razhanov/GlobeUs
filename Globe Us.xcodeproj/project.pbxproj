@@ -33,6 +33,18 @@
 		2398F7342F36A48AFEDECA51 /* DataEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2398F87DF879B1B9DE892350 /* DataEngine.swift */; };
 		2398FC94704549997E8B3F9E /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2398FEE3B0DAA87F648F8A23 /* Photo.swift */; };
 		BD2D3226264B1F32008489BF /* KeyboardObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2D3225264B1F32008489BF /* KeyboardObserver.swift */; };
+		BD2D9B732674B9090082BC1A /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2D9B722674B9090082BC1A /* RadioButton.swift */; };
+		BD2D9B752674D5D00082BC1A /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2D9B742674D5CF0082BC1A /* ProfileService.swift */; };
+		BD2D9B782675FAE00082BC1A /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2D9B772675FAE00082BC1A /* SettingsPresenter.swift */; };
+		BD2D9B7A2675FAFA0082BC1A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2D9B792675FAFA0082BC1A /* SettingsViewController.swift */; };
+		BD2D9B7C2675FB070082BC1A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2D9B7B2675FB070082BC1A /* SettingsView.swift */; };
+		BD2D9B7E2675FB180082BC1A /* SettingsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2D9B7D2675FB180082BC1A /* SettingsConfigurator.swift */; };
+		BD2D9B802676040B0082BC1A /* SettingsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2D9B7F2676040B0082BC1A /* SettingsEntity.swift */; };
+		BD2D9B8226760D790082BC1A /* CountriesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2D9B8126760D790082BC1A /* CountriesResponse.swift */; };
+		BD2D9B84267610A50082BC1A /* CountriesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2D9B83267610A50082BC1A /* CountriesService.swift */; };
+		BD2D9B87267770B00082BC1A /* SettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2D9B86267770B00082BC1A /* SettingsService.swift */; };
+		BD2D9B89267770C90082BC1A /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2D9B88267770C90082BC1A /* RealmService.swift */; };
+		BD2D9B8C26777EF80082BC1A /* SettingsCityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2D9B8B26777EF80082BC1A /* SettingsCityCollectionViewCell.swift */; };
 		BD82297D26502F6D000B286E /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD82297C26502F6C000B286E /* AuthResponse.swift */; };
 		BD8229812650308D000B286E /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8229802650308D000B286E /* AuthService.swift */; };
 		BD82299126503B6F000B286E /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD82299026503B6F000B286E /* AudioToolbox.framework */; };
@@ -43,8 +55,41 @@
 		BD8229D92651172F000B286E /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8229D82651172F000B286E /* RegistrationViewController.swift */; };
 		BD8229E12651173D000B286E /* RegistrationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8229E02651173D000B286E /* RegistrationPresenter.swift */; };
 		BD8229E726511C2F000B286E /* RegisterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8229E626511C2F000B286E /* RegisterResponse.swift */; };
+		BD8835EB267CA0FC00D94E1D /* AboutAppTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8835EA267CA0FC00D94E1D /* AboutAppTableViewCell.swift */; };
+		BD8835ED267CBCC100D94E1D /* LoadedCityEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8835EC267CBCC100D94E1D /* LoadedCityEntity.swift */; };
+		BD8835F0267CC34400D94E1D /* SelectCityPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8835EF267CC34400D94E1D /* SelectCityPresenter.swift */; };
+		BD8835F2267CC35100D94E1D /* SelectCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8835F1267CC35100D94E1D /* SelectCityViewController.swift */; };
+		BD8835F4267CC35E00D94E1D /* SelectCityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8835F3267CC35E00D94E1D /* SelectCityView.swift */; };
+		BD8835F6267CC37000D94E1D /* SelectCityConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8835F5267CC37000D94E1D /* SelectCityConfigurator.swift */; };
+		BD8835F9267CC44C00D94E1D /* SelectCityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8835F8267CC44C00D94E1D /* SelectCityTableViewCell.swift */; };
+		BDA58FA4267C8DF800A32161 /* AboutAppPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA58FA3267C8DF800A32161 /* AboutAppPresenter.swift */; };
+		BDA58FA6267C8E9800A32161 /* AboutAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA58FA5267C8E9800A32161 /* AboutAppViewController.swift */; };
+		BDA58FA8267C8EA700A32161 /* AboutAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA58FA7267C8EA700A32161 /* AboutAppView.swift */; };
+		BDA58FAA267C8EBC00A32161 /* AboutAppConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA58FA9267C8EBC00A32161 /* AboutAppConfigurator.swift */; };
+		BDAC95502662882000216B35 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAC954F2662882000216B35 /* ProfilePresenter.swift */; };
+		BDAC95562662883300216B35 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAC95552662883300216B35 /* ProfileViewController.swift */; };
+		BDAC955A2662883C00216B35 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAC95592662883C00216B35 /* ProfileView.swift */; };
+		BDAC955E2662884A00216B35 /* ProfileConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAC955D2662884A00216B35 /* ProfileConfigurator.swift */; };
+		BDAC95622662A09D00216B35 /* DefaultButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAC95612662A09D00216B35 /* DefaultButton.swift */; };
+		BDAC95662662A8F100216B35 /* ProfileResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAC95652662A8F100216B35 /* ProfileResponse.swift */; };
+		BDAC956A2662B22000216B35 /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAC95692662B21F00216B35 /* ProfileCollectionViewCell.swift */; };
+		BDAC956E2662E67600216B35 /* ProfileHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAC956D2662E67600216B35 /* ProfileHeaderCollectionReusableView.swift */; };
+		BDAC95752663D1A600216B35 /* ProfileSettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAC95742663D1A600216B35 /* ProfileSettingsPresenter.swift */; };
+		BDAC957B2663D1B300216B35 /* ProfileSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAC957A2663D1B300216B35 /* ProfileSettingsViewController.swift */; };
+		BDAC957F2663D1BB00216B35 /* ProfileSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAC957E2663D1BB00216B35 /* ProfileSettingsView.swift */; };
+		BDAC95832663D1C500216B35 /* ProfileSettingsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAC95822663D1C500216B35 /* ProfileSettingsConfigurator.swift */; };
 		BDCBA974264B121500D894D1 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCBA973264B121500D894D1 /* UIImageExtensions.swift */; };
 		BDCBA978264B160F00D894D1 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCBA977264B160F00D894D1 /* UIColorExtensions.swift */; };
+		BDF2E74C267D4E5100F2ECC7 /* FullscreenPhotoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF2E74B267D4E5100F2ECC7 /* FullscreenPhotoPresenter.swift */; };
+		BDF2E74E267D4E6300F2ECC7 /* FullscreenPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF2E74D267D4E6300F2ECC7 /* FullscreenPhotoViewController.swift */; };
+		BDF2E750267D4E7400F2ECC7 /* FullscreenPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF2E74F267D4E7400F2ECC7 /* FullscreenPhotoView.swift */; };
+		BDF2E752267D4E8900F2ECC7 /* FullscreenPhotoConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF2E751267D4E8900F2ECC7 /* FullscreenPhotoConfigurator.swift */; };
+		BDF2E757267E241400F2ECC7 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF2E756267E241400F2ECC7 /* Coordinator.swift */; };
+		BDF2E759267E244600F2ECC7 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF2E758267E244600F2ECC7 /* MainCoordinator.swift */; };
+		BDF2E75C267E46C200F2ECC7 /* ChangePasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF2E75B267E46C200F2ECC7 /* ChangePasswordPresenter.swift */; };
+		BDF2E75E267E470900F2ECC7 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF2E75D267E470900F2ECC7 /* ChangePasswordViewController.swift */; };
+		BDF2E760267E471600F2ECC7 /* ChangePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF2E75F267E471600F2ECC7 /* ChangePasswordView.swift */; };
+		BDF2E762267E472B00F2ECC7 /* ChangePasswordConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF2E761267E472B00F2ECC7 /* ChangePasswordConfigurator.swift */; };
 		C72C9F7425F988FA00A0A6F5 /* ChallengesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72C9F7325F988FA00A0A6F5 /* ChallengesViewController.swift */; };
 		C72C9F7A25F9891900A0A6F5 /* ChallengesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72C9F7925F9891900A0A6F5 /* ChallengesView.swift */; };
 		C72C9F7E25F98F9100A0A6F5 /* ChallengeInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72C9F7D25F98F9100A0A6F5 /* ChallengeInfoTableViewCell.swift */; };
@@ -152,6 +197,18 @@
 		87B8CCC842DB471D11D8D71B /* Pods-Globe Us.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Globe Us.release.xcconfig"; path = "Target Support Files/Pods-Globe Us/Pods-Globe Us.release.xcconfig"; sourceTree = "<group>"; };
 		8964DCD05CB9F3D8DD4CDC14 /* Pods_Globe_Us.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Globe_Us.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD2D3225264B1F32008489BF /* KeyboardObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardObserver.swift; sourceTree = "<group>"; };
+		BD2D9B722674B9090082BC1A /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
+		BD2D9B742674D5CF0082BC1A /* ProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
+		BD2D9B772675FAE00082BC1A /* SettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
+		BD2D9B792675FAFA0082BC1A /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; wrapsLines = 1; };
+		BD2D9B7B2675FB070082BC1A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		BD2D9B7D2675FB180082BC1A /* SettingsConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsConfigurator.swift; sourceTree = "<group>"; };
+		BD2D9B7F2676040B0082BC1A /* SettingsEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsEntity.swift; sourceTree = "<group>"; };
+		BD2D9B8126760D790082BC1A /* CountriesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesResponse.swift; sourceTree = "<group>"; };
+		BD2D9B83267610A50082BC1A /* CountriesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesService.swift; sourceTree = "<group>"; };
+		BD2D9B86267770B00082BC1A /* SettingsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsService.swift; sourceTree = "<group>"; };
+		BD2D9B88267770C90082BC1A /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
+		BD2D9B8B26777EF80082BC1A /* SettingsCityCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCityCollectionViewCell.swift; sourceTree = "<group>"; };
 		BD82297C26502F6C000B286E /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
 		BD8229802650308D000B286E /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		BD82299026503B6F000B286E /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -162,8 +219,41 @@
 		BD8229D82651172F000B286E /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		BD8229E02651173D000B286E /* RegistrationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPresenter.swift; sourceTree = "<group>"; };
 		BD8229E626511C2F000B286E /* RegisterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterResponse.swift; sourceTree = "<group>"; };
+		BD8835EA267CA0FC00D94E1D /* AboutAppTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppTableViewCell.swift; sourceTree = "<group>"; };
+		BD8835EC267CBCC100D94E1D /* LoadedCityEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadedCityEntity.swift; sourceTree = "<group>"; };
+		BD8835EF267CC34400D94E1D /* SelectCityPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCityPresenter.swift; sourceTree = "<group>"; };
+		BD8835F1267CC35100D94E1D /* SelectCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCityViewController.swift; sourceTree = "<group>"; };
+		BD8835F3267CC35E00D94E1D /* SelectCityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCityView.swift; sourceTree = "<group>"; };
+		BD8835F5267CC37000D94E1D /* SelectCityConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCityConfigurator.swift; sourceTree = "<group>"; };
+		BD8835F8267CC44C00D94E1D /* SelectCityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCityTableViewCell.swift; sourceTree = "<group>"; };
+		BDA58FA3267C8DF800A32161 /* AboutAppPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppPresenter.swift; sourceTree = "<group>"; };
+		BDA58FA5267C8E9800A32161 /* AboutAppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppViewController.swift; sourceTree = "<group>"; };
+		BDA58FA7267C8EA700A32161 /* AboutAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppView.swift; sourceTree = "<group>"; };
+		BDA58FA9267C8EBC00A32161 /* AboutAppConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppConfigurator.swift; sourceTree = "<group>"; };
+		BDAC954F2662882000216B35 /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
+		BDAC95552662883300216B35 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		BDAC95592662883C00216B35 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		BDAC955D2662884A00216B35 /* ProfileConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileConfigurator.swift; sourceTree = "<group>"; };
+		BDAC95612662A09D00216B35 /* DefaultButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultButton.swift; sourceTree = "<group>"; };
+		BDAC95652662A8F100216B35 /* ProfileResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileResponse.swift; sourceTree = "<group>"; };
+		BDAC95692662B21F00216B35 /* ProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewCell.swift; sourceTree = "<group>"; };
+		BDAC956D2662E67600216B35 /* ProfileHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
+		BDAC95742663D1A600216B35 /* ProfileSettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingsPresenter.swift; sourceTree = "<group>"; };
+		BDAC957A2663D1B300216B35 /* ProfileSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingsViewController.swift; sourceTree = "<group>"; };
+		BDAC957E2663D1BB00216B35 /* ProfileSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingsView.swift; sourceTree = "<group>"; };
+		BDAC95822663D1C500216B35 /* ProfileSettingsConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingsConfigurator.swift; sourceTree = "<group>"; };
 		BDCBA973264B121500D894D1 /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
 		BDCBA977264B160F00D894D1 /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
+		BDF2E74B267D4E5100F2ECC7 /* FullscreenPhotoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullscreenPhotoPresenter.swift; sourceTree = "<group>"; };
+		BDF2E74D267D4E6300F2ECC7 /* FullscreenPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullscreenPhotoViewController.swift; sourceTree = "<group>"; };
+		BDF2E74F267D4E7400F2ECC7 /* FullscreenPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullscreenPhotoView.swift; sourceTree = "<group>"; };
+		BDF2E751267D4E8900F2ECC7 /* FullscreenPhotoConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullscreenPhotoConfigurator.swift; sourceTree = "<group>"; };
+		BDF2E756267E241400F2ECC7 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		BDF2E758267E244600F2ECC7 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		BDF2E75B267E46C200F2ECC7 /* ChangePasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordPresenter.swift; sourceTree = "<group>"; };
+		BDF2E75D267E470900F2ECC7 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
+		BDF2E75F267E471600F2ECC7 /* ChangePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordView.swift; sourceTree = "<group>"; };
+		BDF2E761267E472B00F2ECC7 /* ChangePasswordConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordConfigurator.swift; sourceTree = "<group>"; };
 		C72C9F7325F988FA00A0A6F5 /* ChallengesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengesViewController.swift; sourceTree = "<group>"; };
 		C72C9F7925F9891900A0A6F5 /* ChallengesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengesView.swift; sourceTree = "<group>"; };
 		C72C9F7D25F98F9100A0A6F5 /* ChallengeInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeInfoTableViewCell.swift; sourceTree = "<group>"; };
@@ -272,14 +362,17 @@
 			children = (
 				BD2D3224264B1F1E008489BF /* Core */,
 				C7FB9AF325EC17010010CD2C /* Models */,
+				BD2D9B852677709E0082BC1A /* Database */,
 				C7FB9ACF25EC0FCB0010CD2C /* Network */,
 				C7FB9AC225EC05920010CD2C /* Extensions */,
 				C7FB9ABF25EBD5530010CD2C /* Globe Us.entitlements */,
 				C72C9F7225F988D700A0A6F5 /* Challenge */,
 				C7A31AB525EBA69C008D5E20 /* Camera */,
 				0521CADD24BBADD5008BB178 /* Controllers */,
+				BDF2E755267E23E600F2ECC7 /* Coordinators */,
 				052B1E4724C39B8F0068B701 /* Authorization */,
 				BD8229CD265116DE000B286E /* Registration */,
+				BDAC954E266287FC00216B35 /* Profile */,
 				0521CAE024BBB0C1008BB178 /* Main */,
 				0517B03024BA474100008884 /* Assets.xcassets */,
 				0517B03224BA474100008884 /* LaunchScreen.storyboard */,
@@ -360,8 +453,42 @@
 			isa = PBXGroup;
 			children = (
 				BD2D3225264B1F32008489BF /* KeyboardObserver.swift */,
+				BDAC95612662A09D00216B35 /* DefaultButton.swift */,
+				BD2D9B722674B9090082BC1A /* RadioButton.swift */,
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		BD2D9B762675FAB20082BC1A /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				BDF2E75A267E462900F2ECC7 /* ChangePassword */,
+				BD8835EE267CC32E00D94E1D /* SelectCity */,
+				BDA58FA2267C8DCF00A32161 /* AboutApp */,
+				BD2D9B8A26777ED40082BC1A /* Cells */,
+				BD2D9B772675FAE00082BC1A /* SettingsPresenter.swift */,
+				BD2D9B792675FAFA0082BC1A /* SettingsViewController.swift */,
+				BD2D9B7B2675FB070082BC1A /* SettingsView.swift */,
+				BD2D9B7D2675FB180082BC1A /* SettingsConfigurator.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		BD2D9B852677709E0082BC1A /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				BD2D9B86267770B00082BC1A /* SettingsService.swift */,
+				BD2D9B88267770C90082BC1A /* RealmService.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		BD2D9B8A26777ED40082BC1A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				BD2D9B8B26777EF80082BC1A /* SettingsCityCollectionViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		BD8229CD265116DE000B286E /* Registration */ = {
@@ -373,6 +500,104 @@
 				BD8229CE26511708000B286E /* RegistrationConfigurator.swift */,
 			);
 			path = Registration;
+			sourceTree = "<group>";
+		};
+		BD8835E9267CA0E600D94E1D /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				BD8835EA267CA0FC00D94E1D /* AboutAppTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		BD8835EE267CC32E00D94E1D /* SelectCity */ = {
+			isa = PBXGroup;
+			children = (
+				BD8835F7267CC44000D94E1D /* Cells */,
+				BD8835EF267CC34400D94E1D /* SelectCityPresenter.swift */,
+				BD8835F1267CC35100D94E1D /* SelectCityViewController.swift */,
+				BD8835F3267CC35E00D94E1D /* SelectCityView.swift */,
+				BD8835F5267CC37000D94E1D /* SelectCityConfigurator.swift */,
+			);
+			path = SelectCity;
+			sourceTree = "<group>";
+		};
+		BD8835F7267CC44000D94E1D /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				BD8835F8267CC44C00D94E1D /* SelectCityTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		BDA58FA2267C8DCF00A32161 /* AboutApp */ = {
+			isa = PBXGroup;
+			children = (
+				BD8835E9267CA0E600D94E1D /* Cells */,
+				BDA58FA3267C8DF800A32161 /* AboutAppPresenter.swift */,
+				BDA58FA5267C8E9800A32161 /* AboutAppViewController.swift */,
+				BDA58FA7267C8EA700A32161 /* AboutAppView.swift */,
+				BDA58FA9267C8EBC00A32161 /* AboutAppConfigurator.swift */,
+			);
+			path = AboutApp;
+			sourceTree = "<group>";
+		};
+		BDAC954E266287FC00216B35 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				BDF2E74A267D4E2700F2ECC7 /* FullscreenPhoto */,
+				BDAC95732663D18700216B35 /* ProfileSettings */,
+				BD2D9B762675FAB20082BC1A /* Settings */,
+				BDAC954F2662882000216B35 /* ProfilePresenter.swift */,
+				BDAC95552662883300216B35 /* ProfileViewController.swift */,
+				BDAC95592662883C00216B35 /* ProfileView.swift */,
+				BDAC955D2662884A00216B35 /* ProfileConfigurator.swift */,
+				BDAC956D2662E67600216B35 /* ProfileHeaderCollectionReusableView.swift */,
+				BDAC95692662B21F00216B35 /* ProfileCollectionViewCell.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		BDAC95732663D18700216B35 /* ProfileSettings */ = {
+			isa = PBXGroup;
+			children = (
+				BDAC95742663D1A600216B35 /* ProfileSettingsPresenter.swift */,
+				BDAC957A2663D1B300216B35 /* ProfileSettingsViewController.swift */,
+				BDAC957E2663D1BB00216B35 /* ProfileSettingsView.swift */,
+				BDAC95822663D1C500216B35 /* ProfileSettingsConfigurator.swift */,
+			);
+			path = ProfileSettings;
+			sourceTree = "<group>";
+		};
+		BDF2E74A267D4E2700F2ECC7 /* FullscreenPhoto */ = {
+			isa = PBXGroup;
+			children = (
+				BDF2E74B267D4E5100F2ECC7 /* FullscreenPhotoPresenter.swift */,
+				BDF2E74D267D4E6300F2ECC7 /* FullscreenPhotoViewController.swift */,
+				BDF2E74F267D4E7400F2ECC7 /* FullscreenPhotoView.swift */,
+				BDF2E751267D4E8900F2ECC7 /* FullscreenPhotoConfigurator.swift */,
+			);
+			path = FullscreenPhoto;
+			sourceTree = "<group>";
+		};
+		BDF2E755267E23E600F2ECC7 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				BDF2E756267E241400F2ECC7 /* Coordinator.swift */,
+				BDF2E758267E244600F2ECC7 /* MainCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		BDF2E75A267E462900F2ECC7 /* ChangePassword */ = {
+			isa = PBXGroup;
+			children = (
+				BDF2E75B267E46C200F2ECC7 /* ChangePasswordPresenter.swift */,
+				BDF2E75D267E470900F2ECC7 /* ChangePasswordViewController.swift */,
+				BDF2E75F267E471600F2ECC7 /* ChangePasswordView.swift */,
+				BDF2E761267E472B00F2ECC7 /* ChangePasswordConfigurator.swift */,
+			);
+			path = ChangePassword;
 			sourceTree = "<group>";
 		};
 		C72C9F7225F988D700A0A6F5 /* Challenge */ = {
@@ -463,7 +688,9 @@
 			children = (
 				BD8229802650308D000B286E /* AuthService.swift */,
 				C7FB9AFE25EC195A0010CD2C /* CitiesService.swift */,
+				BD2D9B742674D5CF0082BC1A /* ProfileService.swift */,
 				C7FB9AF825EC188D0010CD2C /* NetworkError.swift */,
+				BD2D9B83267610A50082BC1A /* CountriesService.swift */,
 				C7FB9AD125EC102A0010CD2C /* Request Router */,
 				C7FB9AD025EC10180010CD2C /* Factory */,
 			);
@@ -493,9 +720,13 @@
 		C7FB9AF325EC17010010CD2C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				BD2D9B8126760D790082BC1A /* CountriesResponse.swift */,
 				C7FB9AF425EC17250010CD2C /* CitiesResponse.swift */,
 				BD82297C26502F6C000B286E /* AuthResponse.swift */,
 				BD8229E626511C2F000B286E /* RegisterResponse.swift */,
+				BDAC95652662A8F100216B35 /* ProfileResponse.swift */,
+				BD2D9B7F2676040B0082BC1A /* SettingsEntity.swift */,
+				BD8835EC267CBCC100D94E1D /* LoadedCityEntity.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -776,65 +1007,110 @@
 			buildActionMask = 2147483647;
 			files = (
 				052B1E4C24C39C030068B701 /* AuthorizationPresenter.swift in Sources */,
+				BDF2E74E267D4E6300F2ECC7 /* FullscreenPhotoViewController.swift in Sources */,
+				BD8835ED267CBCC100D94E1D /* LoadedCityEntity.swift in Sources */,
 				C7FB9B0925EC23E00010CD2C /* UIImageViewDownloader.swift in Sources */,
 				0521CAE524BBB0DA008BB178 /* MainPresenter.swift in Sources */,
 				C75548D425FAA2D000D0D9BE /* ChallengeArrowTableViewCell.swift in Sources */,
 				C7FB9AE525EC158B0010CD2C /* MainRequestFactory.swift in Sources */,
 				C7FB9AF525EC17250010CD2C /* CitiesResponse.swift in Sources */,
+				BDAC95562662883300216B35 /* ProfileViewController.swift in Sources */,
 				BD8229812650308D000B286E /* AuthService.swift in Sources */,
 				C7FB9AE625EC158B0010CD2C /* AbstractRequestFactory.swift in Sources */,
 				C75548E325FAC48900D0D9BE /* ChallengesDetailView.swift in Sources */,
+				BDAC955E2662884A00216B35 /* ProfileConfigurator.swift in Sources */,
+				BD2D9B7C2675FB070082BC1A /* SettingsView.swift in Sources */,
+				BDAC95832663D1C500216B35 /* ProfileSettingsConfigurator.swift in Sources */,
 				0521CAE824BBB0DA008BB178 /* MainConfigurator.swift in Sources */,
 				C7FB9AC425EC05AC0010CD2C /* ViewControllerExtensions.swift in Sources */,
+				BDF2E760267E471600F2ECC7 /* ChangePasswordView.swift in Sources */,
 				C75548E725FAC98400D0D9BE /* ChallengesDetailTableViewCell.swift in Sources */,
+				BD2D9B8C26777EF80082BC1A /* SettingsCityCollectionViewCell.swift in Sources */,
 				C7FB9AD325EC11630010CD2C /* AbstractRequestRouter.swift in Sources */,
 				C7D62D2825ED06730021E642 /* WorkModeCollectionViewCell.swift in Sources */,
+				BD2D9B802676040B0082BC1A /* SettingsEntity.swift in Sources */,
 				C7A31AC125EBA938008D5E20 /* PreviewMetalView.swift in Sources */,
+				BD8835F9267CC44C00D94E1D /* SelectCityTableViewCell.swift in Sources */,
 				BD8229D52651171C000B286E /* RegistrationView.swift in Sources */,
 				0521CAF524BBE0E9008BB178 /* PreviewView.swift in Sources */,
 				C7A31ABD25EBA8D4008D5E20 /* CameraEngine.swift in Sources */,
 				0521CAE724BBB0DA008BB178 /* MainView.swift in Sources */,
 				BD8229E726511C2F000B286E /* RegisterResponse.swift in Sources */,
+				BD2D9B7A2675FAFA0082BC1A /* SettingsViewController.swift in Sources */,
 				052B1E4D24C39C030068B701 /* AuthorizationViewController.swift in Sources */,
 				C72C9F7E25F98F9100A0A6F5 /* ChallengeInfoTableViewCell.swift in Sources */,
 				C7FB9AEC25EC159D0010CD2C /* SessionManagerFactory.swift in Sources */,
+				BDF2E762267E472B00F2ECC7 /* ChangePasswordConfigurator.swift in Sources */,
+				BDA58FAA267C8EBC00A32161 /* AboutAppConfigurator.swift in Sources */,
 				0521CAF324BBDAED008BB178 /* CameraController.swift in Sources */,
+				BDAC95752663D1A600216B35 /* ProfileSettingsPresenter.swift in Sources */,
 				0517B02824BA473C00008884 /* AppDelegate.swift in Sources */,
+				BDAC95622662A09D00216B35 /* DefaultButton.swift in Sources */,
 				0521CADC24BBADC7008BB178 /* LaunchScreenViewController.swift in Sources */,
+				BDAC955A2662883C00216B35 /* ProfileView.swift in Sources */,
 				C7A31AC525EBAA2B008D5E20 /* TapticHelper.swift in Sources */,
+				BD2D9B752674D5D00082BC1A /* ProfileService.swift in Sources */,
 				C7FB9AEB25EC159D0010CD2C /* RequestFactory.swift in Sources */,
 				0521CAE624BBB0DA008BB178 /* MainViewController.swift in Sources */,
+				BDF2E757267E241400F2ECC7 /* Coordinator.swift in Sources */,
+				BD8835F4267CC35E00D94E1D /* SelectCityView.swift in Sources */,
+				BD2D9B8226760D790082BC1A /* CountriesResponse.swift in Sources */,
 				051D060424BE0EC400E61520 /* AccelerometerOrientation.swift in Sources */,
+				BDF2E75E267E470900F2ECC7 /* ChangePasswordViewController.swift in Sources */,
 				BD8229E12651173D000B286E /* RegistrationPresenter.swift in Sources */,
+				BDF2E75C267E46C200F2ECC7 /* ChangePasswordPresenter.swift in Sources */,
 				BDCBA978264B160F00D894D1 /* UIColorExtensions.swift in Sources */,
+				BD2D9B7E2675FB180082BC1A /* SettingsConfigurator.swift in Sources */,
 				C72C9F7425F988FA00A0A6F5 /* ChallengesViewController.swift in Sources */,
+				BDA58FA8267C8EA700A32161 /* AboutAppView.swift in Sources */,
 				C72C9F7A25F9891900A0A6F5 /* ChallengesView.swift in Sources */,
 				0517B02A24BA473C00008884 /* SceneDelegate.swift in Sources */,
 				C7FB9AC825EC05F40010CD2C /* UIViewExtensions.swift in Sources */,
+				BDF2E74C267D4E5100F2ECC7 /* FullscreenPhotoPresenter.swift in Sources */,
 				C7FB9ACC25EC09690010CD2C /* StickersCollectionViewCell.swift in Sources */,
 				C75548FB25FAEBBB00D0D9BE /* AboutChallengeView.swift in Sources */,
 				BDCBA974264B121500D894D1 /* UIImageExtensions.swift in Sources */,
 				BD2D3226264B1F32008489BF /* KeyboardObserver.swift in Sources */,
+				BDAC95662662A8F100216B35 /* ProfileResponse.swift in Sources */,
 				052B1E4F24C39C030068B701 /* AuthorizationConfigurator.swift in Sources */,
+				BD2D9B87267770B00082BC1A /* SettingsService.swift in Sources */,
 				C7A31AB725EBA6C3008D5E20 /* CameraViewController.swift in Sources */,
+				BD8835EB267CA0FC00D94E1D /* AboutAppTableViewCell.swift in Sources */,
+				BD8835F2267CC35100D94E1D /* SelectCityViewController.swift in Sources */,
 				C75548F725FAEBA800D0D9BE /* AboutChallengeViewController.swift in Sources */,
 				C7A31AD025EBB6FC008D5E20 /* CameraActionViewController.swift in Sources */,
 				052B1E4E24C39C030068B701 /* AuthorizationView.swift in Sources */,
 				C7A31ACC25EBB4DD008D5E20 /* PassThrough.metal in Sources */,
+				BD8835F6267CC37000D94E1D /* SelectCityConfigurator.swift in Sources */,
 				C7FB9AF925EC188D0010CD2C /* NetworkError.swift in Sources */,
+				BDAC956E2662E67600216B35 /* ProfileHeaderCollectionReusableView.swift in Sources */,
 				0521CADF24BBADFC008BB178 /* AppController.swift in Sources */,
+				BDAC957B2663D1B300216B35 /* ProfileSettingsViewController.swift in Sources */,
 				2398F1CA0B1B391FCA8EE4A1 /* ShutterButtonViewController.swift in Sources */,
+				BDF2E750267D4E7400F2ECC7 /* FullscreenPhotoView.swift in Sources */,
+				BDA58FA6267C8E9800A32161 /* AboutAppViewController.swift in Sources */,
+				BD2D9B84267610A50082BC1A /* CountriesService.swift in Sources */,
+				BDA58FA4267C8DF800A32161 /* AboutAppPresenter.swift in Sources */,
 				C7FB9AFF25EC195A0010CD2C /* CitiesService.swift in Sources */,
+				BDAC956A2662B22000216B35 /* ProfileCollectionViewCell.swift in Sources */,
 				BD82297D26502F6D000B286E /* AuthResponse.swift in Sources */,
+				BD2D9B89267770C90082BC1A /* RealmService.swift in Sources */,
+				BD2D9B782675FAE00082BC1A /* SettingsPresenter.swift in Sources */,
+				BDAC957F2663D1BB00216B35 /* ProfileSettingsView.swift in Sources */,
 				C75548D825FAB49700D0D9BE /* ChallengeHeaderView.swift in Sources */,
 				C75548EE25FAE23200D0D9BE /* ChallengeDetailInfoViewController.swift in Sources */,
 				C7FB9B0525EC23310010CD2C /* SafeCollection.swift in Sources */,
 				2398F7342F36A48AFEDECA51 /* DataEngine.swift in Sources */,
+				BDF2E752267D4E8900F2ECC7 /* FullscreenPhotoConfigurator.swift in Sources */,
+				BDF2E759267E244600F2ECC7 /* MainCoordinator.swift in Sources */,
 				C75548F225FAE24E00D0D9BE /* ChallengeDetailInfoView.swift in Sources */,
 				BD8229D92651172F000B286E /* RegistrationViewController.swift in Sources */,
 				BD8229CF26511708000B286E /* RegistrationConfigurator.swift in Sources */,
 				C7FB9AE025EC13C90010CD2C /* MainRequestRouter.swift in Sources */,
+				BDAC95502662882000216B35 /* ProfilePresenter.swift in Sources */,
 				C75548DF25FAC46100D0D9BE /* ChallengesDetailViewController.swift in Sources */,
+				BD8835F0267CC34400D94E1D /* SelectCityPresenter.swift in Sources */,
+				BD2D9B732674B9090082BC1A /* RadioButton.swift in Sources */,
 				2398FC94704549997E8B3F9E /* Photo.swift in Sources */,
 				2398F6CDA780662CF40BF311 /* ChallengeInfoView.swift in Sources */,
 			);

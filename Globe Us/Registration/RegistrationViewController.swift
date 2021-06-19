@@ -12,8 +12,6 @@ import GoogleSignIn
 import FBSDKLoginKit
 
 class RegistrationViewController : UIViewController {
-    
-    var configurator = RegistrationConfiguratorImplementation()
     var presenter: RegistrationPresenter?
     weak var loginView: AuthorizationViewProtocol?
     
@@ -57,7 +55,7 @@ class RegistrationViewController : UIViewController {
     
     override func viewDidLoad(){
         super.viewDidLoad()
-        configurator.configure(viewController: self, loginView: loginView, navigationController: navigationController)
+        
         presenter?.viewDidLoad()
         hideKeyboardWhenTappedAround()
         

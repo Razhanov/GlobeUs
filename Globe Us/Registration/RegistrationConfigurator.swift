@@ -8,13 +8,13 @@
 import UIKit
 
 protocol RegistrationConfigurator {
-    func configure(viewController: RegistrationViewController, loginView: AuthorizationViewProtocol?, navigationController: UINavigationController?)
+    func configure(viewController: RegistrationViewController, loginView: AuthorizationViewProtocol?, mainCoordinator: MainCoordinator?)
 }
 
 class RegistrationConfiguratorImplementation : RegistrationConfigurator {
-    func configure(viewController: RegistrationViewController, loginView: AuthorizationViewProtocol? = nil, navigationController: UINavigationController? = nil) {
+    func configure(viewController: RegistrationViewController, loginView: AuthorizationViewProtocol? = nil, mainCoordinator: MainCoordinator?) {
         let presenter = RegistrationPresenterImplementation(view: viewController)
-        presenter.navigationController = navigationController
+        presenter.mainCoordinator = mainCoordinator
         presenter.loginView = loginView
         viewController.presenter = presenter
     }

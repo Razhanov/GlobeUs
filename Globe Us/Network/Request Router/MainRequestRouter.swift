@@ -9,28 +9,33 @@ import Foundation
 import Alamofire
 
 enum MainRequestRouter: AbstractRequestRouter {
-    case getCities
+    case getCities(countryId: Int)
     case getAllClouds(parameters: Parameters)
     case login(parameters: Parameters)
     case register(parameters: Parameters)
     case signInWithGoogle(parameters: Parameters)
     case signInWithApple(parameters: Parameters)
     case signInWithFacebook(parameters: Parameters)
+    case getCountries(langId: Int)
+    case getProfile
+    case updateProfile(parameters: Parameters)
 
     
     var method: HTTPMethod {
         switch self {
-        case .getCities:
+        case .getCities, .getCountries, .getProfile:
             return .get
         case .getAllClouds, .login, .register, .signInWithGoogle, .signInWithApple, .signInWithFacebook:
             return .post
+        case .updateProfile:
+            return .patch
         }
     }
     
     var path: String {
         switch self {
-        case .getCities:
-            return "city/6"
+        case .getCities(let countryId):
+            return "city/\(countryId)"
         case .getAllClouds:
             return "cloud/city"
         case .login:
@@ -43,16 +48,26 @@ enum MainRequestRouter: AbstractRequestRouter {
             return "v1/auth/apple"
         case .signInWithFacebook:
             return "v1/auth/facebook"
+        case .getCountries(let langId):
+            return "country/\(langId)"
+        case .getProfile, .updateProfile:
+            return "v1/user"
         }
     }
     
     var headers: HTTPHeaders {
         
         switch self {
-        case .getCities, .getAllClouds, .login, .register, .signInWithGoogle, .signInWithApple, .signInWithFacebook:
+        case .getCities, .getAllClouds, .login, .register, .signInWithGoogle, .signInWithApple, .signInWithFacebook, .getCountries:
             return [
                 "Content-Type": "application/json",
                 "Accept": "application/json"
+            ]
+        case .getProfile, .updateProfile:
+            return [
+                "Content-Type": "application/json",
+                "Accept": "application/json",
+                "Authorization": "Bearer \(AuthService.getToken() ?? "")"
             ]
         }
     }
@@ -76,10 +91,10 @@ enum MainRequestRouter: AbstractRequestRouter {
         urlRequest.httpMethod = method.rawValue
         
         switch self {
-        case .getCities:
+        case .getCities, .getCountries, .getProfile:
             urlRequest.headers = headers
             urlRequest = try URLEncoding.default.encode(urlRequest, with: nil)
-        case .getAllClouds(let parameters), .login(let parameters), .register(let parameters), .signInWithGoogle(let parameters), .signInWithApple(let parameters), .signInWithFacebook(let parameters):
+        case .getAllClouds(let parameters), .login(let parameters), .register(let parameters), .signInWithGoogle(let parameters), .signInWithApple(let parameters), .signInWithFacebook(let parameters), .updateProfile(let parameters):
             urlRequest.headers = headers
             urlRequest = try CustomPatchEncding().encode(urlRequest, with: parameters)
         }

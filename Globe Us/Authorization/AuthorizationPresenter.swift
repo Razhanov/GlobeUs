@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-protocol AuthorizationViewProtocol: class {
+protocol AuthorizationViewProtocol: AnyObject {
     func setView()
     func setEmail(email: String)
 }
@@ -25,7 +25,7 @@ protocol AuthorizationPresenter {
 class AuthorizationPresenterImplementation : AuthorizationPresenter {
     
     fileprivate weak var view: AuthorizationViewProtocol?
-    weak var navigationController: UINavigationController?
+    weak var mainCoordinator: MainCoordinator?
     
     init(view: AuthorizationViewProtocol) {
         self.view = view
@@ -36,10 +36,11 @@ class AuthorizationPresenterImplementation : AuthorizationPresenter {
     }
     
     func login(email: String, password: String) {
-        AuthService.login(email: email, password: password) { response in
+        AuthService.login(email: email, password: password) { [weak self] response in
             switch response {
             case .success(let result):
-                print(result.data.accessToken)
+                AuthService.setAccessToken(result.data.accessToken)
+                self?.mainCoordinator?.openProfile()
             case .failure(let error):
                 print(error.localizedDescription)
             }
@@ -47,10 +48,11 @@ class AuthorizationPresenterImplementation : AuthorizationPresenter {
     }
     
     func signInWithGoogle(userId: String) {
-        AuthService.signInWithGoogle(userId: userId) { response in
+        AuthService.signInWithGoogle(userId: userId) { [weak self] response in
             switch response {
             case .success(let result):
-                print(result.data.accessToken)
+                AuthService.setAccessToken(result.data.accessToken)
+                self?.mainCoordinator?.openProfile()
             case .failure(let error):
                 print(error.localizedDescription)
             }
@@ -58,10 +60,11 @@ class AuthorizationPresenterImplementation : AuthorizationPresenter {
     }
     
     func signInWithApple(userId: String) {
-        AuthService.signInWithApple(userId: userId) { response in
+        AuthService.signInWithApple(userId: userId) { [weak self] response in
             switch response {
             case .success(let result):
-                print(result.data.accessToken)
+                AuthService.setAccessToken(result.data.accessToken)
+                self?.mainCoordinator?.openProfile()
             case .failure(let error):
                 print(error.localizedDescription)
             }
@@ -69,10 +72,11 @@ class AuthorizationPresenterImplementation : AuthorizationPresenter {
     }
     
     func signInWithFacebook(userId: String) {
-        AuthService.signInWithFacebook(userId: userId) { response in
+        AuthService.signInWithFacebook(userId: userId) { [weak self] response in
             switch response {
             case .success(let result):
-                print(result.data.accessToken)
+                AuthService.setAccessToken(result.data.accessToken)
+                self?.mainCoordinator?.openProfile()
             case .failure(let error):
                 print(error.localizedDescription)
             }
@@ -80,9 +84,6 @@ class AuthorizationPresenterImplementation : AuthorizationPresenter {
     }
     
     func openRegistration() {
-        let registerVC = RegistrationViewController()
-        registerVC.loginView = view
-        
-        navigationController?.pushViewController(registerVC, animated: true)
+        mainCoordinator?.openRegistration(loginView: view)
     }
 }
