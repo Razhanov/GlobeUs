@@ -306,7 +306,7 @@ final class SettingsView: UIView {
             make.top.equalTo(aboutAppButton.snp.bottom).offset(24)
             make.leading.equalTo(safeAreaLayoutGuide).inset(20)
             make.trailing.lessThanOrEqualTo(safeAreaLayoutGuide).inset(16)
-            make.bottom.equalToSuperview().inset(24)
+            make.bottom.equalToSuperview().inset(32)
         }
     }
 }

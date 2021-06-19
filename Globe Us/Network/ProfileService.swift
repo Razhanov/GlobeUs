@@ -29,4 +29,8 @@ class ProfileService {
         
         mainFactory?.updateProfile(firstName: firstName, lastName: lastName, birthday: birthday, targetPlace: targetPlace, photoUrl: nil, email: nil, completion: completion)
     }
+    
+    static func changePassword(oldPassword: String, newPassword: String, completion: @escaping (Result<Void, Error>) -> Void) {
+        completion(.success(()))
+    }
 }

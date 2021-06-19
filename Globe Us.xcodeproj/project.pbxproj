@@ -86,6 +86,10 @@
 		BDF2E752267D4E8900F2ECC7 /* FullscreenPhotoConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF2E751267D4E8900F2ECC7 /* FullscreenPhotoConfigurator.swift */; };
 		BDF2E757267E241400F2ECC7 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF2E756267E241400F2ECC7 /* Coordinator.swift */; };
 		BDF2E759267E244600F2ECC7 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF2E758267E244600F2ECC7 /* MainCoordinator.swift */; };
+		BDF2E75C267E46C200F2ECC7 /* ChangePasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF2E75B267E46C200F2ECC7 /* ChangePasswordPresenter.swift */; };
+		BDF2E75E267E470900F2ECC7 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF2E75D267E470900F2ECC7 /* ChangePasswordViewController.swift */; };
+		BDF2E760267E471600F2ECC7 /* ChangePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF2E75F267E471600F2ECC7 /* ChangePasswordView.swift */; };
+		BDF2E762267E472B00F2ECC7 /* ChangePasswordConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF2E761267E472B00F2ECC7 /* ChangePasswordConfigurator.swift */; };
 		C72C9F7425F988FA00A0A6F5 /* ChallengesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72C9F7325F988FA00A0A6F5 /* ChallengesViewController.swift */; };
 		C72C9F7A25F9891900A0A6F5 /* ChallengesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72C9F7925F9891900A0A6F5 /* ChallengesView.swift */; };
 		C72C9F7E25F98F9100A0A6F5 /* ChallengeInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72C9F7D25F98F9100A0A6F5 /* ChallengeInfoTableViewCell.swift */; };
@@ -246,6 +250,10 @@
 		BDF2E751267D4E8900F2ECC7 /* FullscreenPhotoConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullscreenPhotoConfigurator.swift; sourceTree = "<group>"; };
 		BDF2E756267E241400F2ECC7 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		BDF2E758267E244600F2ECC7 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		BDF2E75B267E46C200F2ECC7 /* ChangePasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordPresenter.swift; sourceTree = "<group>"; };
+		BDF2E75D267E470900F2ECC7 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
+		BDF2E75F267E471600F2ECC7 /* ChangePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordView.swift; sourceTree = "<group>"; };
+		BDF2E761267E472B00F2ECC7 /* ChangePasswordConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordConfigurator.swift; sourceTree = "<group>"; };
 		C72C9F7325F988FA00A0A6F5 /* ChallengesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengesViewController.swift; sourceTree = "<group>"; };
 		C72C9F7925F9891900A0A6F5 /* ChallengesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengesView.swift; sourceTree = "<group>"; };
 		C72C9F7D25F98F9100A0A6F5 /* ChallengeInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeInfoTableViewCell.swift; sourceTree = "<group>"; };
@@ -454,6 +462,7 @@
 		BD2D9B762675FAB20082BC1A /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				BDF2E75A267E462900F2ECC7 /* ChangePassword */,
 				BD8835EE267CC32E00D94E1D /* SelectCity */,
 				BDA58FA2267C8DCF00A32161 /* AboutApp */,
 				BD2D9B8A26777ED40082BC1A /* Cells */,
@@ -578,6 +587,17 @@
 				BDF2E758267E244600F2ECC7 /* MainCoordinator.swift */,
 			);
 			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		BDF2E75A267E462900F2ECC7 /* ChangePassword */ = {
+			isa = PBXGroup;
+			children = (
+				BDF2E75B267E46C200F2ECC7 /* ChangePasswordPresenter.swift */,
+				BDF2E75D267E470900F2ECC7 /* ChangePasswordViewController.swift */,
+				BDF2E75F267E471600F2ECC7 /* ChangePasswordView.swift */,
+				BDF2E761267E472B00F2ECC7 /* ChangePasswordConfigurator.swift */,
+			);
+			path = ChangePassword;
 			sourceTree = "<group>";
 		};
 		C72C9F7225F988D700A0A6F5 /* Challenge */ = {
@@ -1003,6 +1023,7 @@
 				BDAC95832663D1C500216B35 /* ProfileSettingsConfigurator.swift in Sources */,
 				0521CAE824BBB0DA008BB178 /* MainConfigurator.swift in Sources */,
 				C7FB9AC425EC05AC0010CD2C /* ViewControllerExtensions.swift in Sources */,
+				BDF2E760267E471600F2ECC7 /* ChangePasswordView.swift in Sources */,
 				C75548E725FAC98400D0D9BE /* ChallengesDetailTableViewCell.swift in Sources */,
 				BD2D9B8C26777EF80082BC1A /* SettingsCityCollectionViewCell.swift in Sources */,
 				C7FB9AD325EC11630010CD2C /* AbstractRequestRouter.swift in Sources */,
@@ -1019,6 +1040,7 @@
 				052B1E4D24C39C030068B701 /* AuthorizationViewController.swift in Sources */,
 				C72C9F7E25F98F9100A0A6F5 /* ChallengeInfoTableViewCell.swift in Sources */,
 				C7FB9AEC25EC159D0010CD2C /* SessionManagerFactory.swift in Sources */,
+				BDF2E762267E472B00F2ECC7 /* ChangePasswordConfigurator.swift in Sources */,
 				BDA58FAA267C8EBC00A32161 /* AboutAppConfigurator.swift in Sources */,
 				0521CAF324BBDAED008BB178 /* CameraController.swift in Sources */,
 				BDAC95752663D1A600216B35 /* ProfileSettingsPresenter.swift in Sources */,
@@ -1034,7 +1056,9 @@
 				BD8835F4267CC35E00D94E1D /* SelectCityView.swift in Sources */,
 				BD2D9B8226760D790082BC1A /* CountriesResponse.swift in Sources */,
 				051D060424BE0EC400E61520 /* AccelerometerOrientation.swift in Sources */,
+				BDF2E75E267E470900F2ECC7 /* ChangePasswordViewController.swift in Sources */,
 				BD8229E12651173D000B286E /* RegistrationPresenter.swift in Sources */,
+				BDF2E75C267E46C200F2ECC7 /* ChangePasswordPresenter.swift in Sources */,
 				BDCBA978264B160F00D894D1 /* UIColorExtensions.swift in Sources */,
 				BD2D9B7E2675FB180082BC1A /* SettingsConfigurator.swift in Sources */,
 				C72C9F7425F988FA00A0A6F5 /* ChallengesViewController.swift in Sources */,

@@ -1,27 +1,22 @@
 //
-//  ProfileSettingsViewController.swift
+//  ChangePasswordViewController.swift
 //  Globe Us
 //
-//  Created by Михаил Беленко on 30.05.2021.
+//  Created by Михаил Беленко on 19.06.2021.
 //
 
 import UIKit
 
-final class ProfileSettingsViewController: UIViewController {
-    var presenter: ProfileSettingsPresenter?
+final class ChangePasswordViewController: UIViewController {
+    var presenter: ChangePasswordPresenter?
     
     private let keyboardObserver = KeyboardObserver()
     
-    private lazy var mainView: ProfileSettingsView = {
-        let view = ProfileSettingsView()
+    private lazy var mainView: ChangePasswordView = {
+        let view = ChangePasswordView()
         
-        view.genderButtonsStackView.arrangedSubviews.forEach { subview in
-            if let button = subview as? UIButton {
-                button.addTarget(self, action: #selector(changeGenderTapped), for: .touchUpInside)
-            }
-        }
-        
-        view.datePickerView.addTarget(self, action: #selector(handleDatePicker), for: .valueChanged)
+        view.visibilityOldPasswordButton.addTarget(self, action: #selector(changeVisibilityButtonClick), for: .touchUpInside)
+        view.visibilityNewPasswordButton.addTarget(self, action: #selector(changeVisibilityButtonClick), for: .touchUpInside)
         
         return view
     }()
@@ -68,7 +63,7 @@ final class ProfileSettingsViewController: UIViewController {
             .foregroundColor: UIColor(colorNamed: .textColor),
             .font: UIFont.systemFont(ofSize: 18)
         ]
-        title = "Настройки профиля"
+        title = "Изменить пароль"
         
         let doneButton = UIButton()
         doneButton.setImage(UIImage(iconNamed: .doneIcon), for: .normal)
@@ -81,32 +76,24 @@ final class ProfileSettingsViewController: UIViewController {
     }
     
     @objc private func doneButtonClick() {
-        guard let firstName = mainView.firstNameTextField.text,
-              let lastName = mainView.lastNameTextField.text,
-              let gender = mainView.genderButtonsStackView.arrangedSubviews.map({ $0 as? UIButton }).first(where: { $0?.isSelected ?? false })??.tag,
-              let homeCity = mainView.homeCityTextField.text,
-              let birthday = mainView.birthdayTextField.text else {
+        guard let oldPassword = mainView.oldPasswordTextField.text,
+              let newPassword = mainView.newPasswordTextField.text else {
             return
         }
         
-        presenter?.doneAction(firstName: firstName, lastName: lastName, gender: gender, homeCity: homeCity, birthday: birthday)
+        presenter?.doneAction(oldPassword: oldPassword, newPassword: newPassword)
     }
     
-    @objc private func changeGenderTapped(_ sender : UIButton){
-        mainView.genderButtonsStackView.arrangedSubviews.forEach { subview in
-            if let button = subview as? UIButton {
-                button.isSelected = button.tag == sender.tag
-            }
+    @objc private func changeVisibilityButtonClick(sender: UIButton) {
+        if sender.tag == 0 {
+            mainView.changeVisibilityOldPassword()
         }
-    }
-    
-    @objc func handleDatePicker(sender: UIDatePicker) {
-        mainView.birthdayTextField.text = ProfileService.dateFormatter.string(from: sender.date)
+        
+        if sender.tag == 1 {
+            mainView.changeVisibilityNewPassword()
+        }
     }
 }
 
-extension ProfileSettingsViewController: ProfileSettingsViewProtocol {
-    func setData(_ data: ProfileResponse) {
-        mainView.setData(data)
-    }
+extension ChangePasswordViewController: ChangePasswordViewProtocol {
 }

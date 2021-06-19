@@ -12,8 +12,6 @@ import GoogleSignIn
 import FBSDKLoginKit
 
 class AuthorizationViewController : UIViewController {
-    
-    var configurator = AuthorizationConfiguratorImplementation()
     var presenter: AuthorizationPresenter?
     
     private let keyboardObserver = KeyboardObserver()

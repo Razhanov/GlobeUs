@@ -8,7 +8,6 @@
 import UIKit
 
 final class SettingsViewController: UIViewController {
-    var configurator = SettingsConfiguratorImplementation()
     var presenter: SettingsPresenter?
     
     private let keyboardObserver = KeyboardObserver()
@@ -35,6 +34,7 @@ final class SettingsViewController: UIViewController {
         view.aboutAppButton.addTarget(self, action: #selector(aboutAppButtonClick), for: .touchUpInside)
         view.selectCityButton.addTarget(self, action: #selector(showAllCitiesButtonClick), for: .touchUpInside)
         view.exitButton.addTarget(self, action: #selector(exitButtonClick), for: .touchUpInside)
+        view.changePasswordButton.addTarget(self, action: #selector(changePasswordButtonClick), for: .touchUpInside)
         
         return view
     }()
@@ -198,6 +198,10 @@ final class SettingsViewController: UIViewController {
     
     @objc func exitButtonClick() {
         presenter?.exit()
+    }
+    
+    @objc func changePasswordButtonClick() {
+        presenter?.openChangePasswordScreen()
     }
 }
 

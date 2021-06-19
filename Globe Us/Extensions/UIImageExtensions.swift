@@ -47,6 +47,8 @@ enum IconIdentifier: String {
     case downloadIcon = "download_icon"
     case downloadDoneIcon = "download_done_icon"
     case logoImage = "logo_image"
+    case eyeVisibilityOn = "eye_visibility_on"
+    case eyeVisibilityOff = "eye_visibility_off"
     // TODO: Need replace. Resourse from internet
     case loadIcon = "load_icon"
 }

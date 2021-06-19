@@ -28,6 +28,7 @@ protocol SettingsPresenter: LoadCityDelegate {
     func openAboutAppScreen()
     func openSelectCityScreen()
     func exit()
+    func openChangePasswordScreen()
 }
 
 final class SettingsPresenterImplementation: SettingsPresenter {
@@ -158,5 +159,9 @@ final class SettingsPresenterImplementation: SettingsPresenter {
     func exit() {
         AuthService.deleteToken()
         mainCoordinator?.openLogin()
+    }
+    
+    func openChangePasswordScreen() {
+        mainCoordinator?.openChangePassword()
     }
 }

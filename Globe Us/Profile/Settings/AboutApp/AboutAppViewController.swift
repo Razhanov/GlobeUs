@@ -8,7 +8,6 @@
 import UIKit
 
 final class AboutAppViewController: UIViewController {
-    var configurator = AboutAppConfiguratorImplementation()
     var presenter: AboutAppPresenter?
     
     private let reuseIdentifier = "AboutAppTableViewCell"

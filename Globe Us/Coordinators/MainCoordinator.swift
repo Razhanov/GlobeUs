@@ -15,6 +15,7 @@ protocol MainCoordinator: Coordinator {
     func openSettings()
     func openAboutApp()
     func openSelectCity(countryId: Int, cities: [City])
+    func openChangePassword()
 }
 
 final class MainCoordinatorImplementation: MainCoordinator {
@@ -112,5 +113,14 @@ final class MainCoordinatorImplementation: MainCoordinator {
         
         
         navigationController.pushViewController(selectCityVC, animated: true)
+    }
+    
+    func openChangePassword() {
+        let changePasswordVC = ChangePasswordViewController()
+        let configurator = ChangePasswordConfiguratorImplementation()
+        
+        configurator.configure(viewController: changePasswordVC, mainCoordinator: self)
+        
+        navigationController.pushViewController(changePasswordVC, animated: true)
     }
 }

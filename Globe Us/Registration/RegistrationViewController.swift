@@ -12,8 +12,6 @@ import GoogleSignIn
 import FBSDKLoginKit
 
 class RegistrationViewController : UIViewController {
-    
-    var configurator = RegistrationConfiguratorImplementation()
     var presenter: RegistrationPresenter?
     weak var loginView: AuthorizationViewProtocol?
     

@@ -12,8 +12,6 @@ enum ProfilePhotoSource: Int {
 }
 
 final class ProfileViewController: UIViewController {
-    
-    var configurator = ProfileConfiguratorImplementation()
     var presenter: ProfilePresenter?
     
     private let headerReuseIdentifier: String = "ProfileHeaderCollectionReusableView"
