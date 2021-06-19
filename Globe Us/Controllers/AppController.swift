@@ -19,6 +19,7 @@ final class AppController {
             }
         }
     }
+    var coordinator: MainCoordinator?
     
     func show(in window: UIWindow?) {
         guard let window = window else {
@@ -44,7 +45,11 @@ final class AppController {
 //        picker.cameraViewTransform = CGAffineTransform(translationX: 0, y: (screenSize.height - cameraHeight) / 2.0)
 //        picker.cameraViewTransform = CGAffineTransform(scaleX: scale, y: scale)
         
-        rootViewController = UINavigationController(rootViewController: ProfileViewController())//CameraViewController()//MainViewController()
+        let navController = UINavigationController()
+        coordinator = MainCoordinatorImplementation(navigationController: navController)
+        coordinator?.start()
+        
+        rootViewController = navController
     }
     
 }

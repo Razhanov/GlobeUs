@@ -20,18 +20,17 @@ protocol AboutAppPresenter {
 final class AboutAppPresenterImplementation: AboutAppPresenter {
     
     fileprivate weak var view: AboutAppViewProtocol?
-    fileprivate weak var navigationController: UINavigationController?
+    weak var mainCoordinator: MainCoordinator?
     
-    init(view: AboutAppViewProtocol, navigationController: UINavigationController?) {
+    init(view: AboutAppViewProtocol) {
         self.view = view
-        self.navigationController = navigationController
     }
     
     func viewDidLoad() {
     }
     
     func backAction() {
-        navigationController?.popViewController(animated: true)
+        mainCoordinator?.openPreviousViewController()
     }
     
     func configureCell(_ cell: AboutAppTableViewCell, row: Int) {

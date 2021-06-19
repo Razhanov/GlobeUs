@@ -62,7 +62,6 @@ final class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configurator.configure(viewController: self)
         presenter?.viewDidLoad()
     }
     

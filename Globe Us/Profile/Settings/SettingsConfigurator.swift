@@ -8,12 +8,14 @@
 import Foundation
 
 protocol SettingsConfigurator {
-    func configure(viewController: SettingsViewController)
+    func configure(viewController: SettingsViewController, mainCoordinator: MainCoordinator?)
 }
 
 final class SettingsConfiguratorImplementation : SettingsConfigurator {
-    func configure(viewController: SettingsViewController) {
-        let presenter = SettingsPresenterImplementation(view: viewController, navigationController: viewController.navigationController)
+    func configure(viewController: SettingsViewController, mainCoordinator: MainCoordinator?) {
+        let presenter = SettingsPresenterImplementation(view: viewController)
+        presenter.mainCoordinator = mainCoordinator
+        
         viewController.presenter = presenter
     }
 }

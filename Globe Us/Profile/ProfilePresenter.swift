@@ -32,8 +32,8 @@ protocol ProfilePresenter {
 final class ProfilePresenterImplementation: ProfilePresenter {
     
     weak var viewController: UIViewController?
+    weak var mainCoordinator: MainCoordinator?
     fileprivate weak var view: ProfileViewProtocol?
-    fileprivate weak var navigationController: UINavigationController?
     private var data: ProfileResponse? {
         didSet {
             if let data = data {
@@ -42,9 +42,8 @@ final class ProfilePresenterImplementation: ProfilePresenter {
         }
     }
     
-    init(view: ProfileViewProtocol, navigationController: UINavigationController?) {
+    init(view: ProfileViewProtocol) {
         self.view = view
-        self.navigationController = navigationController
     }
     
     func viewWillAppear() {
@@ -111,15 +110,11 @@ final class ProfilePresenterImplementation: ProfilePresenter {
     }
     
     func openProfileSettingsScreen() {
-        let profileSettingsVC = ProfileSettingsViewController()
-        
-        navigationController?.pushViewController(profileSettingsVC, animated: true)
+        mainCoordinator?.openProfileSettings()
     }
     
     func openSettingsScreen() {
-        let settingsVC = SettingsViewController()
-        
-        navigationController?.pushViewController(settingsVC, animated: true)
+        mainCoordinator?.openSettings()
     }
     
     func openImage(indexPath: IndexPath) {

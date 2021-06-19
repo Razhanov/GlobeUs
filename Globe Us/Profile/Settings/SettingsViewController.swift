@@ -34,6 +34,7 @@ final class SettingsViewController: UIViewController {
         
         view.aboutAppButton.addTarget(self, action: #selector(aboutAppButtonClick), for: .touchUpInside)
         view.selectCityButton.addTarget(self, action: #selector(showAllCitiesButtonClick), for: .touchUpInside)
+        view.exitButton.addTarget(self, action: #selector(exitButtonClick), for: .touchUpInside)
         
         return view
     }()
@@ -76,7 +77,6 @@ final class SettingsViewController: UIViewController {
         
         configureNavigationBar()
         
-        configurator.configure(viewController: self)
         presenter?.viewDidLoad()
         
         hideKeyboardWhenTappedAround()
@@ -194,6 +194,10 @@ final class SettingsViewController: UIViewController {
     
     @objc func showAllCitiesButtonClick() {
         presenter?.openSelectCityScreen()
+    }
+    
+    @objc func exitButtonClick() {
+        presenter?.exit()
     }
 }
 

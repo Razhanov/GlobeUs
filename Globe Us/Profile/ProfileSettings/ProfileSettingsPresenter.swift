@@ -21,7 +21,7 @@ protocol ProfileSettingsPresenter {
 final class ProfileSettingsPresenterImplementation: ProfileSettingsPresenter {
     
     fileprivate weak var view: ProfileSettingsViewProtocol?
-    fileprivate weak var navigationController: UINavigationController?
+    weak var mainCoordinator: MainCoordinator?
     
     private var data: ProfileResponse? {
         didSet {
@@ -31,9 +31,8 @@ final class ProfileSettingsPresenterImplementation: ProfileSettingsPresenter {
         }
     }
     
-    init(view: ProfileSettingsViewProtocol, navigationController: UINavigationController?) {
+    init(view: ProfileSettingsViewProtocol) {
         self.view = view
-        self.navigationController = navigationController
     }
     
     func viewDidLoad() {
@@ -48,14 +47,14 @@ final class ProfileSettingsPresenterImplementation: ProfileSettingsPresenter {
     }
     
     func backAction() {
-        navigationController?.popViewController(animated: true)
+        mainCoordinator?.openPreviousViewController()
     }
     
     func doneAction(firstName: String, lastName: String, gender: Int, homeCity: String, birthday: String) {
         ProfileService.changeProfile(firstName: firstName, lastName: lastName, gender: gender, targetPlace: homeCity, birthday: birthday) { [weak self] response in
             switch response {
             case .success():
-                self?.navigationController?.popViewController(animated: true)
+                self?.mainCoordinator?.openPreviousViewController()
             case .failure(let error):
                 print(error.localizedDescription)
             }

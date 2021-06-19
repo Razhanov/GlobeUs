@@ -11,7 +11,23 @@ class AuthService {
     private static let factory = RequestFactory()
     private static var mainFactory: MainRequestFactory?
     
-    static var accessToken: String? = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJjMzg4MDliMy1kNzU4LTRhMGItYWRlNC01OGRiZDJkODFmZWYiLCJ0eXBlIjoiYWNjZXNzIiwiaWF0IjoxNjI0MTAxMzMxLCJleHAiOjE2MjQ1MzMzMzF9.EJRi_oGC6avUmgtyTJvdt_X2epGVyC3REtMABWhrrJo"
+    private static let accessTokenKey = "access_token"
+    
+    static func getToken() -> String? {
+        guard let token = UserDefaults.standard.value(forKeyPath: accessTokenKey) as? String else {
+            return nil
+        }
+        
+        return token
+    }
+    
+    static func setAccessToken(_ accessToken: String) {
+        UserDefaults.standard.setValue(accessToken, forKey: accessTokenKey)
+    }
+    
+    static func deleteToken() {
+        UserDefaults.standard.removeObject(forKey: accessTokenKey)
+    }
     
     static func login(email: String, password: String, completion: @escaping (Result<AuthFullResponse, Error>) -> Void) {
         mainFactory = factory.makeMainFactory()

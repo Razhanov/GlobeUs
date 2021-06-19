@@ -67,7 +67,7 @@ enum MainRequestRouter: AbstractRequestRouter {
             return [
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "Authorization": AuthService.accessToken ?? ""
+                "Authorization": "Bearer \(AuthService.getToken() ?? "")"
             ]
         }
     }

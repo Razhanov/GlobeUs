@@ -21,7 +21,6 @@ protocol FullscreenPhotoPresenter {
 final class FullscreenPhotoPresenterImplementation: FullscreenPhotoPresenter {
     
     fileprivate weak var view: FullscreenPhotoViewProtocol?
-    fileprivate weak var navigationController: UINavigationController?
     
     fileprivate let urlImage: String
     

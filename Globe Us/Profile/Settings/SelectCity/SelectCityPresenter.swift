@@ -23,7 +23,7 @@ protocol SelectCityPresenter: LoadCityDelegate {
 final class SelectCityPresenterImplementation: SelectCityPresenter {
     
     fileprivate weak var view: SelectCityViewProtocol?
-    fileprivate weak var navigationController: UINavigationController?
+    weak var mainCoordinator: MainCoordinator?
     fileprivate let countryId: Int
     
     fileprivate var loadedCities: Set<Int> = []
@@ -34,9 +34,8 @@ final class SelectCityPresenterImplementation: SelectCityPresenter {
         }
     }
     
-    init(view: SelectCityViewProtocol, navigationController: UINavigationController?, countryId: Int, cities: [City]) {
+    init(view: SelectCityViewProtocol, countryId: Int, cities: [City]) {
         self.view = view
-        self.navigationController = navigationController
         self.countryId = countryId
         self.cities = cities
     }
@@ -66,7 +65,7 @@ final class SelectCityPresenterImplementation: SelectCityPresenter {
     }
     
     func backAction() {
-        navigationController?.popViewController(animated: true)
+        mainCoordinator?.openPreviousViewController()
     }
     
     func configureCell(_ cell: SelectCityTableViewCell, row: Int) {

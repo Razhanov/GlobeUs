@@ -30,7 +30,6 @@ final class AboutAppViewController: UIViewController {
         
         configureNavigationBar()
         
-        configurator.configure(viewController: self)
         presenter?.viewDidLoad()
     }
     

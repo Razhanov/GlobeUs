@@ -57,7 +57,7 @@ class RegistrationViewController : UIViewController {
     
     override func viewDidLoad(){
         super.viewDidLoad()
-        configurator.configure(viewController: self, loginView: loginView, navigationController: navigationController)
+        
         presenter?.viewDidLoad()
         hideKeyboardWhenTappedAround()
         

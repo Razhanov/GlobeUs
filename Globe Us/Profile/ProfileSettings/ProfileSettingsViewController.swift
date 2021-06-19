@@ -54,7 +54,6 @@ final class ProfileSettingsViewController: UIViewController {
         
         configureNavigationBar()
         
-        configurator.configure(viewController: self)
         presenter?.viewDidLoad()
         
         hideKeyboardWhenTappedAround()

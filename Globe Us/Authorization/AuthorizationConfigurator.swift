@@ -8,13 +8,13 @@
 import UIKit
 
 protocol AuthorizationConfigurator {
-    func configure(viewController: AuthorizationViewController, navigationController: UINavigationController?)
+    func configure(viewController: AuthorizationViewController, mainCoordinator: MainCoordinator?)
 }
 
 class AuthorizationConfiguratorImplementation : AuthorizationConfigurator {
-    func configure(viewController: AuthorizationViewController, navigationController: UINavigationController? = nil) {
+    func configure(viewController: AuthorizationViewController, mainCoordinator: MainCoordinator?) {
         let presenter = AuthorizationPresenterImplementation(view: viewController)
-        presenter.navigationController = navigationController
+        presenter.mainCoordinator = mainCoordinator
         viewController.presenter = presenter
     }
 }

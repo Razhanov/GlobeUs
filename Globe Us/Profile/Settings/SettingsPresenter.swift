@@ -27,12 +27,13 @@ protocol SettingsPresenter: LoadCityDelegate {
     func configureCell(_ cell: SettingsCityCollectionViewCell, row: Int, selectedCountryRow: Int)
     func openAboutAppScreen()
     func openSelectCityScreen()
+    func exit()
 }
 
 final class SettingsPresenterImplementation: SettingsPresenter {
     
     fileprivate weak var view: SettingsViewProtocol?
-    fileprivate weak var navigationController: UINavigationController?
+    weak var mainCoordinator: MainCoordinator?
     
     fileprivate var loadedCities: [Int: Set<Int>] = [:] {
         didSet {
@@ -47,9 +48,8 @@ final class SettingsPresenterImplementation: SettingsPresenter {
         }
     }
     
-    init(view: SettingsViewProtocol, navigationController: UINavigationController?) {
+    init(view: SettingsViewProtocol) {
         self.view = view
-        self.navigationController = navigationController
     }
     
     func viewWillAppear() {
@@ -62,7 +62,7 @@ final class SettingsPresenterImplementation: SettingsPresenter {
     }
     
     func backAction() {
-        navigationController?.popViewController(animated: true)
+        mainCoordinator?.openPreviousViewController()
     }
     
     func doneAction(selectedCountryRow: Int, mainScreenAppRawValue: Int) {
@@ -71,7 +71,7 @@ final class SettingsPresenterImplementation: SettingsPresenter {
         }
         
         SettingsService.shared.applySettings(countryId: countries[selectedCountryRow].id, mainScreenAppRawValue: mainScreenAppRawValue)
-        navigationController?.popViewController(animated: true)
+        mainCoordinator?.openPreviousViewController()
     }
     
     func loadCountries() {
@@ -137,9 +137,7 @@ final class SettingsPresenterImplementation: SettingsPresenter {
     }
     
     func openAboutAppScreen() {
-        let aboutAppVC = AboutAppViewController()
-        
-        navigationController?.pushViewController(aboutAppVC, animated: true)
+        mainCoordinator?.openAboutApp()
     }
     
     func openSelectCityScreen() {
@@ -147,12 +145,7 @@ final class SettingsPresenterImplementation: SettingsPresenter {
             return
         }
         
-        let selectCityVC = SelectCityViewController()
-        let configurator = SelectCityConfiguratorImplementation()
-        
-        configurator.configure(viewController: selectCityVC, navigationController: navigationController, countryId: country.id, cities: country.cities)
-        
-        navigationController?.pushViewController(selectCityVC, animated: true)
+        mainCoordinator?.openSelectCity(countryId: country.id, cities: country.cities)
     }
     
     func loadCity(_ city: City, completition: () -> ()) {
@@ -160,5 +153,10 @@ final class SettingsPresenterImplementation: SettingsPresenter {
         configureLoadedCities()
         
         completition()
+    }
+    
+    func exit() {
+        AuthService.deleteToken()
+        mainCoordinator?.openLogin()
     }
 }

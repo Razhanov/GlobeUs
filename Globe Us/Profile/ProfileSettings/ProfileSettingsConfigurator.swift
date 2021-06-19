@@ -8,12 +8,14 @@
 import Foundation
 
 protocol ProfileSettingsConfigurator {
-    func configure(viewController: ProfileSettingsViewController)
+    func configure(viewController: ProfileSettingsViewController, mainCoordinator: MainCoordinator?)
 }
 
 final class ProfileSettingsConfiguratorImplementation : ProfileSettingsConfigurator {
-    func configure(viewController: ProfileSettingsViewController) {
-        let presenter = ProfileSettingsPresenterImplementation(view: viewController, navigationController: viewController.navigationController)
+    func configure(viewController: ProfileSettingsViewController, mainCoordinator: MainCoordinator?) {
+        let presenter = ProfileSettingsPresenterImplementation(view: viewController)
+        presenter.mainCoordinator = mainCoordinator
+        
         viewController.presenter = presenter
     }
 }

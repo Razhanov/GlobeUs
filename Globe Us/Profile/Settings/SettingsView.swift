@@ -18,6 +18,7 @@ final class SettingsView: UIView {
     private(set) lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.showsVerticalScrollIndicator = false
+        scrollView.contentInsetAdjustmentBehavior = .never
         return scrollView
     }()
     
@@ -219,7 +220,7 @@ final class SettingsView: UIView {
     
     private func setupConstraints() {
         scrollView.snp.makeConstraints { make in
-            make.edges.equalTo(safeAreaLayoutGuide)
+            make.edges.equalToSuperview()
         }
         
         selectCountryLabel.snp.makeConstraints { make in
@@ -262,14 +263,14 @@ final class SettingsView: UIView {
         
         bottomView.snp.makeConstraints { make in
             make.top.greaterThanOrEqualTo(citiesCollectionView.snp.bottom).offset(32)
-            make.leading.trailing.equalTo(safeAreaLayoutGuide)
-            bottomViewConstraint = make.bottom.equalTo(safeAreaLayoutGuide).priority(.high).constraint
+            make.leading.trailing.equalTo(self)
+            bottomViewConstraint = make.bottom.equalTo(self).priority(.high).constraint
             make.bottom.equalToSuperview()
         }
         
         selectMainScreenAppLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(24)
-            make.leading.trailing.equalToSuperview().inset(16)
+            make.leading.trailing.equalTo(safeAreaLayoutGuide).inset(16)
         }
         
         selectMainScreenAppScrollView.snp.makeConstraints { make in
@@ -280,31 +281,31 @@ final class SettingsView: UIView {
         
         selectMainScreenAppButtonsStackView.snp.makeConstraints { make in
             make.top.bottom.equalToSuperview()
-            make.leading.trailing.equalToSuperview().inset(16)
+            make.leading.trailing.equalTo(safeAreaLayoutGuide).inset(16)
         }
         
         changePasswordButton.snp.makeConstraints { make in
             make.top.equalTo(selectMainScreenAppScrollView.snp.bottom).offset(32)
-            make.leading.equalToSuperview().inset(16)
-            make.trailing.lessThanOrEqualToSuperview().inset(16)
+            make.leading.equalTo(safeAreaLayoutGuide).inset(16)
+            make.trailing.lessThanOrEqualTo(safeAreaLayoutGuide).inset(16)
         }
         
         changeLocationButton.snp.makeConstraints { make in
             make.top.equalTo(changePasswordButton.snp.bottom).offset(24)
-            make.leading.equalToSuperview().inset(16)
-            make.trailing.lessThanOrEqualToSuperview().inset(16)
+            make.leading.equalTo(safeAreaLayoutGuide).inset(16)
+            make.trailing.lessThanOrEqualTo(safeAreaLayoutGuide).inset(16)
         }
         
         aboutAppButton.snp.makeConstraints { make in
             make.top.equalTo(changeLocationButton.snp.bottom).offset(24)
-            make.leading.equalToSuperview().inset(20)
-            make.trailing.lessThanOrEqualToSuperview().inset(16)
+            make.leading.equalTo(safeAreaLayoutGuide).inset(20)
+            make.trailing.lessThanOrEqualTo(safeAreaLayoutGuide).inset(16)
         }
         
         exitButton.snp.makeConstraints { make in
             make.top.equalTo(aboutAppButton.snp.bottom).offset(24)
-            make.leading.equalToSuperview().inset(20)
-            make.trailing.lessThanOrEqualToSuperview().inset(16)
+            make.leading.equalTo(safeAreaLayoutGuide).inset(20)
+            make.trailing.lessThanOrEqualTo(safeAreaLayoutGuide).inset(16)
             make.bottom.equalToSuperview().inset(24)
         }
     }

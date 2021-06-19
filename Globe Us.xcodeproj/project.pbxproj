@@ -84,6 +84,8 @@
 		BDF2E74E267D4E6300F2ECC7 /* FullscreenPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF2E74D267D4E6300F2ECC7 /* FullscreenPhotoViewController.swift */; };
 		BDF2E750267D4E7400F2ECC7 /* FullscreenPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF2E74F267D4E7400F2ECC7 /* FullscreenPhotoView.swift */; };
 		BDF2E752267D4E8900F2ECC7 /* FullscreenPhotoConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF2E751267D4E8900F2ECC7 /* FullscreenPhotoConfigurator.swift */; };
+		BDF2E757267E241400F2ECC7 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF2E756267E241400F2ECC7 /* Coordinator.swift */; };
+		BDF2E759267E244600F2ECC7 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF2E758267E244600F2ECC7 /* MainCoordinator.swift */; };
 		C72C9F7425F988FA00A0A6F5 /* ChallengesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72C9F7325F988FA00A0A6F5 /* ChallengesViewController.swift */; };
 		C72C9F7A25F9891900A0A6F5 /* ChallengesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72C9F7925F9891900A0A6F5 /* ChallengesView.swift */; };
 		C72C9F7E25F98F9100A0A6F5 /* ChallengeInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72C9F7D25F98F9100A0A6F5 /* ChallengeInfoTableViewCell.swift */; };
@@ -242,6 +244,8 @@
 		BDF2E74D267D4E6300F2ECC7 /* FullscreenPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullscreenPhotoViewController.swift; sourceTree = "<group>"; };
 		BDF2E74F267D4E7400F2ECC7 /* FullscreenPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullscreenPhotoView.swift; sourceTree = "<group>"; };
 		BDF2E751267D4E8900F2ECC7 /* FullscreenPhotoConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullscreenPhotoConfigurator.swift; sourceTree = "<group>"; };
+		BDF2E756267E241400F2ECC7 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		BDF2E758267E244600F2ECC7 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		C72C9F7325F988FA00A0A6F5 /* ChallengesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengesViewController.swift; sourceTree = "<group>"; };
 		C72C9F7925F9891900A0A6F5 /* ChallengesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengesView.swift; sourceTree = "<group>"; };
 		C72C9F7D25F98F9100A0A6F5 /* ChallengeInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeInfoTableViewCell.swift; sourceTree = "<group>"; };
@@ -357,6 +361,7 @@
 				C72C9F7225F988D700A0A6F5 /* Challenge */,
 				C7A31AB525EBA69C008D5E20 /* Camera */,
 				0521CADD24BBADD5008BB178 /* Controllers */,
+				BDF2E755267E23E600F2ECC7 /* Coordinators */,
 				052B1E4724C39B8F0068B701 /* Authorization */,
 				BD8229CD265116DE000B286E /* Registration */,
 				BDAC954E266287FC00216B35 /* Profile */,
@@ -564,6 +569,15 @@
 				BDF2E751267D4E8900F2ECC7 /* FullscreenPhotoConfigurator.swift */,
 			);
 			path = FullscreenPhoto;
+			sourceTree = "<group>";
+		};
+		BDF2E755267E23E600F2ECC7 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				BDF2E756267E241400F2ECC7 /* Coordinator.swift */,
+				BDF2E758267E244600F2ECC7 /* MainCoordinator.swift */,
+			);
+			path = Coordinators;
 			sourceTree = "<group>";
 		};
 		C72C9F7225F988D700A0A6F5 /* Challenge */ = {
@@ -1016,6 +1030,7 @@
 				BD2D9B752674D5D00082BC1A /* ProfileService.swift in Sources */,
 				C7FB9AEB25EC159D0010CD2C /* RequestFactory.swift in Sources */,
 				0521CAE624BBB0DA008BB178 /* MainViewController.swift in Sources */,
+				BDF2E757267E241400F2ECC7 /* Coordinator.swift in Sources */,
 				BD8835F4267CC35E00D94E1D /* SelectCityView.swift in Sources */,
 				BD2D9B8226760D790082BC1A /* CountriesResponse.swift in Sources */,
 				051D060424BE0EC400E61520 /* AccelerometerOrientation.swift in Sources */,
@@ -1063,6 +1078,7 @@
 				C7FB9B0525EC23310010CD2C /* SafeCollection.swift in Sources */,
 				2398F7342F36A48AFEDECA51 /* DataEngine.swift in Sources */,
 				BDF2E752267D4E8900F2ECC7 /* FullscreenPhotoConfigurator.swift in Sources */,
+				BDF2E759267E244600F2ECC7 /* MainCoordinator.swift in Sources */,
 				C75548F225FAE24E00D0D9BE /* ChallengeDetailInfoView.swift in Sources */,
 				BD8229D92651172F000B286E /* RegistrationViewController.swift in Sources */,
 				BD8229CF26511708000B286E /* RegistrationConfigurator.swift in Sources */,

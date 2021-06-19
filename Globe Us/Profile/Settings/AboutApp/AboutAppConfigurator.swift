@@ -8,12 +8,14 @@
 import Foundation
 
 protocol AboutAppConfigurator {
-    func configure(viewController: AboutAppViewController)
+    func configure(viewController: AboutAppViewController, mainCoordinator: MainCoordinator?)
 }
 
 final class AboutAppConfiguratorImplementation : AboutAppConfigurator {
-    func configure(viewController: AboutAppViewController) {
-        let presenter = AboutAppPresenterImplementation(view: viewController, navigationController: viewController.navigationController)
+    func configure(viewController: AboutAppViewController, mainCoordinator: MainCoordinator?) {
+        let presenter = AboutAppPresenterImplementation(view: viewController)
+        presenter.mainCoordinator = mainCoordinator
+        
         viewController.presenter = presenter
     }
 }

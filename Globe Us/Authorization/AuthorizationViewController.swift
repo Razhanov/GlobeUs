@@ -48,6 +48,14 @@ class AuthorizationViewController : UIViewController {
         navigationController?.navigationBar.isHidden = true
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        DispatchQueue.main.async {
+            self.mainView.setupBottomConstraint()
+        }
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         NotificationCenter.default.removeObserver(self)
         
@@ -56,12 +64,20 @@ class AuthorizationViewController : UIViewController {
     
     override func viewDidLoad(){
         super.viewDidLoad()
-        configurator.configure(viewController: self, navigationController: navigationController)
+        
         presenter?.viewDidLoad()
         hideKeyboardWhenTappedAround()
         
         GIDSignIn.sharedInstance()?.presentingViewController = self
         GIDSignIn.sharedInstance()?.delegate = self
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        
+        DispatchQueue.main.async {
+            self.mainView.setupBottomConstraint()
+        }
     }
     
     @objc private func login() {
